@@ -50,7 +50,7 @@ Estes tratam de recursos que não são funcionalidades, mas sim características
 			→ Caso ocorra algum problema na aplicação, que não foi identificado nos testes, este estara disponivel em arquivos de logs do sistema (.txt);
 
 - Diagrama de Caso de Uso:
-![image](https://user-images.githubusercontent.com/48540484/84463702-efdbbe80-ac48-11ea-9cfe-b9bcb6e727b9.png)
+![image](https://user-images.githubusercontent.com/48540484/84463728-0255f800-ac49-11ea-9d18-56ff63687f8c.png)
 
 - Modelo Entidade Relacionamento:
 
