@@ -52,6 +52,6 @@ Estes tratam de recursos que não são funcionalidades, mas sim características
 - **Diagrama de Caso de Uso:**
 ![image](https://user-images.githubusercontent.com/48540484/84463728-0255f800-ac49-11ea-9d18-56ff63687f8c.png)
 
-- **Modelo Entidade Relacionamento:**
+- **Diagrama Entidade Relacionamento (DER):**
 
 ![image](https://user-images.githubusercontent.com/48540484/84463536-78a62a80-ac48-11ea-9ec4-fd1d582993b3.png)
