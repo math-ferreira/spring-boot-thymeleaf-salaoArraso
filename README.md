@@ -49,7 +49,8 @@ Estes tratam de recursos que não são funcionalidades, mas sim características
 			→ Utilizara o paradigma Orientada a Objetos para o desenvolvimento backend e também o paradigma Relacional para o Banco de Dados. A integragação entre os paradigmas será realizada com a implementação do Hibernate, através da biblioteca padrão de persistencia de objetos no JAVA, o JPA.
 			→ Caso ocorra algum problema na aplicação, que não foi identificado nos testes, este estara disponivel em arquivos de logs do sistema (.txt);
 
-
+- Diagrama de Caso de Uso:
+![image](https://user-images.githubusercontent.com/48540484/84463702-efdbbe80-ac48-11ea-9cfe-b9bcb6e727b9.png)
 
 - Modelo Entidade Relacionamento:
 
