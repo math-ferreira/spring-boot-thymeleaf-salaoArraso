@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_contato")
 public class Contato implements Serializable{
@@ -29,6 +31,7 @@ public class Contato implements Serializable{
 	
 	private String email;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinTable(
 			name = "tb_fornecedor_contato",
@@ -37,9 +40,11 @@ public class Contato implements Serializable{
 			)
 	private Fornecedor fornecedor;
 
+	
 	@OneToMany(mappedBy = "contato")
 	private List<Telefone> telefones = new ArrayList<>();
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinTable(
 			name = "tb_cliente_contato",
