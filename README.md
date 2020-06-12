@@ -8,7 +8,7 @@ Sistema para gerenciamento de serviços de salão de beleza. Estara disponivel o
 
 ![image](https://user-images.githubusercontent.com/48540484/84463495-5c09f280-ac48-11ea-9be7-e71a13a6e133.png)
 
-1.1 Requisitos funcionais:
+- Requisitos funcionais:
 Se trata das funcionalidades que o sistema deve ter.
 
 		1: O sistema deve permitir que o funcionario insira no calendário serviços a serem realizados;
@@ -29,7 +29,7 @@ Se trata das funcionalidades que o sistema deve ter.
 		16: O sistema possibilitara consultar a movimentação de caixa, referente as entradas e saidas;
 		17: O sistema possibilitara filtrar a movimentação de caixa por: entrada, tipo de entrada, saida, tipo de saida, dia, mês, ano e data vigente;
 
-1.2 Requisitos não funcionais:
+- Requisitos não funcionais:
 Estes tratam de recursos que não são funcionalidades, mas sim características do sistema, como restrições, segurança, confiabilidade, velocidade, validações. entre outros.
 
 		1: Desempenho:
