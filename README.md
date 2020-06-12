@@ -8,7 +8,7 @@ Sistema para gerenciamento de serviços de salão de beleza. Estara disponivel o
 
 ![image](https://user-images.githubusercontent.com/48540484/84463495-5c09f280-ac48-11ea-9be7-e71a13a6e133.png)
 
-- Requisitos funcionais:
+- **Requisitos funcionais:**
 Se trata das funcionalidades que o sistema deve ter.
 
 		1: O sistema deve permitir que o funcionario insira no calendário serviços a serem realizados;
@@ -29,7 +29,7 @@ Se trata das funcionalidades que o sistema deve ter.
 		16: O sistema possibilitara consultar a movimentação de caixa, referente as entradas e saidas;
 		17: O sistema possibilitara filtrar a movimentação de caixa por: entrada, tipo de entrada, saida, tipo de saida, dia, mês, ano e data vigente;
 
-- Requisitos não funcionais:
+- **Requisitos não funcionais:**
 Estes tratam de recursos que não são funcionalidades, mas sim características do sistema, como restrições, segurança, confiabilidade, velocidade, validações. entre outros.
 
 		1: Desempenho:
@@ -49,9 +49,9 @@ Estes tratam de recursos que não são funcionalidades, mas sim características
 			→ Utilizara o paradigma Orientada a Objetos para o desenvolvimento backend e também o paradigma Relacional para o Banco de Dados. A integragação entre os paradigmas será realizada com a implementação do Hibernate, através da biblioteca padrão de persistencia de objetos no JAVA, o JPA.
 			→ Caso ocorra algum problema na aplicação, que não foi identificado nos testes, este estara disponivel em arquivos de logs do sistema (.txt);
 
-- Diagrama de Caso de Uso:
+- **Diagrama de Caso de Uso:**
 ![image](https://user-images.githubusercontent.com/48540484/84463728-0255f800-ac49-11ea-9d18-56ff63687f8c.png)
 
-- Modelo Entidade Relacionamento:
+- **Modelo Entidade Relacionamento:**
 
 ![image](https://user-images.githubusercontent.com/48540484/84463536-78a62a80-ac48-11ea-9ec4-fd1d582993b3.png)
