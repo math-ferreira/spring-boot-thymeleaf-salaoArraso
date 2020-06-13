@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.salaoarrazus.domain.model.Contato;
 
 @Repository
-public interface ContatoRepository extends JpaRepository<Contato, Long>{
+public interface ContatoRepository extends JpaRepository<Contato, Long> {
 
+	
 }

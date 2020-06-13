@@ -5,10 +5,9 @@ import java.util.List;
 
 import org.modelmapper.ModelMapper;
 
-import com.salaoarrazus.domain.model.Cliente;
 import com.salaoarrazus.domain.model.Endereco;
 import com.salaoarrazus.domain.model.Fornecedor;
-import com.salaoarrazus.domain.model.Funcionario;
+import com.salaoarrazus.domain.model.Pessoa;
 
 import lombok.Data;
 
@@ -21,9 +20,9 @@ public class EnderecoDTO {
 	private String cep;
 	private String cidade;
 	private String estado;
-	private List<Funcionario> funcionarios = new ArrayList<>();
+	private List<Pessoa> funcionarios = new ArrayList<>();
 	private Fornecedor fornecedor;
-	private List<Cliente> clientes = new ArrayList<>();
+	private List<Pessoa> pessoas = new ArrayList<>();
 	
 	public static EnderecoDTO create(Endereco endereco) {
 		ModelMapper modelMapper = new ModelMapper();

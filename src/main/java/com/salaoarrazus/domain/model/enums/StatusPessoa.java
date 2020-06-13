@@ -1,15 +1,16 @@
 package com.salaoarrazus.domain.model.enums;
 
-public enum TipoServico {
+public enum StatusPessoa {
 
-	MANICURE(1),
-	PEDICURE(2),
-	CABELO(3),
-	OUTROS(4);
+	FUNCIONARIO(1),
+	MANICURE(2),
+	PEDICURE(3),
+	CABELO(4),
+	OUTROS(5);
 	
 	private Integer code;
 	
-	private TipoServico(Integer code) {
+	private StatusPessoa(Integer code) {
 		this.code = code;
 	}
 	
@@ -17,8 +18,8 @@ public enum TipoServico {
 		return code;
 	}
 	
-	public static TipoServico valueOf(Integer code) {
-		for (TipoServico value : TipoServico.values()) {
+	public static StatusPessoa valueOf(Integer code) {
+		for (StatusPessoa value : StatusPessoa.values()) {
 			if (value.getCode() == code) {
 				return value;
 			}

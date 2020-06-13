@@ -28,6 +28,7 @@ public class Telefone implements Serializable{
 	private Integer tipoTelefone;
 	private String numeroTelefone;
 	
+	
 	@ManyToOne
 	@JoinColumn(name="contato_id")
 	private Contato contato;

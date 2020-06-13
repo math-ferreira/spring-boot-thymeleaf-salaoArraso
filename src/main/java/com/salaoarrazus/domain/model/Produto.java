@@ -31,7 +31,6 @@ public class Produto implements Serializable {
 	private Long id;
 
 	private String descricaoProduto;
-	private String tipo;
 	private Integer quantidade;
 	private double valor;
 	private Date data;
@@ -51,12 +50,11 @@ public class Produto implements Serializable {
 
 	}
 
-	public Produto(Long id, String descricaoProduto, String tipo, Integer quantidade, double valor, Date data,
+	public Produto(Long id, String descricaoProduto, Integer quantidade, double valor, Date data,
 			StatusPagamento statusPagamento, StatusCaixa statusCaixa) {
 		super();
 		this.id = id;
 		this.descricaoProduto = descricaoProduto;
-		this.tipo = tipo;
 		this.quantidade = quantidade;
 		this.valor = valor;
 		this.data = data;
@@ -82,14 +80,6 @@ public class Produto implements Serializable {
 
 	public void setDescricaoProduto(String descricaoProduto) {
 		this.descricaoProduto = descricaoProduto;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
 	}
 
 	public Integer getQuantidade() {
