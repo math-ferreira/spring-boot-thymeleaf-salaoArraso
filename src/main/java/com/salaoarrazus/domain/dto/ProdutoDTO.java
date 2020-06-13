@@ -15,7 +15,6 @@ import lombok.Data;
 public class ProdutoDTO {
 
 	private String descricaoProduto;
-	private String tipo;
 	private Integer quantidade;
 	private double valor;
 	private Date data;

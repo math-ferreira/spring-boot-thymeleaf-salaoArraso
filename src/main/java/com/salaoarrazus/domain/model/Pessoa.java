@@ -1,57 +1,68 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.salaoarrazus.domain.model.enums.TipoServico;
+import com.salaoarrazus.domain.model.enums.StatusPessoa;
 
 @Entity
-@Table(name = "tb_funcionario")
-public class Funcionario implements Serializable{
+@Table(name = "tb_pessoa")
+public class Pessoa implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private String nome;
-	private Integer tipoServico;
-	
-	@ManyToMany
-	@JoinTable(
-			name="tb_funcionario_endereco",
-			joinColumns = @JoinColumn(name="funcionario_id"),
-			inverseJoinColumns = @JoinColumn(name= "endereco_id")
-			)
-	private List<Endereco> enderecos = new ArrayList<>();
 
-	public Funcionario() {
+	private String nome;
+	private Integer statusPessoa;
+
+	@ManyToOne()
+	@JoinColumn(name = "endereco_id")
+	private Endereco endereco;
+
+	@ManyToOne()
+	@JoinColumn(name = "contato_id")
+	private Contato contato;
+
+	public Pessoa() {
 
 	}
 
-	public Funcionario(Long id, String nome, TipoServico tipoServico) {
+	public Pessoa(Long id, String nome, StatusPessoa statusPessoa, Endereco endereco, Contato contato) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		setTipoServico(tipoServico);
+		setStatusPessoa(statusPessoa);
+		this.endereco = endereco;
+		this.contato = contato;
 	}
-	
-	public List<Endereco> getEnderecos() {
-		return enderecos;
+
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
+
+	public Endereco getEnderecos() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public Long getId() {
@@ -70,12 +81,12 @@ public class Funcionario implements Serializable{
 		this.nome = nome;
 	}
 
-	public TipoServico getTipoServico() {
-		return TipoServico.valueOf(tipoServico);
+	public StatusPessoa getStatusPessoa() {
+		return StatusPessoa.valueOf(statusPessoa);
 	}
 
-	public void setTipoServico(TipoServico tipoServico) {
-		this.tipoServico = tipoServico.getCode();
+	public void setStatusPessoa(StatusPessoa statusPessoa) {
+		this.statusPessoa = statusPessoa.getCode();
 	}
 
 	@Override
@@ -94,7 +105,7 @@ public class Funcionario implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Funcionario other = (Funcionario) obj;
+		Pessoa other = (Pessoa) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

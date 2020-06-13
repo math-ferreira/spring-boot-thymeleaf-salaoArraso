@@ -10,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.salaoarrazus.domain.model.enums.TipoTelefone;
 
 @Entity
@@ -29,7 +28,7 @@ public class Telefone implements Serializable{
 	private Integer tipoTelefone;
 	private String numeroTelefone;
 	
-	@JsonIgnore
+	
 	@ManyToOne
 	@JoinColumn(name="contato_id")
 	private Contato contato;

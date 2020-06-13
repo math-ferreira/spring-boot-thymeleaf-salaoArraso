@@ -4,72 +4,52 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_contato")
-public class Contato implements Serializable{
+public class Contato implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String email;
-	
-	@JsonIgnore
-	@ManyToOne
-	@JoinTable(
-			name = "tb_fornecedor_contato",
-			joinColumns = @JoinColumn(name= "contato_id"),
-			inverseJoinColumns = @JoinColumn(name="fornecedor_id")
-			)
+
+	@OneToOne(mappedBy = "contato", cascade = CascadeType.ALL)
 	private Fornecedor fornecedor;
 
-	
 	@OneToMany(mappedBy = "contato")
 	private List<Telefone> telefones = new ArrayList<>();
 	
-	@JsonIgnore
-	@ManyToOne
-	@JoinTable(
-			name = "tb_cliente_contato",
-			joinColumns = @JoinColumn(name= "contato_id"),
-			inverseJoinColumns = @JoinColumn(name="cliente_id")
-			)
-	private Cliente cliente;
-	
+	@OneToMany(mappedBy = "contato")
+	private List<Pessoa> pessoas = new ArrayList<>();
+
 	public Contato() {
 
 	}
 
-	public Contato(Long id, String email, Fornecedor fornecedor, Cliente cliente) {
+	public Contato(Long id, String email, Fornecedor fornecedor) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.fornecedor = fornecedor;
 	}
-	
-	public Cliente getCliente() {
-		return cliente;
-	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public List<Pessoa> getPessoas() {
+		return pessoas;
 	}
 
 	public List<Telefone> getTelefones() {

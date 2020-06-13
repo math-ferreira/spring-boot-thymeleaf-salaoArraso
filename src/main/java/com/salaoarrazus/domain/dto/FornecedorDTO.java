@@ -18,9 +18,9 @@ public class FornecedorDTO {
 	private String nome;
 	private String cnpj;
 	private String ramo;
-	private List<Contato> contatos = new ArrayList<>();
+	private Contato contato;
 	private List<Produto> produtos = new ArrayList<>();
-	private List<Endereco> enderecos = new ArrayList<>();
+	private Endereco endereco;
 	
 	public static FornecedorDTO create(Fornecedor fornecedor) {
 		ModelMapper modelMapper = new ModelMapper();

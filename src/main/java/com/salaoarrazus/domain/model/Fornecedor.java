@@ -8,11 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_fornecedor")
@@ -31,38 +30,49 @@ public class Fornecedor implements Serializable {
 	private String cnpj;
 	private String ramo;
 
-	@OneToMany(mappedBy = "fornecedor")
-	private List<Contato> contatos = new ArrayList<>();
+	@OneToOne
+	@JoinColumn(name = "contato_id")
+	private Contato contato;
 
-	@JsonIgnore
 	@ManyToMany(mappedBy = "fornecedores")
 	private List<Produto> produtos = new ArrayList<>();
 
-	@OneToMany(mappedBy = "fornecedor")
-	private List<Endereco> enderecos = new ArrayList<>();
+	@OneToOne()
+	@JoinColumn(name="endereco_id")
+	private Endereco endereco;
 
 	public Fornecedor() {
 
 	}
 
-	public Fornecedor(Long id, String nome, String cnpj, String ramo) {
+	public Fornecedor(Long id, String nome, String cnpj, String ramo, Contato contato, Endereco endereco) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.ramo = ramo;
+		this.contato = contato;
+		this.endereco = endereco;
 	}
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public List<Produto> getProdutos() {
 		return produtos;
 	}
 
-	public List<Contato> getContatos() {
-		return contatos;
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
 	}
 
 	public Long getId() {
@@ -121,5 +131,6 @@ public class Fornecedor implements Serializable {
 			return false;
 		return true;
 	}
+
 
 }
