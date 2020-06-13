@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_endereco")
 public class Endereco implements Serializable {
@@ -22,6 +24,7 @@ public class Endereco implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -33,12 +36,11 @@ public class Endereco implements Serializable {
 	private String cidade;
 	private String estado;
 
-	@OneToMany(mappedBy = "endereco")
-	private List<Pessoa> funcionarios = new ArrayList<>();
-
+	@JsonIgnore
 	@OneToOne(mappedBy = "endereco", cascade = CascadeType.ALL)
 	private Fornecedor fornecedor;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "endereco")
 	private List<Pessoa> pessoas = new ArrayList<>();
 
@@ -69,10 +71,6 @@ public class Endereco implements Serializable {
 
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
-	}
-
-	public List<Pessoa> getFuncionarios() {
-		return funcionarios;
 	}
 
 	public Long getId() {

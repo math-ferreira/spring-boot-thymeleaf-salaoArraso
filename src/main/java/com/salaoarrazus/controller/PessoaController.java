@@ -21,7 +21,7 @@ public class PessoaController {
 	
 	@GetMapping()
 	public ResponseEntity<List<PessoaDTO>> getPessoas() {
-		List<PessoaDTO> pessoas = pessoaService.getPessoa();
+		List<PessoaDTO> pessoas = pessoaService.getPessoas();
 		return ResponseEntity.ok(pessoas);
 	}
 	

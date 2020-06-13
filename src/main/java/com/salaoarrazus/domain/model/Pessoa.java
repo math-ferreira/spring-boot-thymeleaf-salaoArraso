@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.salaoarrazus.domain.model.enums.StatusPessoa;
 
 @Entity
@@ -21,6 +22,7 @@ public class Pessoa implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -57,7 +59,7 @@ public class Pessoa implements Serializable {
 		this.contato = contato;
 	}
 
-	public Endereco getEnderecos() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
 

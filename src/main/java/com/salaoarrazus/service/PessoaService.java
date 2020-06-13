@@ -17,7 +17,7 @@ public class PessoaService {
 	@Autowired
 	private PessoaRepository pessoaRepository;
 	
-	public List<PessoaDTO> getPessoa(){
+	public List<PessoaDTO> getPessoas(){
 		List<Pessoa> pessoas = pessoaRepository.findAll();
 		
 		List<PessoaDTO> pessoasDTO = new ArrayList<>();
