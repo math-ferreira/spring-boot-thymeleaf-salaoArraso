@@ -4,13 +4,14 @@ import org.modelmapper.ModelMapper;
 
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.domain.model.Telefone;
+import com.salaoarrazus.domain.model.enums.TipoTelefone;
 
 import lombok.Data;
 
 @Data
 public class TelefoneDTO {
 
-	private Integer tipoTelefone;
+	private TipoTelefone tipoTelefone;
 	private String numeroTelefone;
 	private Contato contato;
 	

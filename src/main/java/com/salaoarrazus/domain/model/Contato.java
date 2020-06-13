@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_contato")
 public class Contato implements Serializable {
@@ -22,18 +24,21 @@ public class Contato implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String email;
-
+	
+	@JsonIgnore
 	@OneToOne(mappedBy = "contato", cascade = CascadeType.ALL)
 	private Fornecedor fornecedor;
 
 	@OneToMany(mappedBy = "contato")
 	private List<Telefone> telefones = new ArrayList<>();
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "contato")
 	private List<Pessoa> pessoas = new ArrayList<>();
 
@@ -47,7 +52,7 @@ public class Contato implements Serializable {
 		this.email = email;
 		this.fornecedor = fornecedor;
 	}
-
+	
 	public List<Pessoa> getPessoas() {
 		return pessoas;
 	}
@@ -55,7 +60,7 @@ public class Contato implements Serializable {
 	public List<Telefone> getTelefones() {
 		return telefones;
 	}
-
+	
 	public Fornecedor getFornecedor() {
 		return fornecedor;
 	}

@@ -20,7 +20,6 @@ public class EnderecoDTO {
 	private String cep;
 	private String cidade;
 	private String estado;
-	private List<Pessoa> funcionarios = new ArrayList<>();
 	private Fornecedor fornecedor;
 	private List<Pessoa> pessoas = new ArrayList<>();
 	

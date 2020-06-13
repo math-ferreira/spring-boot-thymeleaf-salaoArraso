@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_fornecedor")
 public class Fornecedor implements Serializable {
@@ -22,12 +24,15 @@ public class Fornecedor implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String nome;
+	
 	private String cnpj;
+	
 	private String ramo;
 
 	@OneToOne

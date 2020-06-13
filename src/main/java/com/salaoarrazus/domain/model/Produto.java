@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 
@@ -26,6 +27,7 @@ public class Produto implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@JsonIgnore
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -36,6 +38,7 @@ public class Produto implements Serializable {
 	private Date data;
 	private Integer statusPagamento;
 
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(
 			name = "tb_produto_fornecedor",

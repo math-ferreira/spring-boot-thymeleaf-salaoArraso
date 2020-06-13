@@ -1,14 +1,9 @@
 package com.salaoarrazus.domain.dto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.modelmapper.ModelMapper;
-
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.domain.model.Endereco;
 import com.salaoarrazus.domain.model.Fornecedor;
-import com.salaoarrazus.domain.model.Produto;
 
 import lombok.Data;
 
@@ -19,7 +14,6 @@ public class FornecedorDTO {
 	private String cnpj;
 	private String ramo;
 	private Contato contato;
-	private List<Produto> produtos = new ArrayList<>();
 	private Endereco endereco;
 	
 	public static FornecedorDTO create(Fornecedor fornecedor) {

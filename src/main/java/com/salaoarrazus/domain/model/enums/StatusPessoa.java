@@ -24,6 +24,6 @@ public enum StatusPessoa {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("Codigo para Tipo Serviço invalido");
+		throw new IllegalArgumentException("Codigo para Tipo Pessoa invalido");
 	}
 }

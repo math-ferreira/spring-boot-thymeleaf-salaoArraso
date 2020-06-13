@@ -8,6 +8,8 @@ import org.modelmapper.ModelMapper;
 
 import com.salaoarrazus.domain.model.Fornecedor;
 import com.salaoarrazus.domain.model.Produto;
+import com.salaoarrazus.domain.model.enums.StatusCaixa;
+import com.salaoarrazus.domain.model.enums.StatusPagamento;
 
 import lombok.Data;
 
@@ -18,9 +20,9 @@ public class ProdutoDTO {
 	private Integer quantidade;
 	private double valor;
 	private Date data;
-	private Integer statusPagamento;
+	private StatusPagamento statusPagamento;
 	private List<Fornecedor> fornecedores = new ArrayList<>();
-	private Integer statusCaixa;
+	private StatusCaixa statusCaixa;
 	
 	
 	public static ProdutoDTO create(Produto produto) {
