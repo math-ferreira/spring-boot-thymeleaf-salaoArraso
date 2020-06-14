@@ -30,6 +30,10 @@ public class EnderecoService {
 		Optional<Endereco> endereco = enderecoRepository.findById(id);
 		return EnderecoDTO.create(endereco.get());
 	}
+	
+	public EnderecoDTO postEndereco(Endereco endereco) {
+		return EnderecoDTO.create(enderecoRepository.save(endereco));
+	}
 
 	public EnderecoDTO putEndereco(Endereco endereco, Long id) {
 		Endereco enderecoUpdate = endereco;

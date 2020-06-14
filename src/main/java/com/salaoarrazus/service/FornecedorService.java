@@ -30,6 +30,10 @@ public class FornecedorService {
 		Optional<Fornecedor> fornecedor = fornecedorRepository.findById(id);
 		return FornecedorDTO.create(fornecedor.get());
 	}
+	
+	public FornecedorDTO postFornecedor(Fornecedor fornecedor) {
+		return FornecedorDTO.create(fornecedorRepository.save(fornecedor));
+	}
 
 	public FornecedorDTO putFornecedor(Fornecedor fornecedor, Long id) {
 		Fornecedor fornecedorUpdate = fornecedor;

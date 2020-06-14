@@ -30,6 +30,10 @@ public class TelefoneService {
 		Optional<Telefone> telefone = telefoneRepository.findById(id);
 		return TelefoneDTO.create(telefone.get());
 	}
+	
+	public TelefoneDTO postTelefone(Telefone telefone) {
+		return TelefoneDTO.create(telefoneRepository.save(telefone));
+	}
 
 	public TelefoneDTO putTelefone(Telefone telefone, Long id) {
 		Telefone telefoneUpdate = telefone;

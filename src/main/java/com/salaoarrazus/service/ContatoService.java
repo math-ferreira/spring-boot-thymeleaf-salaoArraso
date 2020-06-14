@@ -30,6 +30,10 @@ public class ContatoService {
 		Optional<Contato> contato = contatoRepository.findById(id);
 		return ContatoDTO.create(contato.get());
 	}
+	
+	public ContatoDTO postContato(Contato contato) {
+		return ContatoDTO.create(contatoRepository.save(contato));
+	}
 
 	public ContatoDTO putContato(Contato contato, Long id) {
 		Contato contatoUpdate = contato;

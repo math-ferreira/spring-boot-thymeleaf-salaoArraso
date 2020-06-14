@@ -31,6 +31,10 @@ public class ProdutoService {
 		return ProdutoDTO.create(produto.get());
 	}
 
+	public ProdutoDTO postProduto(Produto produto) {
+		return ProdutoDTO.create(produtoRepository.save(produto));
+	}
+	
 	public ProdutoDTO putProduto(Produto produto, Long id) {
 		Produto produtoUpdate = produto;
 		produtoUpdate.setId(produto.getId());

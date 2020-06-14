@@ -46,11 +46,10 @@ public class Contato implements Serializable {
 
 	}
 
-	public Contato(Long id, String email, Fornecedor fornecedor) {
+	public Contato(Long id, String email) {
 		super();
 		this.id = id;
 		this.email = email;
-		this.fornecedor = fornecedor;
 	}
 	
 	public List<Pessoa> getPessoas() {
