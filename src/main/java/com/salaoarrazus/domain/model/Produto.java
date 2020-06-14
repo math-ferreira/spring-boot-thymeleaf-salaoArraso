@@ -1,17 +1,14 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -38,14 +35,9 @@ public class Produto implements Serializable {
 	private Date data;
 	private Integer statusPagamento;
 
-	@JsonIgnore
-	@ManyToMany
-	@JoinTable(
-			name = "tb_produto_fornecedor",
-			joinColumns = @JoinColumn(name= "produto_id"),
-			inverseJoinColumns = @JoinColumn(name="fornecedor_id")
-			)
-	private List<Fornecedor> fornecedores = new ArrayList<>();
+	@ManyToOne()
+	@JoinColumn(name = "fornecedor_id")
+	private Fornecedor fornecedor;
 	
 	private Integer statusCaixa;
 
@@ -54,7 +46,7 @@ public class Produto implements Serializable {
 	}
 
 	public Produto(Long id, String descricaoProduto, Integer quantidade, double valor, Date data,
-			StatusPagamento statusPagamento, StatusCaixa statusCaixa) {
+			StatusPagamento statusPagamento, StatusCaixa statusCaixa, Fornecedor fornecedor) {
 		super();
 		this.id = id;
 		this.descricaoProduto = descricaoProduto;
@@ -64,9 +56,13 @@ public class Produto implements Serializable {
 		setStatusPagamento(statusPagamento);
 		setStatusCaixa(statusCaixa);
 	}
+	
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
 
-	public List<Fornecedor> getFornecedores() {
-		return fornecedores;
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 
 	public Long getId() {

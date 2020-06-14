@@ -1,8 +1,6 @@
 package com.salaoarrazus.domain.dto;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.modelmapper.ModelMapper;
 
@@ -21,7 +19,7 @@ public class ProdutoDTO {
 	private double valor;
 	private Date data;
 	private StatusPagamento statusPagamento;
-	private List<Fornecedor> fornecedores = new ArrayList<>();
+	private Fornecedor fornecedor;
 	private StatusCaixa statusCaixa;
 	
 	

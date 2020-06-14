@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.salaoarrazus.domain.dto.FornecedorDTO;
 import com.salaoarrazus.domain.model.Fornecedor;
 import com.salaoarrazus.repository.FornecedorRepository;
+import com.salaoarrazus.service.config.UpdateObjects;
 
 @Service
 public class FornecedorService {
@@ -36,9 +37,9 @@ public class FornecedorService {
 	}
 
 	public FornecedorDTO putFornecedor(Fornecedor fornecedor, Long id) {
-		Fornecedor fornecedorUpdate = fornecedor;
-		fornecedorUpdate.setId(fornecedor.getId());
-		return FornecedorDTO.create(fornecedorRepository.save(fornecedorUpdate));
+		Fornecedor fornecedorGravado = fornecedorRepository.findById(id).get(); // .get() pois deveria retornar um Optional<>
+		UpdateObjects.merge(fornecedor, fornecedorGravado);
+		return FornecedorDTO.create(fornecedorRepository.save(fornecedorGravado));
 	}
 
 	public void deleteFornecedor(Long id) {

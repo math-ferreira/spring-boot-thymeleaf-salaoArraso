@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.salaoarrazus.domain.dto.PessoaDTO;
 import com.salaoarrazus.domain.model.Pessoa;
 import com.salaoarrazus.repository.PessoaRepository;
+import com.salaoarrazus.service.config.UpdateObjects;
 
 @Service
 public class PessoaService {
@@ -36,10 +37,9 @@ public class PessoaService {
 	}
 
 	public PessoaDTO putPessoa(Pessoa pessoa, Long id) {
-		Pessoa pessoaUpdate = pessoa;
-		pessoaUpdate.setId(pessoa.getId());
-		return PessoaDTO.create(pessoaRepository.save(pessoaUpdate));
-
+		Pessoa pessoaGravada = pessoaRepository.findById(id).get(); // .get() pois deveria retornar um Optional<>
+		UpdateObjects.merge(pessoa, pessoaGravada);
+		return PessoaDTO.create(pessoaRepository.save(pessoaGravada));
 	}
 
 	public void deletePessoa(Long id) {

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.salaoarrazus.domain.dto.ProdutoDTO;
 import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.repository.ProdutoRepository;
+import com.salaoarrazus.service.config.UpdateObjects;
 
 @Service
 public class ProdutoService {
@@ -36,9 +37,9 @@ public class ProdutoService {
 	}
 	
 	public ProdutoDTO putProduto(Produto produto, Long id) {
-		Produto produtoUpdate = produto;
-		produtoUpdate.setId(produto.getId());
-		return ProdutoDTO.create(produtoRepository.save(produtoUpdate));
+		Produto produtoGravado = produtoRepository.findById(id).get(); // .get() pois deveria retornar um Optional<>
+		UpdateObjects.merge(produto, produtoGravado);
+		return ProdutoDTO.create(produtoRepository.save(produtoGravado));
 	}
 
 	public void deleteProduto(Long id) {
