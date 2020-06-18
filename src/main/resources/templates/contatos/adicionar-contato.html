@@ -87,38 +87,60 @@
 					<h4>Preencha as informações abaixo para adicionar um novo
 						contato na agenda</h4>
 					<br>
-					<form th:action="@{/login}" th:object="${loginForm}" method="post">
+					<form th:action="@{/save}" th:object="${pessoa}" method="post">
 						<div class="form-row">
 							<div class="col-md-5 mb-3">
 								<label for="validationDefault01">Nome da pessoa</label> <input
 									type="text" class="form-control" id="validationDefault01"
-									placeholder="Juliane da Silva" required>
+									placeholder="Juliane da Silva" required th:field="*{nome}">
 							</div>
-							<div class="col-md-4 mb-3">
-								<label for="validationDefault02">Tipo de pessoa</label> <input
-									type="text" class="form-control" id="validationDefault02"
-									placeholder="Cliente" required>
+							<div class="col-md-3 mb-3">
+								<label for="validationDefault04">Tipo Pessoa</label> <select
+									class="custom-select" th:field="*{{statusPessoa}}">
+									<option
+										th:each="statusPessoa : ${T(com.salaoarrazus.domain.model.enums.StatusPessoa).values()}"
+										th:value="${statusPessoa}" th:text="${statusPessoa}"></option>
+								</select>
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="col-md-3 mb-3">
 								<label for="validationDefault03">Telefone</label> <input
 									type="text" class="form-control" id="validationDefault03"
-									placeholder="9999-9999" required>
+									placeholder="9999-9999" required
+									th:field=*{contato.telefones[0].numeroTelefone}>
 							</div>
-							<div class="col-md-3 mb-3">
-								<label for="validationDefault04">Tipo Telefone</label> <input
-									type="text" class="form-control" id="validationDefault04"
-									placeholder="Residencial" required>
+							<div class="col-md-2 mb-3">
+								<label for="validationDefault04">Tipo Telefone</label> <select
+									class="custom-select" th:field="*{{contato.telefones[0].tipoTelefone}}">
+									<option
+										th:each="tipoTelefone : ${T(com.salaoarrazus.domain.model.enums.TipoTelefone).values()}"
+										th:value="${tipoTelefone}" th:text="${tipoTelefone}"></option>
+								</select>
 							</div>
 							<div class="col-md-5 mb-3">
 								<label for="validationDefault05">E-mail</label> <input
 									type="text" class="form-control" id="validationDefault05"
-									placeholder="contato@email.com" !required>
+									placeholder="contato@email.com" !required
+									th:field="*{contato.email}">
 							</div>
 						</div>
-						<button class="btn btn-primary" type="submit">Cadastrar
-							pessoa</button>
+						<div class="form-row">
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault03">Bairro</label> <input
+									type="text" class="form-control" id="validationDefault03"
+									placeholder="9999-9999" required th:field="*{endereco.bairro}">
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault04">Cidade</label> <input
+									type="text" class="form-control" id="validationDefault04"
+									placeholder="Residencial" required
+									th:field="*{endereco.cidade}">
+							</div>
+						</div>
+						<br>
+						<button class="btn btn-primary" type="submit">Salvar
+							Pessoa</button>
 					</form>
 				</div>
 			</main>

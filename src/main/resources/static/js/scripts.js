@@ -23,22 +23,11 @@
     // 
     $('#btn-adicionar').on('click', function(e) {
         $(location).attr('href', 'adicionar-contato.html')
-
-
     })
 
-    $('#btn-alterar').on('click', function(e) {
+    $('#btn-alterar-remover').on('click', function(e) {
         $(location).attr('href', 'alterar-contato.html')
-
-
     })
 
-    $('#btn-remover').on('click', function(e) {
-        $(location).attr('href', 'remover-contato.html')
-    })
-    
-    $('#btn-alterar-contato').on('click', function(e) {
-        $(location).attr('href', 'contato-telefone.html')
-    })
     
 })(jQuery);
