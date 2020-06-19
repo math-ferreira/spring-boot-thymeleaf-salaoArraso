@@ -9,33 +9,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.salaoarrazus.domain.dto.PessoaDTO;
 import com.salaoarrazus.domain.model.Pessoa;
 import com.salaoarrazus.service.PessoaService;
 
 @Controller
-@RequestMapping("/")
-public class PessoasController {
-
+@RequestMapping("/agenda")
+public class AgendaController {
+	
 	@Autowired
 	private PessoaService pessoaService;
-
-	@GetMapping("/adicionar-contato.html")
-	public ModelAndView adicionarAlterar(PessoaDTO pessoa) {
-		ModelAndView mv = new ModelAndView("contatos/adicionar-contato");
-		mv.addObject("pessoa", pessoa);
-		return mv;
-	}
-
-	@GetMapping("/alterar-contato.html")
-	public String alterar(ModelMap model) {
-		model.addAttribute("pessoas", pessoaService.getPessoas());
-		return "contatos/alterar-contato";
-	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/editar/{id}")
 	public ModelAndView editar(@PathVariable("id") Long id) {
-		return adicionarAlterar(pessoaService.getPessoaById(id));
+		ModelAndView mvc = new ModelAndView("agenda/editar-agenda");
+		mvc.addObject("pessoa", pessoaService.getPessoaById(id));
+		return mvc;
 	}
 	
 	@PostMapping("/save")
@@ -43,5 +31,5 @@ public class PessoasController {
 		pessoaService.postPessoa(pessoa);
 		return "index";
 	}
-
+	
 }

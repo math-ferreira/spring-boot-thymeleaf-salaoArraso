@@ -8,21 +8,18 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Inicio - Arrazus</title>
+<title>Contatos</title>
 <link href="css/styles.css" rel="stylesheet" />
-<link
-	href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
-	rel="stylesheet" crossorigin="anonymous" />
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
 	crossorigin="anonymous"></script>
 </head>
 
-<body class="sb-nav-fixed">
+<body>
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<a class="navbar-brand">Home</a>
+		<a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
 		<button class="btn btn-link btn-sm order-1 order-lg-0"
-			id="sidebarToggle" href="#">
+			id="sidebarToggle">
 			<i class="fas fa-bars"></i>
 		</button>
 		<!-- Navbar Search-->
@@ -73,7 +70,7 @@
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
 							</div>
-							<a style="color: gray" th:href="@{/agenda}">Acessar agenda</a> </a>
+							<a style="color: gray">Acessar agenda</a> </a>
 						</form>
 					</div>
 				</div>
@@ -88,12 +85,38 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid">
-					<h1 style="text-align: center" class="mt-4">Salão de Beleza -
-						Arrazus</h1>
+					<h1 class="mt-4">Agenda</h1>
+					<ol class="breadcrumb mb-4">
+						<li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+						<li class="breadcrumb-item active">Acessar agenda</li>
+					</ol>
 				</div>
-				<br>
-				<div class="text-center">
-					<img src="assets/img/logo_arrazus.png" alt="arrazus">
+				<div class="card-body">
+					<h4>
+						Alterar contatos da agenda:
+						<div class="table table-striped">
+							<br>
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Nome</th>
+										<th scope="col">Opção</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="pessoa : ${pessoas}">
+										<td scope="row" th:text="${pessoaStat.index} + 1"></td>
+										<td th:text="${pessoa.nome}"></td>
+										<td><div class="btn-group pull-right">
+												<a button type="button" class="btn btn-outline-primary" th:href="@{/agenda/editar/{id}(id=${pessoa.id})}">Editar</button></a>
+												<a button type="button" class="btn btn-outline-danger">Remover</button></a>
+											</div></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+				</div>
 			</main>
 		</div>
 	</div>
@@ -103,18 +126,6 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-		crossorigin="anonymous"></script>
-	<script src="assets/demo/chart-area-demo.js"></script>
-	<script src="assets/demo/chart-bar-demo.js"></script>
-	<script
-		src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"
-		crossorigin="anonymous"></script>
-	<script src="assets/demo/datatables-demo.js"></script>
 </body>
 
 </html>

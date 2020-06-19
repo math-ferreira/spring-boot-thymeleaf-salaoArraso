@@ -20,14 +20,4 @@
         $("body").toggleClass("sb-sidenav-toggled");
     });
 
-    // 
-    $('#btn-adicionar').on('click', function(e) {
-        $(location).attr('href', 'adicionar-contato.html')
-    })
-
-    $('#btn-alterar-remover').on('click', function(e) {
-        $(location).attr('href', 'alterar-contato.html')
-    })
-
-    
 })(jQuery);
