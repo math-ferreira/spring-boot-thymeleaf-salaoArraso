@@ -9,7 +9,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Contatos</title>
-<link href="css/styles.css" rel="stylesheet" />
+<link th:href="@{/css/styles.css}" rel="stylesheet">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
 	crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
 
 <body>
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<a class="navbar-brand" href="index.html">Home</a>
+		<a class="navbar-brand" th:href="@{/}">Home</a>
 		<button class="btn btn-link btn-sm order-1 order-lg-0"
 			id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
@@ -35,29 +35,29 @@
 				<div class="sb-sidenav-menu">
 					<div class="nav">
 						<div class="sb-sidenav-menu-heading">Para Hoje</div>
-						<a class="nav-link" href="atendimentos-hoje.html">
+						<a class="nav-link" th:href="@{/atendimentos}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> Atendimentos
 						</a>
 						<div class="sb-sidenav-menu-heading">Agenda</div>
-						<a class="nav-link" href="consultar-calendario.html">
+						<a class="nav-link" th:href="@{/calendario}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
 							</div> Consultar calendario
-						</a> <a class="nav-link" href="servicos.html">
+						</a> <a class="nav-link" th:href="@{/servicos}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
 							</div> Serviços
 						</a>
 						<div class="sb-sidenav-menu-heading">Fluxo de caixa</div>
-						<a class="nav-link" href="fluxo-de-caixa.html">
+						<a class="nav-link" th:href="@{/caixa}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-chart-area"></i>
 							</div> Consultar Caixa
 						</a>
 						<div class="sb-sidenav-menu-heading">Contatos</div>
-						<a class="nav-link" href="contatos.html">
+						<a class="nav-link" th:href="@{/agenda}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
 							</div> Acessar agenda
@@ -75,27 +75,29 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid">
-					<h1 class="mt-4">Adicionar contato na agenda</h1>
+					<h1 class="mt-4">Adicionar / editar contato na agenda</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-						<li class="breadcrumb-item active"><a href="contatos.html">Acessar
+						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
+						<li class="breadcrumb-item active"><a th:href="@{/agenda}">Acessar
 								agenda</a></li>
 						<li class="breadcrumb-item active">Adicionar contato</li>
 					</ol>
 				</div>
 				<div class="card-body">
-					<h4>Preencha as informações abaixo para adicionar um novo
+					<h4>Preencha as informações abaixo para adicionar/editar um
 						contato na agenda</h4>
 					<br>
-					<form th:action="@{/save}" th:object="${pessoa}" method="post">
+					<form th:action="@{/agenda/save}" th:object="${pessoa}"
+						method="POST">
 						<div class="form-row">
+							<input type="hidden" name="pessoaId" th:value="${pessoa.id}">
 							<div class="col-md-5 mb-3">
 								<label for="validationDefault01">Nome da pessoa</label> <input
 									type="text" class="form-control" id="validationDefault01"
 									placeholder="Juliane da Silva" required th:field="*{nome}">
 							</div>
 							<div class="col-md-3 mb-3">
-								<label for="validationDefault04">Tipo Pessoa</label> <select
+								<label for="validationDefault02">Tipo Pessoa</label> <select
 									class="custom-select" th:field="*{{statusPessoa}}">
 									<option
 										th:each="statusPessoa : ${T(com.salaoarrazus.domain.model.enums.StatusPessoa).values()}"
@@ -107,12 +109,14 @@
 							<div class="col-md-3 mb-3">
 								<label for="validationDefault03">Telefone</label> <input
 									type="text" class="form-control" id="validationDefault03"
-									placeholder="9999-9999" required
+									placeholder="(99) 9999-9999" required
+									data-mask="(00) 00000-0000"
 									th:field=*{contato.telefones[0].numeroTelefone}>
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="validationDefault04">Tipo Telefone</label> <select
-									class="custom-select" th:field="*{{contato.telefones[0].tipoTelefone}}">
+									class="custom-select"
+									th:field="*{{contato.telefones[0].tipoTelefone}}">
 									<option
 										th:each="tipoTelefone : ${T(com.salaoarrazus.domain.model.enums.TipoTelefone).values()}"
 										th:value="${tipoTelefone}" th:text="${tipoTelefone}"></option>
@@ -127,31 +131,62 @@
 						</div>
 						<div class="form-row">
 							<div class="col-md-4 mb-3">
-								<label for="validationDefault03">Bairro</label> <input
-									type="text" class="form-control" id="validationDefault03"
+								<label for="validationDefault06">Bairro</label> <input
+									type="text" class="form-control" id="validationDefault06"
 									placeholder="9999-9999" required th:field="*{endereco.bairro}">
 							</div>
 							<div class="col-md-4 mb-3">
-								<label for="validationDefault04">Cidade</label> <input
-									type="text" class="form-control" id="validationDefault04"
+								<label for="validationDefault07">Cidade</label> <input
+									type="text" class="form-control" id="validationDefault07"
 									placeholder="Residencial" required
 									th:field="*{endereco.cidade}">
 							</div>
 						</div>
 						<br>
-						<button class="btn btn-primary" type="submit">Salvar
-							Pessoa</button>
+						<!-- Button trigger modal -->
+						<button type="button" class="btn btn-primary" data-toggle="modal"
+							data-target="#modalConfirmar">Salvar dados</button>
+
+						<!-- Modal Salvar -->
+						<div class="modal fade" id="modalConfirmar" tabindex="-1"
+							role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Salão
+											Arrazus</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">Confirmar salvar dados?</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Cancelar</button>
+										<button type="submit" class="btn btn-primary">Confirmar</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</form>
 				</div>
 			</main>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-		crossorigin="anonymous"></script>
+	<script src="
+											https://code.jquery.com/jquery-3.4.1.min.js"
+		crossorigin="anonymous">
+		
+	</script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
-	<script src="js/scripts.js"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>

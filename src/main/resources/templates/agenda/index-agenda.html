@@ -9,7 +9,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>Contatos</title>
-<link href="css/styles.css" rel="stylesheet" />
+<link th:href="@{/css/styles.css}" rel="stylesheet">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
 	crossorigin="anonymous"></script>
@@ -34,44 +34,34 @@
 				id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<div class="sb-sidenav-menu-heading">
-							<a style="color: white">Para Hoje</a>
-						</div>
-
-						<form class="nav-link">
+						<div class="sb-sidenav-menu-heading">Para Hoje</div>
+						<a class="nav-link" th:href="@{/atendimentos}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
-							</div>
-							<a style="color: gray" th:href="@{/atendimentos}">Atendimentos</a>
-						</form>
-						<div class="sb-sidenav-menu-heading">
-							<a style="color: white">Agenda</a>
-						</div>
-						<form class="nav-link">
+							</div> Atendimentos
+						</a>
+						<div class="sb-sidenav-menu-heading">Agenda</div>
+						<a class="nav-link" th:href="@{/calendario}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
-							</div>
-							<a style="color: gray" th:href="@{/calendario}">Calendário</a> </a>
-						</form>
-						<div class="sb-sidenav-menu-heading">
-							<a style="color: white">Fluxo de caixa</a>
-						</div>
-						<form class="nav-link">
+							</div> Consultar calendario
+						</a> <a class="nav-link" th:href="@{/servicos}">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-table"></i>
+							</div> Serviços
+						</a>
+						<div class="sb-sidenav-menu-heading">Fluxo de caixa</div>
+						<a class="nav-link" th:href="@{/caixa}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-chart-area"></i>
-							</div>
-							<a style="color: gray" th:href="@{/caixa}">Consultar
-								Caixa</a> </a>
-						</form>
-						<div class="sb-sidenav-menu-heading">
-							<a style="color: white">Agenda</a>
-						</div>
-						<form class="nav-link">
+							</div> Consultar Caixa
+						</a>
+						<div class="sb-sidenav-menu-heading">Contatos</div>
+						<a class="nav-link">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
-							</div>
-							<a style="color: gray">Acessar agenda</a> </a>
-						</form>
+							</div> Acessar agenda
+						</a>
 					</div>
 				</div>
 				<div class="sb-sidenav-footer">
@@ -87,7 +77,7 @@
 				<div class="container-fluid">
 					<h1 class="mt-4">Agenda</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
 						<li class="breadcrumb-item active">Acessar agenda</li>
 					</ol>
 				</div>
@@ -109,8 +99,12 @@
 										<td scope="row" th:text="${pessoaStat.index} + 1"></td>
 										<td th:text="${pessoa.nome}"></td>
 										<td><div class="btn-group pull-right">
-												<a button type="button" class="btn btn-outline-primary" th:href="@{/agenda/editar/{id}(id=${pessoa.id})}">Editar</button></a>
-												<a button type="button" class="btn btn-outline-danger">Remover</button></a>
+												<a button type="button" class="btn btn-outline-primary"
+													th:href="@{/agenda/editar/{id}/pessoa(id=${pessoa.id})}">Editar
+													</button>
+												</a> <a button type="button" class="btn btn-outline-danger">Remover
+													</button>
+												</a>
 											</div></td>
 									</tr>
 								</tbody>
@@ -125,7 +119,7 @@
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
-	<script src="js/scripts.js"></script>
+	<script th:src="@{/js/scripts.js}"></script>
 </body>
 
 </html>

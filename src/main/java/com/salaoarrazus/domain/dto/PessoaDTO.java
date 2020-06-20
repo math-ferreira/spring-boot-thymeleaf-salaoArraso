@@ -17,7 +17,7 @@ public class PessoaDTO {
 	private StatusPessoa statusPessoa;
 	private Endereco endereco;
 	private Contato contato;
-
+	
 	public static PessoaDTO create(Pessoa pessoa) {
 		ModelMapper modelMapper = new ModelMapper();
 		PessoaDTO pessoaDTO = modelMapper.map(pessoa, PessoaDTO.class);

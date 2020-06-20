@@ -11,6 +11,7 @@ import lombok.Data;
 @Data
 public class TelefoneDTO {
 
+	private Long id;
 	private TipoTelefone tipoTelefone;
 	private String numeroTelefone;
 	private Contato contato;

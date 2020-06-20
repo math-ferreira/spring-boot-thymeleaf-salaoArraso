@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,10 +37,6 @@ public class Contato implements Serializable {
 
 	@OneToMany(mappedBy = "contato")
 	private List<Telefone> telefones = new ArrayList<>();
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "contato")
-	private List<Pessoa> pessoas = new ArrayList<>();
 
 	public Contato() {
 
@@ -51,12 +48,12 @@ public class Contato implements Serializable {
 		this.email = email;
 	}
 	
-	public List<Pessoa> getPessoas() {
-		return pessoas;
-	}
-
 	public List<Telefone> getTelefones() {
 		return telefones;
+	}
+
+	public void setTelefones(List<Telefone> telefones) {
+		this.telefones = telefones;
 	}
 	
 	public Fornecedor getFornecedor() {

@@ -2,6 +2,7 @@ package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,11 +31,11 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private Integer statusPessoa;
 
-	@ManyToOne()
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
 
-	@ManyToOne()
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "contato_id")
 	private Contato contato;
 
