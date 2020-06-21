@@ -82,34 +82,43 @@
 					</ol>
 				</div>
 				<div class="card-body">
-					<h4>
-						Alterar contatos da agenda:
-						<div class="table table-striped">
-							<br>
-							<table class="table">
-								<thead>
-									<tr>
-										<th scope="col">#</th>
-										<th scope="col">Nome</th>
-										<th scope="col">Opção</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr th:each="pessoa : ${pessoas}">
-										<td scope="row" th:text="${pessoaStat.index} + 1"></td>
-										<td th:text="${pessoa.nome}"></td>
-										<td><div class="btn-group pull-right">
-												<a button type="button" class="btn btn-outline-primary"
-													th:href="@{/agenda/editar/{id}/pessoa(id=${pessoa.id})}">Editar
-													</button>
-												</a> <a button type="button" class="btn btn-outline-danger">Remover
-													</button>
-												</a>
-											</div></td>
-									</tr>
-								</tbody>
-							</table>
+					<h1>
+						<div class="border border-light p-3 mb-4">
+
+							<div class="text-justify">
+								<a button type="button" class="btn btn-outline-success"
+									th:href="@{/agenda/adicionar/pessoa}" th:method="GET">Adicionar
+									Pessoa nos contatos</button></a>
+							</div>
 						</div>
+					</h1>
+					Alterar contatos da agenda:
+					<div class="table table-striped">
+						<br>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nome</th>
+									<th scope="col">Opção</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="pessoa : ${pessoas}">
+									<td scope="row" th:text="${pessoaStat.index} + 1"></td>
+									<td th:text="${pessoa.nome}"></td>
+									<td><div class="btn-group pull-right">
+											<a button type="button" class="btn btn-outline-primary"
+												th:href="@{/agenda/editar/{id}/pessoa(id=${pessoa.id})}">Editar
+												</button>
+											</a> <a button type="button" class="btn btn-outline-danger">Remover
+												</button>
+											</a>
+										</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</main>
 		</div>

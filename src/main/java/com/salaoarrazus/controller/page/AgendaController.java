@@ -34,6 +34,11 @@ public class AgendaController {
 		mvc.addObject("pessoa", pessoaService.getPessoaById(id));
 		return mvc;
 	}
+	
+	@GetMapping("/adicionar/pessoa")
+	public String adicionar() {
+		return ("agenda/editar-agenda");
+	}
 
 	@PostMapping("/save")
 	public String save(Pessoa pessoa, @RequestParam("pessoaId") Long id) {
@@ -44,7 +49,6 @@ public class AgendaController {
 		else {
 			pessoaService.putPessoa(pessoa, id);
 		}
-
-		return "redirect:/";
+		return "redirect:";
 	}
 }

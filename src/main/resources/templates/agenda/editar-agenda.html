@@ -93,7 +93,7 @@
 							<input type="hidden" name="pessoaId" th:value="${pessoa.id}">
 							<div class="col-md-5 mb-3">
 								<label for="validationDefault01">Nome da pessoa</label> <input
-									type="text" class="form-control" id="validationDefault01"
+									type="text" class="form-control" id="nomePessoa"
 									placeholder="Juliane da Silva" required th:field="*{nome}">
 							</div>
 							<div class="col-md-3 mb-3">
@@ -108,7 +108,7 @@
 						<div class="form-row">
 							<div class="col-md-3 mb-3">
 								<label for="validationDefault03">Telefone</label> <input
-									type="text" class="form-control" id="validationDefault03"
+									type="text" class="form-control" id="numeroTelefone"
 									placeholder="(99) 9999-9999" required
 									data-mask="(00) 00000-0000"
 									th:field=*{contato.telefones[0].numeroTelefone}>
@@ -124,7 +124,7 @@
 							</div>
 							<div class="col-md-5 mb-3">
 								<label for="validationDefault05">E-mail</label> <input
-									type="text" class="form-control" id="validationDefault05"
+									type="text" class="form-control" id="email"
 									placeholder="contato@email.com" !required
 									th:field="*{contato.email}">
 							</div>
@@ -132,44 +132,20 @@
 						<div class="form-row">
 							<div class="col-md-4 mb-3">
 								<label for="validationDefault06">Bairro</label> <input
-									type="text" class="form-control" id="validationDefault06"
-									placeholder="9999-9999" required th:field="*{endereco.bairro}">
+									type="text" class="form-control" id="bairro"
+									placeholder="Laranjeiras" required th:field="*{endereco.bairro}">
 							</div>
 							<div class="col-md-4 mb-3">
 								<label for="validationDefault07">Cidade</label> <input
-									type="text" class="form-control" id="validationDefault07"
-									placeholder="Residencial" required
+									type="text" class="form-control" id="cidade"
+									placeholder="Ipiranga" required
 									th:field="*{endereco.cidade}">
 							</div>
 						</div>
 						<br>
 						<!-- Button trigger modal -->
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#modalConfirmar">Salvar dados</button>
+						<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar dados</button>
 
-						<!-- Modal Salvar -->
-						<div class="modal fade" id="modalConfirmar" tabindex="-1"
-							role="dialog" aria-labelledby="exampleModalLabel"
-							aria-hidden="true">
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Salão
-											Arrazus</h5>
-										<button type="button" class="close" data-dismiss="modal"
-											aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-									<div class="modal-body">Confirmar salvar dados?</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary"
-											data-dismiss="modal">Cancelar</button>
-										<button type="submit" class="btn btn-primary">Confirmar</button>
-									</div>
-								</div>
-							</div>
-						</div>
 					</form>
 				</div>
 			</main>
