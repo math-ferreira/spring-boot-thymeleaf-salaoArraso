@@ -60,7 +60,7 @@
 						<a class="nav-link" th:href="@{/agenda}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
-							</div> Acessar agenda
+							</div> Acessar contatos
 						</a>
 					</div>
 				</div>
@@ -79,12 +79,12 @@
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
 						<li class="breadcrumb-item active"><a th:href="@{/agenda}">Acessar
-								agenda</a></li>
+								contatos</a></li>
 						<li class="breadcrumb-item active">Adicionar contato</li>
 					</ol>
 				</div>
 				<div class="card-body">
-					<h4>Preencha as informações abaixo para adicionar/editar um
+					<h4>Preencha as informações abaixo para adicionar ou editar um
 						contato na agenda</h4>
 					<br>
 					<form th:action="@{/agenda/save}" th:object="${pessoa}"
@@ -97,8 +97,8 @@
 									placeholder="Juliane da Silva" required th:field="*{nome}">
 							</div>
 							<div class="col-md-3 mb-3">
-								<label for="validationDefault02">Tipo Pessoa</label> <select
-									class="custom-select" th:field="*{{statusPessoa}}">
+								<label for="topic">Tipo Pessoa</label> <select
+									class="form-control" id="tipoPessoa" th:field="*{statusPessoa}">
 									<option
 										th:each="statusPessoa : ${T(com.salaoarrazus.domain.model.enums.StatusPessoa).values()}"
 										th:value="${statusPessoa}" th:text="${statusPessoa}"></option>
@@ -116,7 +116,7 @@
 							<div class="col-md-2 mb-3">
 								<label for="validationDefault04">Tipo Telefone</label> <select
 									class="custom-select"
-									th:field="*{{contato.telefones[0].tipoTelefone}}">
+									th:field="*{contato.telefones[0].tipoTelefone}">
 									<option
 										th:each="tipoTelefone : ${T(com.salaoarrazus.domain.model.enums.TipoTelefone).values()}"
 										th:value="${tipoTelefone}" th:text="${tipoTelefone}"></option>
@@ -133,19 +133,19 @@
 							<div class="col-md-4 mb-3">
 								<label for="validationDefault06">Bairro</label> <input
 									type="text" class="form-control" id="bairro"
-									placeholder="Laranjeiras" required th:field="*{endereco.bairro}">
+									placeholder="Laranjeiras" required
+									th:field="*{endereco.bairro}">
 							</div>
 							<div class="col-md-4 mb-3">
 								<label for="validationDefault07">Cidade</label> <input
 									type="text" class="form-control" id="cidade"
-									placeholder="Ipiranga" required
-									th:field="*{endereco.cidade}">
+									placeholder="Ipiranga" required th:field="*{endereco.cidade}">
 							</div>
 						</div>
 						<br>
 						<!-- Button trigger modal -->
-						<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar dados</button>
-
+						<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar
+							dados</button>
 					</form>
 				</div>
 			</main>
@@ -163,6 +163,28 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
 		crossorigin="anonymous"></script>
+
+	<!-- Modal Salvar-->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

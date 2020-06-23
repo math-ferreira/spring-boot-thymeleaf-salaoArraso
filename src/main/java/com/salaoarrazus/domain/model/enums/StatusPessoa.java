@@ -1,12 +1,13 @@
 package com.salaoarrazus.domain.model.enums;
 
 public enum StatusPessoa {
+	
+	OUTROS(1),
+	FUNCIONARIO(2),
+	MANICURE(3),
+	PEDICURE(4),
+	CABELO(5);
 
-	FUNCIONARIO(1),
-	MANICURE(2),
-	PEDICURE(3),
-	CABELO(4),
-	OUTROS(5);
 	
 	private Integer code;
 	

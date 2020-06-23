@@ -30,13 +30,17 @@ public class Contato implements Serializable {
 	private Long id;
 
 	private String email;
-	
+
 	@JsonIgnore
 	@OneToOne(mappedBy = "contato")
 	private Fornecedor fornecedor;
 
-	@OneToMany(mappedBy = "contato")
+	@JsonIgnore
+	@OneToMany(mappedBy = "contato", cascade = CascadeType.ALL)
 	private List<Telefone> telefones = new ArrayList<>();
+
+	@OneToMany(mappedBy = "contato")
+	private List<Pessoa> pessoas = new ArrayList<>();
 
 	public Contato() {
 
@@ -47,7 +51,11 @@ public class Contato implements Serializable {
 		this.id = id;
 		this.email = email;
 	}
-	
+
+	public List<Pessoa> getPessoas() {
+		return pessoas;
+	}
+
 	public List<Telefone> getTelefones() {
 		return telefones;
 	}
@@ -55,7 +63,7 @@ public class Contato implements Serializable {
 	public void setTelefones(List<Telefone> telefones) {
 		this.telefones = telefones;
 	}
-	
+
 	public Fornecedor getFornecedor() {
 		return fornecedor;
 	}

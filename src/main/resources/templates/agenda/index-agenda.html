@@ -60,7 +60,7 @@
 						<a class="nav-link">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
-							</div> Acessar agenda
+							</div> Acessar contatos
 						</a>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 					<h1 class="mt-4">Agenda</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
-						<li class="breadcrumb-item active">Acessar agenda</li>
+						<li class="breadcrumb-item active">Acessar contatos</li>
 					</ol>
 				</div>
 				<div class="card-body">
@@ -87,8 +87,10 @@
 
 							<div class="text-justify">
 								<a button type="button" class="btn btn-outline-success"
-									th:href="@{/agenda/adicionar/pessoa}" th:method="GET">Adicionar
-									Pessoa nos contatos</button></a>
+									th:href="@{/agenda/adicionar/pessoa}">Adicionar Pessoa nos
+									contatos
+									</button>
+								</a>
 							</div>
 						</div>
 					</h1>
@@ -104,6 +106,10 @@
 								</tr>
 							</thead>
 							<tbody>
+								<th:block th:if="${pessoas.isEmpty()}">
+									<p style="color:red" class="font-italic">Não há contatos na agenda!</p>
+								</th:block>
+
 								<tr th:each="pessoa : ${pessoas}">
 									<td scope="row" th:text="${pessoaStat.index} + 1"></td>
 									<td th:text="${pessoa.nome}"></td>
@@ -111,19 +117,50 @@
 											<a button type="button" class="btn btn-outline-primary"
 												th:href="@{/agenda/editar/{id}/pessoa(id=${pessoa.id})}">Editar
 												</button>
-											</a> <a button type="button" class="btn btn-outline-danger">Remover
+											</a> <a button type="button" class="btn btn-outline-danger"
+												data-toggle="modal" data-target="#modalDeletar">Remover
 												</button>
 											</a>
+											<!-- Modal -->
+											<div class="modal fade" id="modalDeletar" tabindex="-1"
+												role="dialog" aria-labelledby="exampleModalLabel"
+												aria-hidden="true">
+												<div class="modal-dialog" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h6 class="modal-title" id="exampleModalLabel">Arrazus
+																diz:</h6>
+															<button type="button" class="close" data-dismiss="modal"
+																aria-label="Close">
+																<span aria-hidden="true">&times;</span>
+															</button>
+														</div>
+														<div class="modal-body">O contato será excluido</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-outline-secondary"
+																data-dismiss="modal">Cancelar</button>
+															<form
+																th:action="@{/agenda/remover/{id}/pessoa(id=${pessoa.id})}"
+																th:method="DELETE">
+																<button type="submit" class="btn btn-outline-danger">Confirmar
+																</button>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
+
 			</main>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	<script src="
+												https://code.jquery.com/jquery-3.4.1.min.js"
 		crossorigin="anonymous"></script>
 	<script
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"

@@ -29,7 +29,8 @@ public class Pessoa implements Serializable {
 	private Long id;
 
 	private String nome;
-	private Integer statusPessoa;
+	
+	private Integer statusPessoa = StatusPessoa.OUTROS.getCode(); 
 
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "endereco_id")

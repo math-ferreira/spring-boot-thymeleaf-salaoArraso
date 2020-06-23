@@ -2,6 +2,7 @@ package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ import com.salaoarrazus.domain.model.enums.TipoTelefone;
 
 @Entity
 @Table(name = "tb_telefone")
-public class Telefone implements Serializable{
+public class Telefone implements Serializable {
 
 	/**
 	 * 
@@ -26,12 +27,10 @@ public class Telefone implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	private Integer tipoTelefone;
+	private Integer tipoTelefone = TipoTelefone.OUTROS.getCode();
 	private String numeroTelefone;
 	
-	@JsonIgnore
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="contato_id")
 	private Contato contato;
 

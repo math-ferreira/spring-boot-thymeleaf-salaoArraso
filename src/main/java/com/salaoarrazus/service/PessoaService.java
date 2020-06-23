@@ -33,6 +33,7 @@ public class PessoaService {
 	}
 
 	public PessoaDTO postPessoa(Pessoa pessoa) {
+		UpdateObjects.associaTelefone(pessoa);
 		return PessoaDTO.create(pessoaRepository.save(pessoa));
 	}
 

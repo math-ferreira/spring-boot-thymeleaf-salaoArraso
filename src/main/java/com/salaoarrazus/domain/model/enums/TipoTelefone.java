@@ -2,10 +2,10 @@ package com.salaoarrazus.domain.model.enums;
 
 public enum TipoTelefone {
 
-	RESIDENCIAL(1),
-	COMERCIAL(2),
-	CELULAR(3),
-	OUTROS(4);
+	OUTROS(1),
+	RESIDENCIAL(2),
+	COMERCIAL(3),
+	CELULAR(4);
 	
 	private Integer code;
 	
