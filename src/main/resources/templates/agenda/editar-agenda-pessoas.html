@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Contatos</title>
+<link th:href="@{/css/styles.css}" rel="stylesheet">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+	crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+		<a class="navbar-brand" th:href="@{/}">Home</a>
+		<button class="btn btn-link btn-sm order-1 order-lg-0"
+			id="sidebarToggle" href="#">
+			<i class="fas fa-bars"></i>
+		</button>
+		<!-- Navbar Search-->
+		<form
+			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+
+		</form>
+	</nav>
+	<div id="layoutSidenav">
+		<div id="layoutSidenav_nav">
+			<nav class="sb-sidenav accordion sb-sidenav-dark"
+				id="sidenavAccordion">
+				<div class="sb-sidenav-menu">
+					<div class="nav">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Para Hoje</h6>
+						</div>
+						<a class="nav-link" href="atendimentos-hoje.html">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-tachometer-alt"></i>
+							</div> Atendimentos
+						</a>
+						<div class="sb-sidenav-menu-heading">
+							<h6>Agenda</h6>
+						</div>
+						<a class="nav-link" href="consultar-calendario.html">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-table"></i>
+							</div> Consultar calendario
+						</a> <a class="nav-link" href="servicos.html">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-table"></i>
+							</div> Serviços
+						</a>
+						<div class="sb-sidenav-menu-heading">
+							<h6>Fluxo de caixa</h6>
+						</div>
+						<a class="nav-link" href="fluxo-de-caixa.html">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-chart-area"></i>
+							</div> Consultar Caixa
+						</a>
+						<div class="sb-sidenav-menu-heading">
+							<h6>Contatos</h6>
+						</div>
+						<a class="nav-link">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-book-open"></i>
+							</div> Pessoas
+						</a> <a class="nav-link" th:href="@{/agenda/fornecedores}">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-book-open"></i>
+							</div> Fornecedores
+						</a>
+					</div>
+				</div>
+				<div class="sb-sidenav-footer">
+					<div class="small">Feito por:</div>
+					<strong><a target="_blank" rel="noopener noreferrer"
+						href="https://www.linkedin.com/in/math-ferreira/">Matheus
+							Ferreira</a>
+				</div>
+			</nav>
+		</div>
+		<div id="layoutSidenav_content">
+			<main>
+				<div class="container-fluid">
+					<h1 class="mt-4">Adicionar / editar contato na agenda</h1>
+					<ol class="breadcrumb mb-4">
+						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
+						<li class="breadcrumb-item active"><a
+							th:href="@{/agenda/pessoas}">Pessoas</a></li>
+						<li class="breadcrumb-item active">Adicionar contato</li>
+					</ol>
+				</div>
+				<div class="card-body">
+					<h4>Preencha as informações abaixo para adicionar ou editar um
+						contato na agenda</h4>
+					<br>
+					<form th:action="@{/agenda/pessoas/save}" th:object="${pessoa}"
+						method="POST">
+						<div class="form-row">
+							<input type="hidden" name="pessoaId" th:value="${pessoa.id}">
+							<div class="col-md-5 mb-3">
+								<label for="validationDefault01">Nome da pessoa</label> <input
+									type="text" class="form-control" id="nomePessoa"
+									placeholder="Juliane da Silva" required th:field="*{nome}">
+							</div>
+							<div class="col-md-3 mb-3">
+								<label for="topic">Tipo Pessoa</label> <select
+									class="form-control" id="tipoPessoa" th:field="*{statusPessoa}">
+									<option
+										th:each="statusPessoa : ${T(com.salaoarrazus.domain.model.enums.StatusPessoa).values()}"
+										th:value="${statusPessoa}" th:text="${statusPessoa}"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-3 mb-3">
+								<label for="validationDefault03">Telefone</label> <input
+									type="text" class="form-control" id="numeroTelefone"
+									placeholder="(99) 9999-9999" required
+									data-mask="(00) 00000-0000"
+									th:field=*{contato.telefones[0].numeroTelefone}>
+							</div>
+							<div class="col-md-2 mb-3">
+								<label for="validationDefault04">Tipo Telefone</label> <select
+									class="custom-select"
+									th:field="*{contato.telefones[0].tipoTelefone}">
+									<option
+										th:each="tipoTelefone : ${T(com.salaoarrazus.domain.model.enums.TipoTelefone).values()}"
+										th:value="${tipoTelefone}" th:text="${tipoTelefone}"></option>
+								</select>
+							</div>
+							<div class="col-md-5 mb-3">
+								<label for="validationDefault05">E-mail</label> <input
+									type="text" class="form-control" id="email"
+									placeholder="contato@email.com" !required
+									th:field="*{contato.email}">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault06">Bairro</label> <input
+									type="text" class="form-control" id="bairro"
+									placeholder="Laranjeiras" required
+									th:field="*{endereco.bairro}">
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault07">Cidade</label> <input
+									type="text" class="form-control" id="cidade"
+									placeholder="Ipiranga" required th:field="*{endereco.cidade}">
+							</div>
+						</div>
+						<br>
+						<!-- Button trigger modal -->
+						<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar
+							dados</button>
+					</form>
+				</div>
+			</main>
+		</div>
+	</div>
+	<script src="
+											https://code.jquery.com/jquery-3.4.1.min.js"
+		crossorigin="anonymous">
+		
+	</script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+	<script th:src="@{/js/scripts.js}"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+		crossorigin="anonymous"></script>
+
+	<!-- Modal Salvar-->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

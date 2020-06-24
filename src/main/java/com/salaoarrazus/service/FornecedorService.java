@@ -33,6 +33,7 @@ public class FornecedorService {
 	}
 	
 	public FornecedorDTO postFornecedor(Fornecedor fornecedor) {
+		UpdateObjects.associaFornecedorTelefone(fornecedor);
 		return FornecedorDTO.create(fornecedorRepository.save(fornecedor));
 	}
 

@@ -17,29 +17,30 @@ import com.salaoarrazus.domain.model.Pessoa;
 import com.salaoarrazus.service.PessoaService;
 
 @Controller
-@RequestMapping("/agenda")
-public class AgendaController {
+@RequestMapping("/agenda/pessoas")
+public class PessoaController {
 
 	@Autowired
 	private PessoaService pessoaService;
+	
 
 	@GetMapping()
 	public String agenda(ModelMap model) {
 		model.addAttribute("pessoas", pessoaService.getPessoas());
-		return "agenda/index-agenda";
+		return "agenda/index-agenda-pessoas";
 	}
 
 	@GetMapping("/editar/{id}/pessoa")
-	public ModelAndView editar(@PathVariable("id") Long id) {
+	public ModelAndView editarPessoa(@PathVariable("id") Long id) {
 
-		ModelAndView mvc = new ModelAndView("agenda/editar-agenda");
+		ModelAndView mvc = new ModelAndView("agenda/editar-agenda-pessoas");
 		mvc.addObject("pessoa", pessoaService.getPessoaById(id));
 		return mvc;
 	}
-
-	@GetMapping("/adicionar/pessoa")
-	public ModelAndView adicionar(Pessoa pessoa) {
-		ModelAndView mv = new ModelAndView("agenda/editar-agenda");
+	
+	@GetMapping("/adicionar")
+	public ModelAndView adicionarPessoa(Pessoa pessoa) {
+		ModelAndView mv = new ModelAndView("agenda/editar-agenda-pessoas");
 		mv.addObject("pessoa", pessoa);
 		return mv;
 	}
@@ -57,6 +58,6 @@ public class AgendaController {
 	@DeleteMapping("/remover/{id}/pessoa")
 	public String delete(@PathVariable("id") Long id) {
 		pessoaService.deletePessoa(id);
-		return "redirect:/agenda";
+		return "redirect:/agenda/pessoas";
 	}
 }

@@ -34,33 +34,45 @@
 				id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Para Hoje</div>
-						<a class="nav-link" th:href="@{/atendimentos}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Para Hoje</h6>
+						</div>
+						<a class="nav-link" href="atendimentos-hoje.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> Atendimentos
 						</a>
-						<div class="sb-sidenav-menu-heading">Agenda</div>
-						<a class="nav-link" th:href="@{/calendario}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Agenda</h6>
+						</div>
+						<a class="nav-link" href="consultar-calendario.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
 							</div> Consultar calendario
-						</a> <a class="nav-link" th:href="@{/servicos}">
+						</a> <a class="nav-link" href="servicos.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
 							</div> Serviços
 						</a>
-						<div class="sb-sidenav-menu-heading">Fluxo de caixa</div>
-						<a class="nav-link" th:href="@{/caixa}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Fluxo de caixa</h6>
+						</div>
+						<a class="nav-link" href="fluxo-de-caixa.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-chart-area"></i>
 							</div> Consultar Caixa
 						</a>
-						<div class="sb-sidenav-menu-heading">Contatos</div>
-						<a class="nav-link" th:href="@{/agenda}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Contatos</h6>
+						</div>
+						<a class="nav-link" th:href="@{/agenda/pessoas}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
-							</div> Acessar contatos
+							</div> Pessoas
+						</a> <a class="nav-link">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-book-open"></i>
+							</div> Fornecedores
 						</a>
 					</div>
 				</div>
@@ -78,8 +90,8 @@
 					<h1 class="mt-4">Adicionar / editar contato na agenda</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
-						<li class="breadcrumb-item active"><a th:href="@{/agenda}">Acessar
-								contatos</a></li>
+						<li class="breadcrumb-item active"><a
+							th:href="@{/agenda/fornecedores}">Fornecedores</a></li>
 						<li class="breadcrumb-item active">Adicionar contato</li>
 					</ol>
 				</div>
@@ -87,22 +99,20 @@
 					<h4>Preencha as informações abaixo para adicionar ou editar um
 						contato na agenda</h4>
 					<br>
-					<form th:action="@{/agenda/save}" th:object="${pessoa}"
-						method="POST">
+					<form th:action="@{/agenda/fornecedores/save}"
+						th:object="${fornecedor}" method="POST">
 						<div class="form-row">
-							<input type="hidden" name="pessoaId" th:value="${pessoa.id}">
+							<input type="hidden" name="fornecedorId"
+								th:value="${fornecedor.id}">
 							<div class="col-md-5 mb-3">
-								<label for="validationDefault01">Nome da pessoa</label> <input
-									type="text" class="form-control" id="nomePessoa"
+								<label for="validationDefault01">Nome da fornecedor</label> <input
+									type="text" class="form-control" id="nomeFornecedor"
 									placeholder="Juliane da Silva" required th:field="*{nome}">
 							</div>
-							<div class="col-md-3 mb-3">
-								<label for="topic">Tipo Pessoa</label> <select
-									class="form-control" id="tipoPessoa" th:field="*{statusPessoa}">
-									<option
-										th:each="statusPessoa : ${T(com.salaoarrazus.domain.model.enums.StatusPessoa).values()}"
-										th:value="${statusPessoa}" th:text="${statusPessoa}"></option>
-								</select>
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault01">Ramo Atuação</label> <input
+									type="text" class="form-control" id="nomeFornecedor"
+									placeholder="Produtos higiene" required th:field="*{ramo}">
 							</div>
 						</div>
 						<div class="form-row">

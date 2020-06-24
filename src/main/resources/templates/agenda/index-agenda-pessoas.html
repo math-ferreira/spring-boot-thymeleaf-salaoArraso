@@ -34,33 +34,45 @@
 				id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Para Hoje</div>
-						<a class="nav-link" th:href="@{/atendimentos}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Para Hoje</h6>
+						</div>
+						<a class="nav-link" href="atendimentos-hoje.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> Atendimentos
 						</a>
-						<div class="sb-sidenav-menu-heading">Agenda</div>
-						<a class="nav-link" th:href="@{/calendario}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Agenda</h6>
+						</div>
+						<a class="nav-link" href="consultar-calendario.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
 							</div> Consultar calendario
-						</a> <a class="nav-link" th:href="@{/servicos}">
+						</a> <a class="nav-link" href="servicos.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
 							</div> Serviços
 						</a>
-						<div class="sb-sidenav-menu-heading">Fluxo de caixa</div>
-						<a class="nav-link" th:href="@{/caixa}">
+						<div class="sb-sidenav-menu-heading">
+							<h6>Fluxo de caixa</h6>
+						</div>
+						<a class="nav-link" href="fluxo-de-caixa.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-chart-area"></i>
 							</div> Consultar Caixa
 						</a>
-						<div class="sb-sidenav-menu-heading">Contatos</div>
+						<div class="sb-sidenav-menu-heading">
+							<h6>Contatos</h6>
+						</div>
 						<a class="nav-link">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
-							</div> Acessar contatos
+							</div> Pessoas
+						</a> <a class="nav-link" th:href="@{/agenda/fornecedores}">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-book-open"></i>
+							</div> Fornecedores
 						</a>
 					</div>
 				</div>
@@ -75,47 +87,44 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid">
-					<h1 class="mt-4">Agenda</h1>
+					<h1 class="mt-4">Contatos de Pessoas</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
-						<li class="breadcrumb-item active">Acessar contatos</li>
+						<li class="breadcrumb-item active">Pessoas</li>
 					</ol>
+					<h3>Escolha uma das opções abaixo.</h3>
 				</div>
 				<div class="card-body">
 					<h1>
-						<div class="border border-light p-3 mb-4">
 
-							<div class="text-justify">
-								<a button type="button" class="btn btn-outline-success"
-									th:href="@{/agenda/adicionar/pessoa}">Adicionar Pessoa nos
-									contatos
-									</button>
-								</a>
-							</div>
-						</div>
+						<a button type="button" class="btn btn-outline-success"
+							th:href="@{/agenda/pessoas/adicionar}">Adicionar Pessoa
+						</a>
 					</h1>
-					Alterar contatos da agenda:
 					<div class="table table-striped">
 						<br>
 						<table class="table">
 							<thead>
 								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Opção</th>
+									<th scope="col"><h4>#</h4></th>
+									<th scope="col"><h4>Nome</h4></th>
+									<th scope="col"><h4>Telefone</h4></th>
+									<th scope="col"><h4></h4></th>
 								</tr>
 							</thead>
 							<tbody>
 								<th:block th:if="${pessoas.isEmpty()}">
-									<p style="color:red" class="font-italic">Não há contatos na agenda!</p>
+									<p style="color: red" class="font-italic">Não há contatos
+										na agenda!</p>
 								</th:block>
 
 								<tr th:each="pessoa : ${pessoas}">
 									<td scope="row" th:text="${pessoaStat.index} + 1"></td>
 									<td th:text="${pessoa.nome}"></td>
+									<td th:text="${pessoa.contato.telefones[0].numeroTelefone}"></td>
 									<td><div class="btn-group pull-right">
 											<a button type="button" class="btn btn-outline-primary"
-												th:href="@{/agenda/editar/{id}/pessoa(id=${pessoa.id})}">Editar
+												th:href="@{/agenda/pessoas/editar/{id}/pessoa(id=${pessoa.id})}">Editar
 												</button>
 											</a> <a button type="button" class="btn btn-outline-danger"
 												data-toggle="modal" data-target="#modalDeletar">Remover
@@ -140,7 +149,7 @@
 															<button type="button" class="btn btn-outline-secondary"
 																data-dismiss="modal">Cancelar</button>
 															<form
-																th:action="@{/agenda/remover/{id}/pessoa(id=${pessoa.id})}"
+																th:action="@{/agenda/pessoas/remover/{id}/pessoa(id=${pessoa.id})}"
 																th:method="DELETE">
 																<button type="submit" class="btn btn-outline-danger">Confirmar
 																</button>

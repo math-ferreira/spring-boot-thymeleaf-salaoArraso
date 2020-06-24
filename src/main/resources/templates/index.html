@@ -20,7 +20,7 @@
 
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<a class="navbar-brand">Home</a>
+		<a class="navbar-brand"><h4>Home</h4></a>
 		<button class="btn btn-link btn-sm order-1 order-lg-0"
 			id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
@@ -37,13 +37,13 @@
 				id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<div class="sb-sidenav-menu-heading">Para Hoje</div>
+						<div class="sb-sidenav-menu-heading"><h6>Para Hoje</h6></div>
 						<a class="nav-link" href="atendimentos-hoje.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-tachometer-alt"></i>
 							</div> Atendimentos
 						</a>
-						<div class="sb-sidenav-menu-heading">Agenda</div>
+						<div class="sb-sidenav-menu-heading"><h6>Agenda</h6></div>
 						<a class="nav-link" href="consultar-calendario.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-table"></i>
@@ -53,17 +53,21 @@
 								<i class="fas fa-table"></i>
 							</div> Serviços
 						</a>
-						<div class="sb-sidenav-menu-heading">Fluxo de caixa</div>
+						<div class="sb-sidenav-menu-heading"><h6>Fluxo de caixa</h6></div>
 						<a class="nav-link" href="fluxo-de-caixa.html">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-chart-area"></i>
 							</div> Consultar Caixa
 						</a>
-						<div class="sb-sidenav-menu-heading">Contatos</div>
-						<a class="nav-link" th:href="@{/agenda}">
+						<div class="sb-sidenav-menu-heading"><h6>Contatos</h6></div>
+						<a class="nav-link" th:href="@{/agenda/pessoas}">
 							<div class="sb-nav-link-icon">
 								<i class="fas fa-book-open"></i>
-							</div> Acessar contatos
+							</div> Pessoas
+						</a> <a class="nav-link" th:href="@{/agenda/fornecedores}">
+							<div class="sb-nav-link-icon">
+								<i class="fas fa-book-open"></i>
+							</div> Fornecedores
 						</a>
 					</div>
 				</div>

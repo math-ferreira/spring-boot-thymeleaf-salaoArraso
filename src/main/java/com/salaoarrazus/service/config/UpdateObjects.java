@@ -3,6 +3,7 @@ package com.salaoarrazus.service.config;
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;
 
+import com.salaoarrazus.domain.model.Fornecedor;
 import com.salaoarrazus.domain.model.Pessoa;
 import com.salaoarrazus.domain.model.Telefone;
 
@@ -34,11 +35,24 @@ public class UpdateObjects {
 	 * @return pessoa
 	 */
 	
-	public static Pessoa associaTelefone(Pessoa pessoa) {
+	public static Pessoa associaPessoaTelefone(Pessoa pessoa) {
 		for (Telefone telefone : pessoa.getContato().getTelefones()) {
 			telefone.setContato(pessoa.getContato());
 		}
 		return pessoa;
+	}
+	
+	/**
+	 * Associa a coleção de telefones ao objeto fornecedor
+	 * @param fornecedor
+	 * @return fornecedor
+	 */
+	
+	public static Fornecedor associaFornecedorTelefone(Fornecedor fornecedor) {
+		for (Telefone telefone : fornecedor.getContato().getTelefones()) {
+			telefone.setContato(fornecedor.getContato());
+		}
+		return fornecedor;
 	}
 
 }
