@@ -1,6 +1,8 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,10 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.salaoarrazus.domain.model.enums.StatusPessoa;
 
 @Entity
 @Table(name = "tb_pessoa")
@@ -29,8 +31,6 @@ public class Pessoa implements Serializable {
 	private Long id;
 
 	private String nome;
-	
-	private Integer statusPessoa = StatusPessoa.OUTROS.getCode(); 
 
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "endereco_id")
@@ -39,18 +39,25 @@ public class Pessoa implements Serializable {
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "contato_id")
 	private Contato contato;
+	
+	@OneToMany(mappedBy = "pessoa")
+	private List<Atendimento> atendimentos = new ArrayList<>();
 
 	public Pessoa() {
 
 	}
 
-	public Pessoa(Long id, String nome, StatusPessoa statusPessoa, Endereco endereco, Contato contato) {
+	public Pessoa(Long id, String nome, Endereco endereco, Contato contato) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		setStatusPessoa(statusPessoa);
 		this.endereco = endereco;
 		this.contato = contato;
+	}
+
+
+	public List<Atendimento> getAtendimentos() {
+		return atendimentos;
 	}
 
 	public Contato getContato() {
@@ -83,14 +90,6 @@ public class Pessoa implements Serializable {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public StatusPessoa getStatusPessoa() {
-		return StatusPessoa.valueOf(statusPessoa);
-	}
-
-	public void setStatusPessoa(StatusPessoa statusPessoa) {
-		this.statusPessoa = statusPessoa.getCode();
 	}
 
 	@Override

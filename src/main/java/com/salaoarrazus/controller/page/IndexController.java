@@ -13,8 +13,6 @@ public class IndexController {
 	
 	@GetMapping("/atendimentos") public String atendimentos() {return "calendario-atendimentos/atendimentos-hoje";}
 	
-	@GetMapping("/calendario") public String calendario() { return "calendario-atendimentos/consultar-calendario";}
-	
 	@GetMapping("/caixa") public String caixa() { return "fluxo-de-caixa/index-fluxo-de-caixa";}
 	
 	@GetMapping("/servicos") public String servicos() { return "servicos/index-servicos"; }

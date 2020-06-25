@@ -37,5 +37,5 @@
 				alert("Dados Salvos com sucesso");
 			}
 			});
-
+	
 })(jQuery);

@@ -108,13 +108,11 @@
 									type="text" class="form-control" id="nomePessoa"
 									placeholder="Juliane da Silva" required th:field="*{nome}">
 							</div>
-							<div class="col-md-3 mb-3">
-								<label for="topic">Tipo Pessoa</label> <select
-									class="form-control" id="tipoPessoa" th:field="*{statusPessoa}">
-									<option
-										th:each="statusPessoa : ${T(com.salaoarrazus.domain.model.enums.StatusPessoa).values()}"
-										th:value="${statusPessoa}" th:text="${statusPessoa}"></option>
-								</select>
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault05">E-mail</label> <input
+									type="text" class="form-control" id="email"
+									placeholder="contato@email.com" !required
+									th:field="*{contato.email}">
 							</div>
 						</div>
 						<div class="form-row">
@@ -133,12 +131,6 @@
 										th:each="tipoTelefone : ${T(com.salaoarrazus.domain.model.enums.TipoTelefone).values()}"
 										th:value="${tipoTelefone}" th:text="${tipoTelefone}"></option>
 								</select>
-							</div>
-							<div class="col-md-5 mb-3">
-								<label for="validationDefault05">E-mail</label> <input
-									type="text" class="form-control" id="email"
-									placeholder="contato@email.com" !required
-									th:field="*{contato.email}">
 							</div>
 						</div>
 						<div class="form-row">

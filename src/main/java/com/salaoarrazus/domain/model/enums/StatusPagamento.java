@@ -4,7 +4,8 @@ public enum StatusPagamento {
 
 	AGUARDANDO_PAGAMENTO(1),
 	PAGO(2),
-	CANCELADO(3);
+	CANCELADO(3),
+	PAGO_PARCIAL(4);
 	
 	private Integer code;
 	

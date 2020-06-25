@@ -16,8 +16,8 @@ INSERT INTO `tb_fornecedor`(`cnpj`, `nome`, `ramo`, `contato_id`, `endereco_id`)
 INSERT INTO `tb_fornecedor`(`cnpj`, `nome`, `ramo`, `contato_id`, `endereco_id`) VALUES ("02382890343","Supermercado Dia","Alimentos","3","4")
 
 #TB_PESSOA
-INSERT INTO `tb_pessoa`(`nome`, `status_pessoa`, `contato_id`, `endereco_id`) VALUES ("Matheus Ferreira","4","1","2")
-INSERT INTO `tb_pessoa`(`nome`, `status_pessoa`, `contato_id`, `endereco_id`) VALUES ("Maysa Prado","4","4","1")
+INSERT INTO `tb_pessoa`(`nome`, `contato_id`, `endereco_id`) VALUES ("Matheus Ferreira","1","2")
+INSERT INTO `tb_pessoa`(`nome`, `contato_id`, `endereco_id`) VALUES ("Maysa Prado","4","1")
 
 #TB_PRODUTO
 INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`) VALUES ("2020-06-06 14:03:00","Alvejante","2","2","2","16.20")
@@ -35,3 +35,6 @@ INSERT INTO `tb_telefone`(`numero_telefone`, `tipo_telefone`, `contato_id`) VALU
 INSERT INTO `tb_telefone`(`numero_telefone`, `tipo_telefone`, `contato_id`) VALUES ("11987654099","3","1")
 #INSERT INTO `tb_telefone`(`numero_telefone`, `tipo_telefone`, `contato_id`) VALUES ("14987627348","3","5")
 INSERT INTO `tb_telefone`(`numero_telefone`, `tipo_telefone`, `contato_id`) VALUES ("11449909922","2","2")
+
+#TB_ATENDIMENTO
+INSERT INTO `tb_atendimento`(`data_pedido`, `modo_pagamento`, `quantidade_sessoes`, `status_pagamento`, `tipo_atendimento`, `valor_total`, `pessoa_id`) VALUES ('2020-06-02 14:09:44','2','3','1','3','147','2')

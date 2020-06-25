@@ -20,7 +20,7 @@ import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.domain.model.Telefone;
 import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
-import com.salaoarrazus.domain.model.enums.StatusPessoa;
+import com.salaoarrazus.domain.model.enums.TipoAtendimento;
 import com.salaoarrazus.domain.model.enums.TipoTelefone;
 import com.salaoarrazus.service.ContatoService;
 import com.salaoarrazus.service.EnderecoService;
@@ -69,7 +69,7 @@ class SalaoArrazusApplicationTests {
 
 		Pessoa pessoa = new Pessoa();
 		pessoa.setNome("Matheus");
-		pessoa.setStatusPessoa(StatusPessoa.FUNCIONARIO);
+		//pessoa.setStatusPessoa(TipoAtendimento.FUNCIONARIO);
 		pessoa.setContato(contato);
 		pessoa.setEndereco(endereco);
 		pessoaService.postPessoa(pessoa);
@@ -85,10 +85,10 @@ class SalaoArrazusApplicationTests {
 	@Test
 	void testCPUT() {
 		Pessoa pessoa = new Pessoa();
-		pessoa.setStatusPessoa(StatusPessoa.PEDICURE);
+		//pessoa.setStatusPessoa(TipoAtendimento.PEDICURE);
 		pessoaService.putPessoa(pessoa, 1L);
 		assertEquals(pessoaService.getPessoas().get(0).getNome(), "Matheus");
-		assertEquals(pessoaService.getPessoas().get(0).getStatusPessoa(), StatusPessoa.PEDICURE);
+		assertEquals(pessoaService.getPessoas().get(0).getStatusPessoa(), TipoAtendimento.PEDICURE);
 	}
 
 	@Test

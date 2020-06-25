@@ -5,7 +5,6 @@ import org.modelmapper.ModelMapper;
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.domain.model.Endereco;
 import com.salaoarrazus.domain.model.Pessoa;
-import com.salaoarrazus.domain.model.enums.StatusPessoa;
 
 import lombok.Data;
 
@@ -14,7 +13,6 @@ public class PessoaDTO {
 	
 	private Long id;
 	private String nome;
-	private StatusPessoa statusPessoa;
 	private Endereco endereco;
 	private Contato contato;
 	
