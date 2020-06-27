@@ -1,11 +1,12 @@
 package com.salaoarrazus.domain.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 import org.modelmapper.ModelMapper;
 
 import com.salaoarrazus.domain.model.Atendimento;
-import com.salaoarrazus.domain.model.Pessoa;
+import com.salaoarrazus.domain.model.Servico;
+import com.salaoarrazus.domain.model.enums.ModoPagamento;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 import com.salaoarrazus.domain.model.enums.TipoAtendimento;
 
@@ -15,19 +16,17 @@ import lombok.Data;
 public class AtendimentoDTO {
 
 	private Long id;
-	private int quantidadeSessoes;
+	private Date dataAtendimento;
+	private double valorAtendimento;
+	private boolean atendimentoRealizado;
 	private TipoAtendimento tipoAtendimento;
-	private double valorTotal;
 	private StatusPagamento statusPagamento;
-	private Date dataPedido;
-	private Pessoa pessoa;
-	
+	private ModoPagamento modoPagamento;
+	private Servico servico;
 	
 	public static AtendimentoDTO create(Atendimento atendimento) {
 		ModelMapper modelMapper = new ModelMapper();
-		AtendimentoDTO atendimentoDTO = modelMapper.map(atendimento, AtendimentoDTO.class);
-		return atendimentoDTO;
-		
+		AtendimentoDTO atendimentosMarcadosDTO = modelMapper.map(atendimento, AtendimentoDTO.class);
+		return atendimentosMarcadosDTO;
 	}
-	
 }

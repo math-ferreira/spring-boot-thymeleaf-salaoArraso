@@ -31,7 +31,7 @@ public class Telefone implements Serializable {
 	private String numeroTelefone;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="contato_id")
+	@JoinColumn(name="contato_fk")
 	private Contato contato;
 
 	public Telefone() {

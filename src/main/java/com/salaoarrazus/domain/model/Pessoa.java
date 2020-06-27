@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -32,32 +33,36 @@ public class Pessoa implements Serializable {
 
 	private String nome;
 
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "endereco_id")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "endereco_fk")
 	private Endereco endereco;
 
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "contato_id")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "contato_fk")
 	private Contato contato;
-	
-	@OneToMany(mappedBy = "pessoa")
-	private List<Atendimento> atendimentos = new ArrayList<>();
+
+	@OneToOne(mappedBy = "pessoa")
+	private Servico servico;
 
 	public Pessoa() {
 
 	}
 
-	public Pessoa(Long id, String nome, Endereco endereco, Contato contato) {
+	public Pessoa(Long id, String nome, Endereco endereco, Contato contato, Servico servico) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.endereco = endereco;
 		this.contato = contato;
+		this.servico = servico;
 	}
 
+	public Servico getServico() {
+		return servico;
+	}
 
-	public List<Atendimento> getAtendimentos() {
-		return atendimentos;
+	public void setServico(Servico servico) {
+		this.servico = servico;
 	}
 
 	public Contato getContato() {

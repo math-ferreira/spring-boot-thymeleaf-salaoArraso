@@ -37,14 +37,14 @@ public class Fornecedor implements Serializable {
 	private String ramo;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "contato_id")
+	@JoinColumn(name = "contato_fk")
 	private Contato contato;
 
 	@OneToMany(mappedBy = "fornecedor", cascade = CascadeType.ALL)
 	private List<Produto> produtos = new ArrayList<>();
 
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="endereco_id")
+	@JoinColumn(name="endereco_fk")
 	private Endereco endereco;
 
 	public Fornecedor() {

@@ -36,7 +36,7 @@ public class Produto implements Serializable {
 	private Integer statusPagamento;
 
 	@ManyToOne()
-	@JoinColumn(name = "fornecedor_id")
+	@JoinColumn(name = "fornecedor_fk")
 	private Fornecedor fornecedor;
 	
 	private Integer statusCaixa;

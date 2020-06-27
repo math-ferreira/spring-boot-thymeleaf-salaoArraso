@@ -1,8 +1,9 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,12 +12,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.salaoarrazus.domain.model.enums.ModoPagamento;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 import com.salaoarrazus.domain.model.enums.TipoAtendimento;
 
 @Entity
-@Table(name = "tb_atendimento")
+@Table(name = "tb_atendimentos_marcados")
 public class Atendimento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -24,49 +27,35 @@ public class Atendimento implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@DateTimeFormat (pattern="dd/MM/yyyy HH:mm")
+	private Date dataAtendimento;
 	
-	private int quantidadeSessoes;
+	private double valorAtendimento;
+	private boolean atendimentoRealizado;
 	private Integer tipoAtendimento = TipoAtendimento.OUTROS.getCode();
-	private double valorTotal;
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
-	private Date dataPedido;
 	private Integer modoPagamento = ModoPagamento.OUTROS.getCode();
 	
-	@ManyToOne()
-	@JoinColumn(name = "pessoa_id")
-	private Pessoa pessoa;
-	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "servico_fk")
+	private Servico servico;
+
 	public Atendimento() {
-		
+
 	}
 
-	public Atendimento(Long id, int quantidadeSessoes, TipoAtendimento tipoAtendimento, double valorTotal,
-			StatusPagamento statusPagamento, Date dataPedido, Pessoa pessoa, ModoPagamento modoPagamento) {
+	public Atendimento(Long id, Date dataAtendimento, double valorAtendimento, boolean atendimentoRealizado,
+			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento, Servico servico) {
 		super();
 		this.id = id;
-		this.quantidadeSessoes = quantidadeSessoes;
+		this.dataAtendimento = dataAtendimento;
+		this.valorAtendimento = valorAtendimento;
+		this.atendimentoRealizado = atendimentoRealizado;
 		setTipoAtendimento(tipoAtendimento);
-		this.valorTotal = valorTotal;
 		setStatusPagamento(statusPagamento);
 		setModoPagamento(modoPagamento);
-		this.dataPedido = dataPedido;
-		this.pessoa = pessoa;
-	}
-	
-	public ModoPagamento getModoPagamento() {
-		return ModoPagamento.valueOf(modoPagamento);
-	}
-
-	public void setModoPagamento(ModoPagamento modoPagamento) {
-		this.modoPagamento = modoPagamento.getCode();
-	}
-
-	public Pessoa getPessoa() {
-		return pessoa;
-	}
-
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+		this.servico = servico;
 	}
 
 	public Long getId() {
@@ -76,13 +65,45 @@ public class Atendimento implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public int getQuantidadeSessoes() {
-		return quantidadeSessoes;
+	
+	public Servico getServico() {
+		return servico;
 	}
 
-	public void setQuantidadeSessoes(int quantidadeSessoes) {
-		this.quantidadeSessoes = quantidadeSessoes;
+	public void setServico(Servico servico) {
+		this.servico = servico;
+	}
+
+	public Date getDataAtendimento() {
+		return dataAtendimento;
+	}
+
+	public void setDataAtendimento(Date dataAtendimento) {
+		this.dataAtendimento = dataAtendimento;
+	}
+
+	public double getValorAtendimento() {
+		return valorAtendimento;
+	}
+
+	public void setValorAtendimento(double valorAtendimento) {
+		this.valorAtendimento = valorAtendimento;
+	}
+
+	public boolean isAtendimentoRealizado() {
+		return atendimentoRealizado;
+	}
+
+	public void setAtendimentoRealizado(boolean atendimentoRealizado) {
+		this.atendimentoRealizado = atendimentoRealizado;
+	}
+
+	public ModoPagamento getModoPagamento() {
+		return ModoPagamento.valueOf(modoPagamento);
+	}
+
+	public void setModoPagamento(ModoPagamento modoPagamento) {
+		this.modoPagamento = modoPagamento.getCode();
 	}
 
 	public TipoAtendimento getTipoAtendimento() {
@@ -93,28 +114,12 @@ public class Atendimento implements Serializable {
 		this.tipoAtendimento = tipoAtendimento.getCode();
 	}
 
-	public double getValorTotal() {
-		return valorTotal;
-	}
-
-	public void setValorTotal(double valorTotal) {
-		this.valorTotal = valorTotal;
-	}
-
 	public StatusPagamento getStatusPagamento() {
 		return StatusPagamento.valueOf(statusPagamento);
 	}
 
 	public void setStatusPagamento(StatusPagamento statusPagamento) {
 		this.statusPagamento = statusPagamento.getCode();
-	}
-	
-	public Date getDataPedido() {
-		return dataPedido;
-	}
-
-	public void setDataPedido(Date dataPedido) {
-		this.dataPedido = dataPedido;
 	}
 
 	@Override
@@ -141,5 +146,5 @@ public class Atendimento implements Serializable {
 			return false;
 		return true;
 	}
-	
+
 }
