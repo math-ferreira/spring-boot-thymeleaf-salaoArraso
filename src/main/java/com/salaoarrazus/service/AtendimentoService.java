@@ -32,6 +32,7 @@ public class AtendimentoService {
 		cal.setTime(new Date());
 		int diaSemana = cal.get(Calendar.DAY_OF_WEEK);
 		int mes = cal.get(Calendar.MONTH);
+		int ano = cal.get(Calendar.YEAR);
 
 		switch (periodicidadeAtendimentos.getCode()) {
 		// Todos os Atendimentos
@@ -77,6 +78,20 @@ public class AtendimentoService {
 			break;
 		// Atendimentos do ano vigente
 		case 5:
+			while (ano == Calendar.getInstance().get(Calendar.YEAR)) {
+				cal.add(Calendar.DATE, 1);
+				ano = cal.get(Calendar.YEAR);
+			}
+			cal.add(Calendar.YEAR, 1);
+			for (Atendimento atendimento : atendimentos) {
+
+				if (atendimento.getDataAtendimento().isAfter(LocalDateTime.now()) && atendimento.getDataAtendimento()
+						.isBefore(LocalDateTime.of(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH),
+								cal.get(Calendar.DATE), cal.get(Calendar.HOUR), cal.get(Calendar.MINUTE)))) {
+					atendimentosDTO.add(AtendimentoDTO.create(atendimento));
+				}
+
+			}
 			break;
 		// Atendimentos ja realizados
 		case 6:
