@@ -1,7 +1,7 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -29,7 +29,7 @@ public class Atendimento implements Serializable {
 	private Long id;
 
 	@DateTimeFormat (pattern="dd/MM/yyyy HH:mm")
-	private Date dataAtendimento;
+	private LocalDateTime dataAtendimento;
 	
 	private double valorAtendimento;
 	private boolean atendimentoRealizado;
@@ -45,7 +45,7 @@ public class Atendimento implements Serializable {
 
 	}
 
-	public Atendimento(Long id, Date dataAtendimento, double valorAtendimento, boolean atendimentoRealizado,
+	public Atendimento(Long id, LocalDateTime dataAtendimento, double valorAtendimento, boolean atendimentoRealizado,
 			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento, Servico servico) {
 		super();
 		this.id = id;
@@ -74,11 +74,11 @@ public class Atendimento implements Serializable {
 		this.servico = servico;
 	}
 
-	public Date getDataAtendimento() {
+	public LocalDateTime getDataAtendimento() {
 		return dataAtendimento;
 	}
 
-	public void setDataAtendimento(Date dataAtendimento) {
+	public void setDataAtendimento(LocalDateTime dataAtendimento) {
 		this.dataAtendimento = dataAtendimento;
 	}
 

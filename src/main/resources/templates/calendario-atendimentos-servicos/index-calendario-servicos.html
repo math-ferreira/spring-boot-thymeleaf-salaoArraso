@@ -110,7 +110,7 @@
 										<button class="btn btn-link" data-toggle="collapse"
 											data-target="#collapseOne" aria-expanded="true"
 											aria-controls="collapseOne">
-											<h4>Na semana</h4>
+											<h4>Na semana (domingo a domingo)</h4>
 										</button>
 									</h5>
 								</div>
@@ -145,9 +145,7 @@
 														<th:block th:if="${!atendimento.atendimentoRealizado}">
 															<td scope="row" th:text="${atendimentoStat.index} + 1"></td>
 															<td
-																th:text="${#dates.format(atendimento.dataAtendimento, 'dd-MM-yyyy - hh:mm')}"></td>
-															<td
-																th:text="${#dates.format(#calendars.createForTimeZone(#calendars.year(atendimento.dataAtendimento), #calendars.month(atendimento.dataAtendimento), #calendars.day(atendimento.dataAtendimento), #calendars.hour(atendimento.dataAtendimento), #calendars.minute(atendimento.dataAtendimento),'GMT'), 'dd-MM-yyyy HH:mm')}"></td>
+																th:text="${atendimento.dataAtendimento}"></td>
 															<td th:text="${atendimento.servico.pessoa.nome}"></td>
 															<td
 																th:text="${atendimento.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>
@@ -242,7 +240,7 @@
 															<td scope="row"
 																th:text="${atendimentosMensaisStat.index} + 1"></td>
 															<td
-																th:text="${#dates.format(atendimentosMensais.dataAtendimento, 'dd-MM-yyyy - hh:mm')}"></td>
+																th:text="${atendimentosMensais.dataAtendimento}"></td>
 															<td th:text="${atendimentosMensais.servico.pessoa.nome}"></td>
 															<td
 																th:text="${atendimentosMensais.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>

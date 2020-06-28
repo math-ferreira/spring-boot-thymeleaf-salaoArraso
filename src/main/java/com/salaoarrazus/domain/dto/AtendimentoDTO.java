@@ -1,6 +1,6 @@
 package com.salaoarrazus.domain.dto;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import org.modelmapper.ModelMapper;
 
@@ -16,7 +16,7 @@ import lombok.Data;
 public class AtendimentoDTO {
 
 	private Long id;
-	private Date dataAtendimento;
+	private LocalDateTime dataAtendimento;
 	private double valorAtendimento;
 	private boolean atendimentoRealizado;
 	private TipoAtendimento tipoAtendimento;
