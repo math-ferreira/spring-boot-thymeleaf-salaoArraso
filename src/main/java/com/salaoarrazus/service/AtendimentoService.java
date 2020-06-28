@@ -121,14 +121,14 @@ public class AtendimentoService {
 		return AtendimentoDTO.create(atendimentos.get());
 	}
 
-	public AtendimentoDTO postAtendimento(Atendimento atendimentos) {
-		return AtendimentoDTO.create(atendimentosRepository.save(atendimentos));
+	public AtendimentoDTO postAtendimento(Atendimento atendimento) {
+		return AtendimentoDTO.create(atendimentosRepository.save(atendimento));
 	}
 
-	public AtendimentoDTO putAtendimento(Atendimento atendimentos, Long id) {
+	public AtendimentoDTO putAtendimento(Atendimento atendimento, Long id) {
 		Atendimento atendimentosGravado = atendimentosRepository.findById(id).get(); // .get() pois deveria retornar um
 																						// Optional<>
-		UpdateObjects.merge(atendimentos, atendimentosGravado);
+		UpdateObjects.merge(atendimento, atendimentosGravado);
 		return AtendimentoDTO.create(atendimentosRepository.save(atendimentosGravado));
 	}
 
