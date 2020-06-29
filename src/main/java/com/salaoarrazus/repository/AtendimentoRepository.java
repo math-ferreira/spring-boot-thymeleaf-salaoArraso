@@ -7,5 +7,5 @@ import com.salaoarrazus.domain.model.Atendimento;
 
 @Repository
 public interface AtendimentoRepository extends JpaRepository<Atendimento, Long>{
-
+	
 }
