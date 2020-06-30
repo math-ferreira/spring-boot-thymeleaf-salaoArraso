@@ -1,5 +1,6 @@
 package com.salaoarrazus.controller.page;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.salaoarrazus.domain.dto.AtendimentoDTO;
 import com.salaoarrazus.domain.model.Atendimento;
 import com.salaoarrazus.service.AtendimentoService;
 import com.salaoarrazus.service.config.PeriodicidadeAtendimentos;
@@ -21,43 +23,45 @@ import com.salaoarrazus.service.config.PeriodicidadeAtendimentos;
 @RequestMapping("/calendario/servicos")
 public class CalendarioServicosController {
 
-	
 	@Autowired
 	private AtendimentoService atendimentoService;
-	
 
 	@GetMapping()
-	public String agenda(ModelMap model) throws Exception{
-		model.addAttribute("atendimentosSemanais", atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.SEMANAL));
-		model.addAttribute("atendimentosMensais", atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.MENSAL));
+	public String agenda(ModelMap model) throws Exception {
+		List<AtendimentoDTO> semanais = atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.SEMANAL);
+		List<AtendimentoDTO> mensais = atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.MENSAL);
+		List<AtendimentoDTO> totais= atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.TODOS);
+
+		model.addAttribute("atendimentosSemanais", atendimentoService.converteDataGTMLocal(semanais));
+		model.addAttribute("atendimentosMensais", atendimentoService.converteDataGTMLocal(mensais));
+		model.addAttribute("atendimentosTotais", atendimentoService.converteDataGTMLocal(totais));
 		return "calendario-atendimentos-servicos/index-calendario-servicos.html";
 	}
-	
-	
+
 	@GetMapping("/editar/{id}/servicos")
 	public ModelAndView editarPessoa(@PathVariable("id") Long id) {
 		ModelAndView mvc = new ModelAndView("calendario-atendimentos-servicos/editar-calendario-servicos");
 		mvc.addObject("atendimento", atendimentoService.getAtendimentoById(id));
 		return mvc;
 	}
-	
+
 	@GetMapping("/adicionar")
 	public ModelAndView adicionarPessoa(Atendimento atendimento) {
 		ModelAndView mv = new ModelAndView("calendario-atendimentos-servicos/editar-calendario-servicos");
 		mv.addObject("atendimento", atendimento);
 		return mv;
 	}
-	
+
 	@PostMapping("/save")
 	public String save(Atendimento atendimento, @RequestParam("atendimentoId") Long id) {
-		if (Objects.isNull(id)) {			
+		if (Objects.isNull(id)) {
 			atendimentoService.postAtendimento(atendimento);
 		} else {
 			atendimentoService.putAtendimento(atendimento, id);
 		}
 		return "redirect:";
 	}
-	
+
 	@DeleteMapping("/remover/{id}/servico")
 	public String delete(@PathVariable("id") Long id) {
 		atendimentoService.deleteAtendimento(id);

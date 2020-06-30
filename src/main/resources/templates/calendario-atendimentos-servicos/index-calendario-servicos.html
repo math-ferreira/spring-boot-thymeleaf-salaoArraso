@@ -2,83 +2,79 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Contatos</title>
-<link th:href="@{/css/styles.css}" rel="stylesheet">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
-	crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Contatos</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
-		<button class="btn btn-link btn-sm order-1 order-lg-0"
-			id="sidebarToggle">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle">
 			<i class="fas fa-bars"></i>
 		</button>
-		<!-- Navbar Search-->
-		<form
-			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
 
-		</form>
-	</nav>
-	<div id="layoutSidenav">
-		<div id="layoutSidenav_nav">
-			<nav class="sb-sidenav accordion sb-sidenav-dark"
-				id="sidenavAccordion">
-				<div class="sb-sidenav-menu">
-					<div class="nav">
-						<div class="sb-sidenav-menu-heading">
-							<h6>Para Hoje</h6>
-						</div>
-						<a class="nav-link" href="atendimentosSemanais-hoje.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> Atendimentos
-						</a>
-						<div class="sb-sidenav-menu-heading">
-							<h6>Agenda</h6>
-						</div>
-						<a class="nav-link" href="consultar-calendario.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-table"></i>
-							</div> Consultar calendario
-						</a> <a class="nav-link" href="atendimentosSemanais.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-table"></i>
-							</div> Serviços
-						</a>
-						<div class="sb-sidenav-menu-heading">
-							<h6>Fluxo de caixa</h6>
-						</div>
-						<a class="nav-link" href="fluxo-de-caixa.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-chart-area"></i>
-							</div> Consultar Caixa
-						</a>
-						<div class="sb-sidenav-menu-heading">
-							<h6>Contatos</h6>
-						</div>
-						<a class="nav-link">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-book-open"></i>
-							</div> Pessoas
-						</a> <a class="nav-link" th:href="@{/agenda/atendimentosSemanais}">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-book-open"></i>
-							</div> Servicos
-						</a>
-					</div>
-				</div>
-				<div class="sb-sidenav-footer">
-					<div class="small">Feito por:</div>
-					<strong><a target="_blank" rel="noopener noreferrer"
+        </form>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Para Hoje</h6>
+                        </div>
+                        <a class="nav-link" href="atendimentosSemanais-hoje.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div> Atendimentos
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Agenda</h6>
+                        </div>
+                        <a class="nav-link" href="consultar-calendario.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-table"></i>
+                            </div> Consultar calendario
+                        </a>
+                        <a class="nav-link" href="atendimentosSemanais.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-table"></i>
+                            </div> Serviços
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Fluxo de caixa</h6>
+                        </div>
+                        <a class="nav-link" href="fluxo-de-caixa.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div> Consultar Caixa
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Contatos</h6>
+                        </div>
+                        <a class="nav-link">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div> Pessoas
+                        </a>
+                        <a class="nav-link" th:href="@{/agenda/atendimentosSemanais}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div> Servicos
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Feito por:</div>
+                    <strong><a target="_blank" rel="noopener noreferrer"
 						href="https://www.linkedin.com/in/math-ferreira/">Matheus
 							Ferreira</a>
 				</div>
@@ -141,20 +137,19 @@
 															serviços na agenda!</p>
 													</th:block>
 
-													<tr th:each="atendimento : ${atendimentosSemanais}">
-														<th:block th:if="${!atendimento.atendimentoRealizado}">
-															<td scope="row" th:text="${atendimentoStat.index} + 1"></td>
+													<tr th:each="atendimentosSemanais : ${atendimentosSemanais}">
+														<th:block th:if="${!atendimentosSemanais.atendimentoRealizado}">
+															<td scope="row" th:text="${atendimentosSemanaisStat.index} + 1"></td>
+															<td th:text="${#temporals.format((atendimentosSemanais.dataAtendimento), 'dd-MMM-yyyy HH:mm')}"></td>
+															<td th:text="${atendimentosSemanais.servico.pessoa.nome}"></td>
 															<td
-																th:text="${atendimento.dataAtendimento}"></td>
-															<td th:text="${atendimento.servico.pessoa.nome}"></td>
-															<td
-																th:text="${atendimento.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>
-															<td th:text="${atendimento.tipoAtendimento}"></td>
-															<td th:text="'R$ ' + ${atendimento.valorAtendimento}"></td>
-															<td th:text="${atendimento.statusPagamento}"></td>
+																th:text="${atendimentosSemanais.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>
+															<td th:text="${atendimentosSemanais.tipoAtendimento}"></td>
+															<td th:text="'R$ ' + ${atendimentosSemanais.valorAtendimento}"></td>
+															<td th:text="${atendimentosSemanais.statusPagamento}"></td>
 															<td><div class="btn-group pull-right">
 																	<a button type="button" class="btn btn-outline-primary"
-																		th:href="@{/calendario/servicos/editar/{id}/servicos(id=${atendimento.id})}">Editar
+																		th:href="@{/calendario/servicos/editar/{id}/servicos(id=${atendimentosSemanais.id})}">Editar
 																	</a> <a button type="button" class="btn btn-outline-danger"
 																		data-toggle="modal" data-target="#modalDeletar">Remover
 																	</a>
@@ -179,7 +174,7 @@
 																						class="btn btn-outline-secondary"
 																						data-dismiss="modal">Cancelar</button>
 																					<form
-																						th:action="@{/agenda/atendimentos/remover/{id}/atendimento(id=${atendimento.id})}"
+																						th:action="@{/agenda/atendimentos/remover/{id}/atendimento(id=${atendimentosSemanais.id})}"
 																						th:method="DELETE">
 																						<button type="submit"
 																							class="btn btn-outline-danger">Confirmar
@@ -239,8 +234,7 @@
 															th:if="${!atendimentosMensais.atendimentoRealizado}">
 															<td scope="row"
 																th:text="${atendimentosMensaisStat.index} + 1"></td>
-															<td
-																th:text="${atendimentosMensais.dataAtendimento}"></td>
+															<td th:text="${#temporals.format((atendimentosMensais.dataAtendimento), 'dd-MMM-yyyy HH:mm')}"></td>
 															<td th:text="${atendimentosMensais.servico.pessoa.nome}"></td>
 															<td
 																th:text="${atendimentosMensais.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>
@@ -276,6 +270,102 @@
 																						data-dismiss="modal">Cancelar</button>
 																					<form
 																						th:action="@{/agenda/atendimentos/remover/{id}/servicos(id=${atendimentosMensais.id})}"
+																						th:method="DELETE">
+																						<button type="submit"
+																							class="btn btn-outline-danger">Confirmar
+																						</button>
+																					</form>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div></td>
+														</th:block>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card-header" id="headingTwo">
+									<h5 class="mb-0">
+										<button class="btn btn-link collapsed" data-toggle="collapse"
+											data-target="#collapseThree" aria-expanded="false"
+											aria-controls="collapseThree">
+											<h4>Histórico e totais</h4>
+										</button>
+									</h5>
+								</div>
+								<div id="collapseThree" class="collapse"
+									aria-labelledby="headingTwo" data-parent="#accordion">
+									<div class="card-body">
+
+										<div class="table .table-sm">
+											<br>
+											<table class="table">
+												<thead>
+													<tr>
+														<th scope="col"><h4>#</h4></th>
+														<th scope="col"><h4>Data/hora</h4></th>
+														<th scope="col"><h4>Cliente</h4></th>
+														<th scope="col"><h4>Contato</h4></th>
+														<th scope="col"><h4>Serviço</h4></th>
+														<th scope="col"><h4>Valor total</h4></th>
+														<th scope="col"><h4>Pagamento</h4></th>
+
+														<th scope="col"><h4></h4></th>
+													</tr>
+												</thead>
+												<tbody>
+													<th:block th:if="${atendimentosTotais.isEmpty()}">
+														<p style="color: red" class="font-italic">Não há
+															serviços na agenda!</p>
+													</th:block>
+
+													<tr th:each="atendimentosTotais : ${atendimentosTotais}">
+														<th:block
+															th:if="${!atendimentosTotais.atendimentoRealizado}">
+															<td scope="row"
+																th:text="${atendimentosTotaisStat.index} + 1"></td>
+
+															<td th:text="${#temporals.format((atendimentosTotais.dataAtendimento), 'dd-MMM-yyyy HH:mm')}"></td>
+															<td th:text="${atendimentosTotais.servico.pessoa.nome}"></td>
+															<td
+																th:text="${atendimentosTotais.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>
+															<td th:text="${atendimentosTotais.tipoAtendimento}"></td>
+															<td
+																th:text="'R$ ' + ${atendimentosTotais.valorAtendimento}"></td>
+															<td th:text="${atendimentosTotais.statusPagamento}"></td>
+															<td><div class="btn-group pull-right">
+																	<a button type="button" class="btn btn-outline-primary"
+																		th:href="@{/calendario/servicos/editar/{id}/servicos(id=${atendimentosTotais.id})}">Editar
+																	</a> <a button type="button" class="btn btn-outline-danger"
+																		data-toggle="modal" data-target="#modalDeletar">Remover
+																	</a>
+																	<!-- Modal -->
+																	<div class="modal fade" id="modalDeletar" tabindex="-1"
+																		role="dialog" aria-labelledby="exampleModalLabel"
+																		aria-hidden="true">
+																		<div class="modal-dialog" role="document">
+																			<div class="modal-content">
+																				<div class="modal-header">
+																					<h6 class="modal-title" id="exampleModalLabel">Arrazus
+																						diz:</h6>
+																					<button type="button" class="close"
+																						data-dismiss="modal" aria-label="Close">
+																						<span aria-hidden="true">&times;</span>
+																					</button>
+																				</div>
+																				<div class="modal-body">O Serviço será
+																					excluido</div>
+																				<div class="modal-footer">
+																					<button type="button"
+																						class="btn btn-outline-secondary"
+																						data-dismiss="modal">Cancelar</button>
+																					<form
+																						th:action="@{/agenda/atendimentos/remover/{id}/servicos(id=${atendimentosTotais.id})}"
 																						th:method="DELETE">
 																						<button type="submit"
 																							class="btn btn-outline-danger">Confirmar

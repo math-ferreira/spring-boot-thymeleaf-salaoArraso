@@ -6,12 +6,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.Date;
 
-import org.junit.FixMethodOrder;
-import org.junit.jupiter.api.Test;
-import org.junit.runners.MethodSorters;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.domain.model.Endereco;
 import com.salaoarrazus.domain.model.Fornecedor;
@@ -20,7 +14,6 @@ import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.domain.model.Telefone;
 import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
-import com.salaoarrazus.domain.model.enums.TipoAtendimento;
 import com.salaoarrazus.domain.model.enums.TipoTelefone;
 import com.salaoarrazus.service.ContatoService;
 import com.salaoarrazus.service.EnderecoService;
@@ -28,6 +21,12 @@ import com.salaoarrazus.service.FornecedorService;
 import com.salaoarrazus.service.PessoaService;
 import com.salaoarrazus.service.ProdutoService;
 import com.salaoarrazus.service.TelefoneService;
+
+import org.junit.FixMethodOrder;
+import org.junit.jupiter.api.Test;
+import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

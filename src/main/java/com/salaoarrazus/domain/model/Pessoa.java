@@ -1,8 +1,6 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -60,6 +57,7 @@ public class Pessoa implements Serializable {
 	public Servico getServico() {
 		return servico;
 	}
+
 
 	public void setServico(Servico servico) {
 		this.servico = servico;
