@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.salaoarrazus.domain.dto.AtendimentoDTO;
+import com.salaoarrazus.domain.dto.PessoaDTO;
 import com.salaoarrazus.domain.model.Atendimento;
 import com.salaoarrazus.service.AtendimentoService;
+import com.salaoarrazus.service.PessoaService;
 import com.salaoarrazus.service.config.PeriodicidadeAtendimentos;
 
 @Controller
@@ -26,14 +28,12 @@ public class CalendarioServicosController {
 	@Autowired
 	private AtendimentoService atendimentoService;
 
+	@Autowired
+	private PessoaService pessoaService;
+
 	@GetMapping()
 	public String agenda(ModelMap model) throws Exception {
-		List<AtendimentoDTO> semanais = atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.SEMANAL);
-		List<AtendimentoDTO> mensais = atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.MENSAL);
 		List<AtendimentoDTO> totais= atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.TODOS);
-
-		model.addAttribute("atendimentosSemanais", atendimentoService.converteDataGTMLocal(semanais));
-		model.addAttribute("atendimentosMensais", atendimentoService.converteDataGTMLocal(mensais));
 		model.addAttribute("atendimentosTotais", atendimentoService.converteDataGTMLocal(totais));
 		return "calendario-atendimentos-servicos/index-calendario-servicos.html";
 	}
@@ -42,6 +42,7 @@ public class CalendarioServicosController {
 	public ModelAndView editarPessoa(@PathVariable("id") Long id) {
 		ModelAndView mvc = new ModelAndView("calendario-atendimentos-servicos/editar-calendario-servicos");
 		mvc.addObject("atendimento", atendimentoService.getAtendimentoById(id));
+		mvc.addObject("pessoas", pessoaService.getPessoas());
 		return mvc;
 	}
 

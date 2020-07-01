@@ -22,8 +22,10 @@
 
     $(document).ready(function() {
         $('#phone-number').mask('0000-0000');
-
     });
+
+
+
 
     $("#btn-confirmar").on("click", function(e) {
         $('#modalConfirmar').modal('toggle');
@@ -40,3 +42,5 @@
         });
 
 })(jQuery);
+
+//$("#valor").mask("R$ 9999", { autoclear: false });
