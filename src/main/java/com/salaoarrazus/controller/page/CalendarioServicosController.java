@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.salaoarrazus.domain.dto.AtendimentoDTO;
-import com.salaoarrazus.domain.dto.PessoaDTO;
 import com.salaoarrazus.domain.model.Atendimento;
 import com.salaoarrazus.service.AtendimentoService;
 import com.salaoarrazus.service.PessoaService;
-import com.salaoarrazus.service.config.PeriodicidadeAtendimentos;
+import com.salaoarrazus.service.config.PeriodicidadeAtendimentosEnum;
 
 @Controller
 @RequestMapping("/calendario/servicos")
@@ -33,7 +32,7 @@ public class CalendarioServicosController {
 
 	@GetMapping()
 	public String agenda(ModelMap model) throws Exception {
-		List<AtendimentoDTO> totais= atendimentoService.getAtendimentos(PeriodicidadeAtendimentos.TODOS);
+		List<AtendimentoDTO> totais= atendimentoService.getAtendimentos(PeriodicidadeAtendimentosEnum.TODOS);
 		model.addAttribute("atendimentosTotais", atendimentoService.converteDataGTMLocal(totais));
 		return "calendario-atendimentos-servicos/index-calendario-servicos.html";
 	}

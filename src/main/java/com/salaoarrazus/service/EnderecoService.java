@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.salaoarrazus.domain.dto.EnderecoDTO;
 import com.salaoarrazus.domain.model.Endereco;
 import com.salaoarrazus.repository.EnderecoRepository;
-import com.salaoarrazus.service.config.UpdateObjects;
+import com.salaoarrazus.service.config.UpdateObjectsService;
 
 @Service
 public class EnderecoService {
@@ -38,7 +38,7 @@ public class EnderecoService {
 
 	public EnderecoDTO putEndereco(Endereco endereco, Long id) {		
 		Endereco enderecoGravado = enderecoRepository.findById(id).get(); // .get() pois deveria retornar um Optional<>
-		UpdateObjects.merge(endereco, enderecoGravado);
+		UpdateObjectsService.merge(endereco, enderecoGravado);
 		return EnderecoDTO.create(enderecoRepository.save(enderecoGravado));
 	}
 

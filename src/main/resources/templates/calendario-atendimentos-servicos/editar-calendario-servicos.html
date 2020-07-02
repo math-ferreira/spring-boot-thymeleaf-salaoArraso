@@ -101,10 +101,10 @@
 							<input type="hidden" name="atendimentoId" th:value="${atendimento.id}">
 							<div class="col-md-2 mb-3">
 								<label for="validationDefault04">Cliente</label> <select class="custom-select"
-									th:field="*{servico.pessoa.nome}">
+									th:field="*{pessoa.id}">
 									<option
 										th:each="pessoas : ${pessoas}"
-										th:value="${pessoas.nome}" th:text="${pessoas.nome}"></option>
+										th:value="${pessoas.id}" th:text="${pessoas.nome}"></option>
 								</select>
 							</div>
 							<div class="col-md-3 mb-3">

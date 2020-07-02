@@ -37,16 +37,16 @@ public class Atendimento implements Serializable {
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
 	private Integer modoPagamento = ModoPagamento.OUTROS.getCode();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "servico_fk")
-	private Servico servico;
+	@ManyToOne()
+	@JoinColumn(name = "pessoa_fk")
+	private Pessoa pessoa;
 
 	public Atendimento() {
 
 	}
 
 	public Atendimento(Long id, LocalDateTime dataAtendimento, double valorAtendimento, boolean atendimentoRealizado,
-			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento, Servico servico) {
+			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento, Pessoa pessoa) {
 		super();
 		this.id = id;
 		this.dataAtendimento = dataAtendimento;
@@ -55,7 +55,19 @@ public class Atendimento implements Serializable {
 		setTipoAtendimento(tipoAtendimento);
 		setStatusPagamento(statusPagamento);
 		setModoPagamento(modoPagamento);
-		this.servico = servico;
+		this.pessoa = pessoa;
+	}
+
+	public boolean getAtendimentoRealizado() {
+		return this.atendimentoRealizado;
+	}
+
+	public Pessoa getPessoa() {
+		return this.pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
 	public Long getId() {
@@ -66,14 +78,6 @@ public class Atendimento implements Serializable {
 		this.id = id;
 	}
 	
-	public Servico getServico() {
-		return servico;
-	}
-
-	public void setServico(Servico servico) {
-		this.servico = servico;
-	}
-
 	public LocalDateTime getDataAtendimento() {
 		return dataAtendimento;
 	}

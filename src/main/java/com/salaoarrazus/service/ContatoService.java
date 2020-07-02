@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.salaoarrazus.domain.dto.ContatoDTO;
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.repository.ContatoRepository;
-import com.salaoarrazus.service.config.UpdateObjects;
+import com.salaoarrazus.service.config.UpdateObjectsService;
 
 @Service
 public class ContatoService {
@@ -38,7 +38,7 @@ public class ContatoService {
 
 	public ContatoDTO putContato(Contato contato, Long id) {
 		Contato contatoGravado = contatoRepository.findById(id).get(); // .get() pois deveria retornar um Optional<>
-		UpdateObjects.merge(contato, contatoGravado);
+		UpdateObjectsService.merge(contato, contatoGravado);
 		return ContatoDTO.create(contatoRepository.save(contatoGravado));
 	}
 

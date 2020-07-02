@@ -123,9 +123,9 @@
 												th:text="${atendimentosTotaisStat.index} + 1"></td>
 
 											<td th:text="${#temporals.format((atendimentosTotais.dataAtendimento), 'dd-MMM-yyyy HH:mm')}"></td>
-											<td th:text="${atendimentosTotais.servico.pessoa.nome}"></td>
+											<td th:text="${atendimentosTotais.pessoa.nome}"></td>
 											<td
-												th:text="${atendimentosTotais.servico.pessoa.contato.telefones[0].numeroTelefone}"></td>
+												th:text="${atendimentosTotais.pessoa.contato.telefones[0].numeroTelefone}"></td>
 											<td th:text="${atendimentosTotais.tipoAtendimento}"></td>
 											<td
 												th:text="'R$ ' + ${atendimentosTotais.valorAtendimento}"></td>

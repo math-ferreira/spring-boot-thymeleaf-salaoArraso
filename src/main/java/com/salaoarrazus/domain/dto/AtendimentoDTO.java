@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import org.modelmapper.ModelMapper;
 
 import com.salaoarrazus.domain.model.Atendimento;
-import com.salaoarrazus.domain.model.Servico;
+import com.salaoarrazus.domain.model.Pessoa;
 import com.salaoarrazus.domain.model.enums.ModoPagamento;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 import com.salaoarrazus.domain.model.enums.TipoAtendimento;
@@ -22,7 +22,7 @@ public class AtendimentoDTO {
 	private TipoAtendimento tipoAtendimento;
 	private StatusPagamento statusPagamento;
 	private ModoPagamento modoPagamento;
-	private Servico servico;
+	private Pessoa pessoa;
 	
 	public static AtendimentoDTO create(Atendimento atendimento) {
 		ModelMapper modelMapper = new ModelMapper();

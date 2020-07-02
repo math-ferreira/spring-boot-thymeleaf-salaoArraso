@@ -1,6 +1,6 @@
 package com.salaoarrazus.service.config;
 
-public enum PeriodicidadeAtendimentos {
+public enum PeriodicidadeAtendimentosEnum {
 
 	TODOS(1),
 	DIARIO(2),
@@ -15,12 +15,12 @@ public enum PeriodicidadeAtendimentos {
 		return code;
 	}
 	
-	private PeriodicidadeAtendimentos(Integer code) {
+	private PeriodicidadeAtendimentosEnum(Integer code) {
 		this.code = code;
 	}
 	
-	public static PeriodicidadeAtendimentos valueOf(Integer code) {
-		for (PeriodicidadeAtendimentos value : PeriodicidadeAtendimentos.values()) {
+	public static PeriodicidadeAtendimentosEnum valueOf(Integer code) {
+		for (PeriodicidadeAtendimentosEnum value : PeriodicidadeAtendimentosEnum.values()) {
 			if (value.getCode() == code) {
 				return value;
 			}

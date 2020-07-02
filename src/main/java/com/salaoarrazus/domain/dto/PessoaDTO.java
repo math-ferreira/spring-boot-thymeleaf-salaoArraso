@@ -2,10 +2,12 @@ package com.salaoarrazus.domain.dto;
 
 import org.modelmapper.ModelMapper;
 
+import java.util.List;
+
+import com.salaoarrazus.domain.model.Atendimento;
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.domain.model.Endereco;
 import com.salaoarrazus.domain.model.Pessoa;
-import com.salaoarrazus.domain.model.Servico;
 
 import lombok.Data;
 
@@ -16,7 +18,7 @@ public class PessoaDTO {
 	private String nome;
 	private Endereco endereco;
 	private Contato contato;
-	private Servico servico;
+	private List<Atendimento> atendimentos;
 	
 	public static PessoaDTO create(Pessoa pessoa) {
 		ModelMapper modelMapper = new ModelMapper();
