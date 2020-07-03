@@ -102,29 +102,29 @@
 							<th:block th:if="${pessoas.size() > 0}">
 								<div class="col-md-3 mb-3">
 									<label for="validationDefault04">Cliente</label> <select class="custom-select"
-										th:field="*{pessoa.id}">
-										<option
-											th:each="pessoas : ${pessoas}"
-											th:value="${pessoas.id}" th:text="${pessoas.nome}"></option>
+										th:field="*{pessoa.id}" id="cliente">
+										<option th:each="pessoas : ${pessoas}" th:value="${pessoas.id}"
+											th:text="${pessoas.nome}"></option>
 									</select>
 								</div>
 							</th:block>
 							<th:block th:if="${pessoas.size() == 0}">
 								<div class="col-md-3 mb-3">
 									<label for="validationDefault01">Cliente</label> <input type="text"
-										class="form-control" id="clienteVazio" placeholder="não há contatos na agenda!" readonly required>
+										class="form-control" id="clienteVazio" placeholder="Não há contatos na agenda!"
+										readonly required>
 								</div>
 							</th:block>
 							<div class="col-md-3 mb-3">
 								<label for="validationDefault01">Data e Hora Atendimento</label> <input type="text"
-									class="form-control" id="data" placeholder="00/00/0000 00:00" data-mask="00/00/0000 00:00" required
-									th:field="*{dataAtendimento}">
+									class="form-control" id="data" placeholder="00/00/0000 00:00"
+									data-mask="00/00/0000 00:00" required th:field="*{dataAtendimento}">
 							</div>
 							<div class="col-md-2 mb-3">
-								<label for="validationDefault05">Valor (R$)</label> <input type="text" class="form-control"
-									id="valor" placeholder="R$ 45" required
+								<label for="validationDefault05">Valor (R$)</label> <input type="text"
+									class="form-control" id="valor" placeholder="R$ 45" required
 									th:field="*{valorAtendimento}">
-									<td>
+								<td>
 							</div>
 							<div class="col-md-3 mb-3">
 
@@ -165,14 +165,12 @@
 						</div>
 						<br>
 						<!-- Button trigger modal -->
-						<th:block th:if="${pessoas.size() > 0}">
-							<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar
-								dados</button>
-						</th:block>
-						<th:block th:if="${pessoas.size() == 0}">
-							<button type="submit" class="btn btn-primary" id="btn-salvar" readonly required>Salvar
-								dados</button>
-						</th:block>
+						<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar
+							dados</button>
+							<th:block th:if="${pessoas.size() == 0}">
+								<a button type="button" class="btn btn-success"
+								th:href="@{/agenda/pessoas/adicionar}">Adicionar Pessoa </a>
+							</th:block>
 					</form>
 				</div>
 			</main>
@@ -189,8 +187,9 @@
 		crossorigin="anonymous"></script>
 </body>
 <script>
-	$(function() {
-	  $('#valor').maskMoney();
+	$(function () {
+		$('#valor').maskMoney();
 	})
-  </script>
+</script>
+
 </html>

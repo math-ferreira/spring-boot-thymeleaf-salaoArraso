@@ -24,7 +24,15 @@
         $('#phone-number').mask('0000-0000');
     });
 
-
+    $(document).ready(function() {
+        if ($('#cliente').val() == null) {
+            var pathname = window.location.pathname;
+            if (pathname == "/salao_arrazus/v1/calendario/servicos/adicionar") {
+                $('#btn-salvar').prop("disabled", true);
+                $('#btn-salvar').attr('title', 'Não é possivel inserir, não há contatos na agenda');
+            }
+        }
+    });
 
 
     $("#btn-confirmar").on("click", function(e) {

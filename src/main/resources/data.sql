@@ -1,4 +1,4 @@
-
+/*
 #TB_ENDERECO
 INSERT INTO `tb_endereco`(`bairro`, `cep`, `cidade`, `estado`, `numero`, `rua`) VALUES ("Guararema","12443200","Campinas","SP","125","Rua Rio Speers do Sul")
 INSERT INTO `tb_endereco`(`bairro`, `cep`, `cidade`, `estado`, `numero`, `rua`) VALUES ("Barra Funda","06754902","São Paulo","SP","16","Av Matarazzo")
@@ -45,3 +45,6 @@ INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendiment
 INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/01 17:00','1','3','1','99.90','2')
 INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/27 21:30','1','3','2','100','2')
 INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/06/30 23:30','3','2','1','15','2')
+
+
+*/
