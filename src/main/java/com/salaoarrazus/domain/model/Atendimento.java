@@ -12,11 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.salaoarrazus.domain.model.enums.ModoPagamento;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 import com.salaoarrazus.domain.model.enums.TipoAtendimento;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "tb_atendimentos_marcados")
@@ -28,16 +28,16 @@ public class Atendimento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@DateTimeFormat (pattern="dd/MM/yyyy HH:mm")
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dataAtendimento;
-	
+
 	private double valorAtendimento;
 	private boolean atendimentoRealizado;
 	private Integer tipoAtendimento = TipoAtendimento.OUTROS.getCode();
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
 	private Integer modoPagamento = ModoPagamento.OUTROS.getCode();
-	
-	@ManyToOne()
+
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "pessoa_fk")
 	private Pessoa pessoa;
 
@@ -46,7 +46,8 @@ public class Atendimento implements Serializable {
 	}
 
 	public Atendimento(Long id, LocalDateTime dataAtendimento, double valorAtendimento, boolean atendimentoRealizado,
-			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento, Pessoa pessoa) {
+			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento,
+			Pessoa pessoa) {
 		super();
 		this.id = id;
 		this.dataAtendimento = dataAtendimento;
@@ -77,7 +78,7 @@ public class Atendimento implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public LocalDateTime getDataAtendimento() {
 		return dataAtendimento;
 	}
@@ -129,7 +130,7 @@ public class Atendimento implements Serializable {
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
+			int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}

@@ -90,18 +90,17 @@ public class AtendimentoService {
 		Atendimento atendimentoGravado = atendimentosRepository.findById(id).get();
 		Long idPessoaGravada = atendimentoGravado.getPessoa().getId();
 		Long idPessoaUpdate = atendimento.getPessoa().getId();
-		UpdateObjectsService.merge(atendimento, atendimentoGravado);
+
 		if (!idPessoaGravada.equals(idPessoaUpdate)){
 			PessoaDTO pessoaDTO = pessoaService.getPessoaById(idPessoaUpdate);
-			List<Atendimento> atendimentos = pessoaDTO.getAtendimentos();
-			atendimentos.add(atendimento);
-			pessoaDTO.setAtendimentos(atendimentos);
-			
 			ModelMapper modelMapper = new ModelMapper();
-			Pessoa pessoa = modelMapper.map(pessoaDTO, Pessoa.class);
-			atendimentoGravado.setPessoa(pessoa);
+			atendimentoGravado.setPessoa(modelMapper.map(pessoaDTO, Pessoa.class));
 		}
 
+		if (!atendimento.getDataAtendimento().plusHours(-3).equals(atendimentoGravado.getDataAtendimento())){
+			atendimentoGravado.setDataAtendimento(atendimento.getDataAtendimento().plusHours(-3));
+		}
+		UpdateObjectsService.merge(atendimento, atendimentoGravado);
 		return AtendimentoDTO.create(atendimentosRepository.save(atendimentoGravado));
 	}
 
