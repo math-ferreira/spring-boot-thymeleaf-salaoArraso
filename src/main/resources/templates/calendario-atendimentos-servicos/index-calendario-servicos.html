@@ -93,8 +93,8 @@
 				</div>
 
 				<div class="card-body">
-					<button type="button" class="btn btn-outline-success">Adicionar
-						novo serviço</button>
+					<a button type="button" class="btn btn-outline-success" th:href="@{/calendario/servicos/adicionar}">Adicionar
+						novo serviço</a>
 
 						<div class="table .table-sm">
 							<br>
@@ -159,7 +159,7 @@
 																		class="btn btn-outline-secondary"
 																		data-dismiss="modal">Cancelar</button>
 																	<form
-																		th:action="@{/agenda/atendimentos/remover/{id}/servicos(id=${atendimentosTotais.id})}"
+																		th:action="@{/calendario/servicos/remover/{id}/servico(id=${atendimentosTotais.id})}"
 																		th:method="DELETE">
 																		<button type="submit"
 																			class="btn btn-outline-danger">Confirmar

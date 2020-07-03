@@ -37,7 +37,7 @@ public class Atendimento implements Serializable {
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
 	private Integer modoPagamento = ModoPagamento.OUTROS.getCode();
 
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne()
 	@JoinColumn(name = "pessoa_fk")
 	private Pessoa pessoa;
 

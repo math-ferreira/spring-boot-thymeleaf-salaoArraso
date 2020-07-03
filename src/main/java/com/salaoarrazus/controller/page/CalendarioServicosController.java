@@ -46,10 +46,11 @@ public class CalendarioServicosController {
 	}
 
 	@GetMapping("/adicionar")
-	public ModelAndView adicionarPessoa(Atendimento atendimento) {
-		ModelAndView mv = new ModelAndView("calendario-atendimentos-servicos/editar-calendario-servicos");
-		mv.addObject("atendimento", atendimento);
-		return mv;
+	public ModelAndView adicionarAtendimento(Atendimento atendimento) {
+		ModelAndView mvc = new ModelAndView("calendario-atendimentos-servicos/editar-calendario-servicos");
+		mvc.addObject("atendimento", atendimento);
+		mvc.addObject("pessoas", pessoaService.getPessoas());
+		return mvc;
 	}
 
 	@PostMapping("/save")
@@ -65,6 +66,7 @@ public class CalendarioServicosController {
 	@DeleteMapping("/remover/{id}/servico")
 	public String delete(@PathVariable("id") Long id) {
 		atendimentoService.deleteAtendimento(id);
-		return "redirect:/agenda/pessoas";
+		return "redirect:/calendario/servicos";
 	}
+	
 }
