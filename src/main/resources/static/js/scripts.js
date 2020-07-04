@@ -20,9 +20,26 @@
         $("body").toggleClass("sb-sidenav-toggled");
     });
 
+    //masks
     $(document).ready(function() {
         $('#phone-number').mask('0000-0000');
+        $('#valor').mask('#.##0,00', { reverse: true });
     });
+
+    $(document).ready(function() {
+        if ($('#valor').val() == 0) {
+            $('#valor').val("");
+        }
+    });
+
+    $("#btn-salvar").on("click",
+        function(e) {
+            var pathname = window.location.pathname;
+            if (pathname == "/salao_arrazus/v1/calendario/servicos/editar/1/servicos") {
+                alert("Dasasasasados Salvos com sucesso");
+            }
+        });
+
 
     $(document).ready(function() {
         if ($('#cliente').val() == null) {
@@ -41,7 +58,11 @@
 
     $("#btn-salvar").on("click",
         function(e) {
-            if ($("#nomePessoa").val() != '' &&
+            var pathname = window.location.pathname;
+            if (pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0) {
+                $('#valor').val($('#valor').val().replace(/\./g, '').replace(/\,/g, '.'));
+                alert($('#valor').val());
+            } else if ($("#nomePessoa").val() != '' &&
                 $("#numeroTelefone").val() != '' &&
                 $("#bairro").val() != '' &&
                 $("#cidade").val() != '') {
@@ -49,6 +70,5 @@
             }
         });
 
-})(jQuery);
 
-//$("#valor").mask("R$ 9999", { autoclear: false });
+})(jQuery);

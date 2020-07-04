@@ -1,5 +1,6 @@
 package com.salaoarrazus.domain.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.modelmapper.ModelMapper;
@@ -17,7 +18,7 @@ public class AtendimentoDTO {
 
 	private Long id;
 	private LocalDateTime dataAtendimento;
-	private double valorAtendimento;
+	private BigDecimal valorAtendimento;
 	private boolean atendimentoRealizado;
 	private TipoAtendimento tipoAtendimento;
 	private StatusPagamento statusPagamento;

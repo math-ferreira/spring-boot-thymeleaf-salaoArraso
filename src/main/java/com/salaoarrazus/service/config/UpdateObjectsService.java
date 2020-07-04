@@ -64,5 +64,6 @@ public class UpdateObjectsService {
 		}
 		return fornecedor;
 	}
+	//public static double 
 
 }

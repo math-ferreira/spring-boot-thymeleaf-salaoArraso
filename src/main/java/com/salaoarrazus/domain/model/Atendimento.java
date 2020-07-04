@@ -1,6 +1,7 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
@@ -31,7 +32,7 @@ public class Atendimento implements Serializable {
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime dataAtendimento;
 
-	private double valorAtendimento;
+	private BigDecimal valorAtendimento;
 	private boolean atendimentoRealizado;
 	private Integer tipoAtendimento = TipoAtendimento.OUTROS.getCode();
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
@@ -45,7 +46,7 @@ public class Atendimento implements Serializable {
 
 	}
 
-	public Atendimento(Long id, LocalDateTime dataAtendimento, double valorAtendimento, boolean atendimentoRealizado,
+	public Atendimento(Long id, LocalDateTime dataAtendimento, BigDecimal valorAtendimento, boolean atendimentoRealizado,
 			TipoAtendimento tipoAtendimento, StatusPagamento statusPagamento, ModoPagamento modoPagamento,
 			Pessoa pessoa) {
 		super();
@@ -87,11 +88,11 @@ public class Atendimento implements Serializable {
 		this.dataAtendimento = dataAtendimento;
 	}
 
-	public double getValorAtendimento() {
+	public BigDecimal getValorAtendimento() {
 		return valorAtendimento;
 	}
 
-	public void setValorAtendimento(double valorAtendimento) {
+	public void setValorAtendimento(BigDecimal valorAtendimento) {
 		this.valorAtendimento = valorAtendimento;
 	}
 
