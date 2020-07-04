@@ -135,9 +135,13 @@
 											<td><div class="btn-group pull-right">
 													<a button type="button" class="btn btn-outline-primary"
 														th:href="@{/calendario/servicos/editar/{id}/servicos(id=${atendimentosTotais.id})}">Editar
-													</a> <a button type="button" class="btn btn-outline-danger"
-														data-toggle="modal" data-target="#modalDeletar">Remover
-													</a>
+													</a> 																	<form
+													th:action="@{/calendario/servicos/remover/{id}/servico(id=${atendimentosTotais.id})}"
+													th:method="DELETE">
+													<button type="submit" id="btn-remover"
+														class="btn btn-outline-danger" onclick="alert('Registro removido!')">Remover
+													</button>
+												</form>
 													<!-- Modal -->
 													<div class="modal fade" id="modalDeletar" tabindex="-1"
 														role="dialog" aria-labelledby="exampleModalLabel"
@@ -158,13 +162,6 @@
 																	<button type="button"
 																		class="btn btn-outline-secondary"
 																		data-dismiss="modal">Cancelar</button>
-																	<form
-																		th:action="@{/calendario/servicos/remover/{id}/servico(id=${atendimentosTotais.id})}"
-																		th:method="DELETE">
-																		<button type="submit"
-																			class="btn btn-outline-danger">Confirmar
-																		</button>
-																	</form>
 																</div>
 															</div>
 														</div>

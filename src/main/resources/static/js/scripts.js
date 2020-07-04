@@ -32,15 +32,6 @@
         }
     });
 
-    $("#btn-salvar").on("click",
-        function(e) {
-            var pathname = window.location.pathname;
-            if (pathname == "/salao_arrazus/v1/calendario/servicos/editar/1/servicos") {
-                alert("Dasasasasados Salvos com sucesso");
-            }
-        });
-
-
     $(document).ready(function() {
         if ($('#cliente').val() == null) {
             var pathname = window.location.pathname;
@@ -59,16 +50,22 @@
     $("#btn-salvar").on("click",
         function(e) {
             var pathname = window.location.pathname;
-            if (pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0) {
+            if ((pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0 ||
+                    pathname.indexOf("/salao_arrazus/v1/calendario/servicos/adicionar") == 0
+                ) &&
+                $('#valor').val() != "" &&
+                $('#data').val() != ""
+            ) {
                 $('#valor').val($('#valor').val().replace(/\./g, '').replace(/\,/g, '.'));
-                alert($('#valor').val());
-            } else if ($("#nomePessoa").val() != '' &&
+                alert("Dados Salvos com sucesso");
+
+            } else if (pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/editar/") == 0 &&
+                $("#nomePessoa").val() != '' &&
                 $("#numeroTelefone").val() != '' &&
                 $("#bairro").val() != '' &&
                 $("#cidade").val() != '') {
                 alert("Dados Salvos com sucesso");
             }
         });
-
 
 })(jQuery);

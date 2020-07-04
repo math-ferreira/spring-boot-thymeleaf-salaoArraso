@@ -2,83 +2,79 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Contatos</title>
-<link th:href="@{/css/styles.css}" rel="stylesheet">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
-	crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Contatos</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-		<a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
-		<button class="btn btn-link btn-sm order-1 order-lg-0"
-			id="sidebarToggle">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle">
 			<i class="fas fa-bars"></i>
 		</button>
-		<!-- Navbar Search-->
-		<form
-			class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
 
-		</form>
-	</nav>
-	<div id="layoutSidenav">
-		<div id="layoutSidenav_nav">
-			<nav class="sb-sidenav accordion sb-sidenav-dark"
-				id="sidenavAccordion">
-				<div class="sb-sidenav-menu">
-					<div class="nav">
-						<div class="sb-sidenav-menu-heading">
-							<h6>Para Hoje</h6>
-						</div>
-						<a class="nav-link" href="atendimentos-hoje.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-tachometer-alt"></i>
-							</div> Atendimentos
-						</a>
-						<div class="sb-sidenav-menu-heading">
-							<h6>Agenda</h6>
-						</div>
-						<a class="nav-link" href="consultar-calendario.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-table"></i>
-							</div> Consultar calendario
-						</a> <a class="nav-link" href="servicos.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-table"></i>
-							</div> Serviços
-						</a>
-						<div class="sb-sidenav-menu-heading">
-							<h6>Fluxo de caixa</h6>
-						</div>
-						<a class="nav-link" href="fluxo-de-caixa.html">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-chart-area"></i>
-							</div> Consultar Caixa
-						</a>
-						<div class="sb-sidenav-menu-heading">
-							<h6>Contatos</h6>
-						</div>
-						<a class="nav-link" th:href="@{/agenda/pessoas}">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-book-open"></i>
-							</div> Pessoas
-						</a> <a class="nav-link">
-							<div class="sb-nav-link-icon">
-								<i class="fas fa-book-open"></i>
-							</div> Fornecedores
-						</a>
-					</div>
-				</div>
-				<div class="sb-sidenav-footer">
-					<div class="small">Feito por:</div>
-					<strong><a target="_blank" rel="noopener noreferrer"
+        </form>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Para Hoje</h6>
+                        </div>
+                        <a class="nav-link" href="atendimentos-hoje.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div> Atendimentos
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Agenda</h6>
+                        </div>
+                        <a class="nav-link" href="consultar-calendario.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-table"></i>
+                            </div> Consultar calendario
+                        </a>
+                        <a class="nav-link" href="servicos.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-table"></i>
+                            </div> Serviços
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Fluxo de caixa</h6>
+                        </div>
+                        <a class="nav-link" href="fluxo-de-caixa.html">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div> Consultar Caixa
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Contatos</h6>
+                        </div>
+                        <a class="nav-link" th:href="@{/agenda/pessoas}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div> Pessoas
+                        </a>
+                        <a class="nav-link">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div> Fornecedores
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Feito por:</div>
+                    <strong><a target="_blank" rel="noopener noreferrer"
 						href="https://www.linkedin.com/in/math-ferreira/">Matheus
 							Ferreira</a>
 				</div>
@@ -128,38 +124,13 @@
 											<a button type="button" class="btn btn-outline-primary"
 												th:href="@{/agenda/fornecedores/editar/{id}/fornecedor(id=${fornecedor.id})}">Editar
 												</button>
-											</a> <a button type="button" class="btn btn-outline-danger"
-												data-toggle="modal" data-target="#modalDeletar">Remover
-												</button>
-											</a>
-											<!-- Modal -->
-											<div class="modal fade" id="modalDeletar" tabindex="-1"
-												role="dialog" aria-labelledby="exampleModalLabel"
-												aria-hidden="true">
-												<div class="modal-dialog" role="document">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h6 class="modal-title" id="exampleModalLabel">Arrazus
-																diz:</h6>
-															<button type="button" class="close" data-dismiss="modal"
-																aria-label="Close">
-																<span aria-hidden="true">&times;</span>
-															</button>
-														</div>
-														<div class="modal-body">O contato será excluido</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-outline-secondary"
-																data-dismiss="modal">Cancelar</button>
-															<form
-																th:action="@{/agenda/fornecedores/remover/{id}/fornecedor(id=${fornecedor.id})}"
-																th:method="DELETE">
-																<button type="submit" class="btn btn-outline-danger">Confirmar
-																</button>
-															</form>
-														</div>
-													</div>
-												</div>
-											</div>
+											</a>															
+											<form
+											th:action="@{/agenda/fornecedores/remover/{id}/fornecedor(id=${fornecedor.id})}"
+											th:method="DELETE">
+											<button type="submit" id="btn-remover" class="btn btn-outline-danger" onclick="alert('Registro removido!')">Remover
+											</button>
+										</form>
 										</div></td>
 								</tr>
 							</tbody>
