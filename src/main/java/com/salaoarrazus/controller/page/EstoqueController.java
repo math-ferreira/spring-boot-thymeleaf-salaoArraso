@@ -1,7 +1,9 @@
 package com.salaoarrazus.controller.page;
 
 import com.salaoarrazus.domain.model.Atendimento;
+import com.salaoarrazus.service.ProdutoService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,8 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/organizacao/estoque")
 public class EstoqueController {
 
+	@Autowired
+	private ProdutoService ProdutoService;
+
 	@GetMapping()
 	public String estoque(ModelMap model) throws Exception {
+		model.addAttribute("produtos", ProdutoService.getProdutos());
 		return "organizacao/estoque";
 	}
 

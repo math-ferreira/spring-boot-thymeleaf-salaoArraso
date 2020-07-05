@@ -15,9 +15,9 @@
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
-        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
-			<i class="fas fa-bars"></i>
-		</button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarT oggle" href="#">
+            <i class="fas fa-bars"></i>
+        </button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
 
@@ -60,10 +60,10 @@
                         <div class="sb-sidenav-menu-heading">
                             <h6>Contatos</h6>
                         </div>
-                        <a class="nav-link" th:href="@{/agenda/pessoas}">
+                        <a class="nav-link" th:href="@{/agenda/produtos}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-book-open"></i>
-                            </div> Pessoas
+                            </div> produtos
                         </a>
                         <a class="nav-link">
                             <div class="sb-nav-link-icon">
@@ -75,11 +75,11 @@
                 <div class="sb-sidenav-footer">
                     <div class="small">Feito por:</div>
                     <strong><a target="_blank" rel="noopener noreferrer"
-						href="https://www.linkedin.com/in/math-ferreira/">Matheus
-							Ferreira</a>
-				</div>
-			</nav>
-		</div>
+                            href="https://www.linkedin.com/in/math-ferreira/">Matheus
+                            Ferreira</a>
+                </div>
+            </nav>
+        </div>
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
@@ -88,15 +88,76 @@
                         <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
                         <li class="breadcrumb-item active">Estoque</li>
                     </ol>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p class="mb-0">This page is an example of using static navigation. By removing the <code>.sb-nav-fixed</code> class from the <code>body</code>, the top navigation and side navigation will become static on scroll. Scroll down this page to
-                                see an example.</p>
+                    <div class="card-body">
+                        <h1>
+
+                            <a button type="button" class="btn btn-outline-success"
+                                th:href="@{/agenda/produtos/adicionar}">Adicionar Item </a>
+                        </h1>
+                        <div class="table table-striped">
+                            <br>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">
+                                            <h4>#</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4>Descrição</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4>Fornecedor</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4>Valor</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4>Data compra/pedido</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4>Status pagamentos</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4>Status caixa</h4>
+                                        </th>
+                                        <th scope="col">
+                                            <h4></h4>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <th:block th:if="${produtos.isEmpty()}">
+                                        <p style="color: red" class="font-italic">Não há Produtos cadastrados!</p>
+                                    </th:block>
+
+                                    <tr th:each="produtos : ${produtos}">
+                                        <td scope="row" th:text="${produtosStat.index} + 1"></td>
+                                        <td th:text="${produtos.descricaoProduto}"></td>
+                                        <td th:text="${produtos.fornecedor.nome}"></td>
+                                        <td th:text="'R$ ' + ${produtos.valor}"></td>
+                                        <td th:text="${#temporals.format((produtos.data), 'dd-MMM-yyyy HH:mm')}"></td>
+                                        <td th:text="${produtos.statusPagamento}"></td>
+                                        <td th:text="${produtos.statusCaixa}"></td>
+                                        <td>
+                                            <div class="btn-group pull-right">
+                                                <a button type="button" class="btn btn-outline-primary"
+                                                    th:href="@{/agenda/produtos/editar/{id}/produtos(id=${produtos.id})}">Editar
+                                                    </button>
+                                                </a>
+                                                <form
+                                                    th:action="@{/agenda/produtos/remover/{id}/produtos(id=${produtos.id})}"
+                                                    th:method="DELETE">
+                                                    <button type="submit" id="btn-remover"
+                                                        class="btn btn-outline-danger"
+                                                        onclick="alert('Registro removido!')">Remover
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                    <div style="height: 100vh;"></div>
-                    <div class="card mb-4">
-                        <div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div>
                     </div>
                 </div>
             </main>
@@ -114,7 +175,8 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <script th:src="@{/js/scripts.js}"></script>
 </body>

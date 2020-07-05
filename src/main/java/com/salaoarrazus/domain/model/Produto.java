@@ -1,7 +1,8 @@
 package com.salaoarrazus.domain.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,8 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "tb_produto")
@@ -31,21 +34,23 @@ public class Produto implements Serializable {
 
 	private String descricaoProduto;
 	private Integer quantidade;
-	private double valor;
-	private Date data;
-	private Integer statusPagamento;
+	private BigDecimal valor;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	private LocalDateTime data;
+	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
 
 	@ManyToOne()
 	@JoinColumn(name = "fornecedor_fk")
 	private Fornecedor fornecedor;
 	
-	private Integer statusCaixa;
+	private Integer statusCaixa = StatusCaixa.ENTRADA.getCode();
 
 	public Produto() {
 
 	}
 
-	public Produto(Long id, String descricaoProduto, Integer quantidade, double valor, Date data,
+	public Produto(Long id, String descricaoProduto, Integer quantidade, BigDecimal valor, LocalDateTime data,
 			StatusPagamento statusPagamento, StatusCaixa statusCaixa, Fornecedor fornecedor) {
 		super();
 		this.id = id;
@@ -89,19 +94,19 @@ public class Produto implements Serializable {
 		this.quantidade = quantidade;
 	}
 
-	public double getValor() {
+	public BigDecimal getValor() {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
 
-	public Date getData() {
+	public LocalDateTime getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
 

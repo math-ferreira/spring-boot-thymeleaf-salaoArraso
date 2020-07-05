@@ -171,8 +171,8 @@ class SalaoArrazusApplicationTests {
 		Fornecedor fornecedor = new Fornecedor(null, "Math tomates", "90234894323", "Alimentos", c, endereco);
 		fornecedorService.postFornecedor(fornecedor);
 		
-		Produto produto = new Produto(null, "Café Extra-forte", 5, 16.33, new Date(), StatusPagamento.PAGO, StatusCaixa.SAIDA, fornecedor);
-		produtoService.postProduto(produto);
+		//Produto produto = new Produto(null, "Café Extra-forte", 5, 16.33, new Date(), StatusPagamento.PAGO, StatusCaixa.SAIDA, fornecedor);
+		//produtoService.postProduto(produto);
 		
 		assertEquals(fornecedorService.getFornecedores().size(), 1);
 		assertEquals(produtoService.getProdutos().size(), 1);

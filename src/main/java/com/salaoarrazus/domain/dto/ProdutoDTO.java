@@ -1,23 +1,25 @@
 package com.salaoarrazus.domain.dto;
 
-import java.util.Date;
-
-import org.modelmapper.ModelMapper;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import com.salaoarrazus.domain.model.Fornecedor;
 import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 
+import org.modelmapper.ModelMapper;
+
 import lombok.Data;
 
 @Data
 public class ProdutoDTO {
 
+	private Long id;
 	private String descricaoProduto;
 	private Integer quantidade;
-	private double valor;
-	private Date data;
+	private BigDecimal valor;
+	private LocalDateTime data;
 	private StatusPagamento statusPagamento;
 	private Fornecedor fornecedor;
 	private StatusCaixa statusCaixa;

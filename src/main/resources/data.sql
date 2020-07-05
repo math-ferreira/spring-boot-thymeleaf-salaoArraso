@@ -33,9 +33,9 @@ INSERT INTO `tb_pessoa`(`nome`, `contato_fk`, `endereco_fk`) VALUES ("Patricia S
 INSERT INTO `tb_pessoa`(`nome`, `contato_fk`, `endereco_fk`) VALUES ("Leandro Moraes","7","6")
 
 #TB_PRODUTO
-INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`) VALUES ("2020-06-06 14:03:00","Alvejante","2","2","2","16.20")
-INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`) VALUES ("2020-06-06 14:10:00","Limpador de vidro","1","2","2","6.90")
-INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`) VALUES ("2020-06-12 09:00:00","Café","5","2","1","6.90")
+INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`,`fornecedor_fk`) VALUES ("2020-06-06 14:03:00","Alvejante","2","3","1","16.20","1")
+INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`, `fornecedor_fk`) VALUES ("2020-06-06 14:10:00","Limpador de vidro","1","1","2","6.90", "1")
+INSERT INTO `tb_produto`(`data`, `descricao_produto`, `quantidade`, `status_caixa`, `status_pagamento`, `valor`, `fornecedor_fk`) VALUES ("2020-06-12 09:00:00","Café","5","2","3","6.90","2")
 
 #TB_PRODUTO_FORNECEDOR
 #INSERT INTO `tb_produto_fornecedor`(`produto_fk`, `fornecedor_fk`) VALUES ("1","1")
