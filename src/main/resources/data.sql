@@ -55,11 +55,17 @@ INSERT INTO `tb_telefone`(`numero_telefone`, `tipo_telefone`, `contato_fk`) VALU
 
 
 #TB_ATENDIMENTO
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (true,'2020/06/29 14:40','1','4','1','1320', '1')
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (true,'2020/07/03 07:00','4','1','2','40','2')
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/06/30 11:30','2','2','3','25','1')
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/06 19:10','2','1','4','70','1')
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/13 09:50','3','3','3','55','2')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (true,'2020/06/29 14:40','1','4','1','130', '1')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (true,'2020/07/03 07:00','4','1','2','40','4')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/06/30 11:30','2','2','3','25','3')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/06 19:10','2','1','4','70','5')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/13 09:50','3','3','3','55','3')
 INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/01 17:00','1','3','1','99.90','2')
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/27 21:30','1','3','2','100','2')
-INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/06/30 23:30','3','2','1','15','2')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/27 21:30','1','3','2','100','4')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/06/30 23:30','3','2','1','15','5')
+
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/07/06 15:55','1','3','2','32.40','1')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2021/12/27 08:30','2','1','1','40.99','3')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/05/09 17:00','3','2','1','78.90','2')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2021/02/17 09:15','1','2','1','140.50','4')
+INSERT INTO `tb_atendimentos_marcados`(`atendimento_realizado`, `data_atendimento`, `modo_pagamento`, `status_pagamento`, `tipo_atendimento`, `valor_atendimento`, `pessoa_fk`) VALUES (false,'2020/12/04 16:10','3','2','1','15','2')

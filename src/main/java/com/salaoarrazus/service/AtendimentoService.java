@@ -83,6 +83,7 @@ public class AtendimentoService {
 	}
 
 	public AtendimentoDTO postAtendimento(Atendimento atendimento) {
+		atendimento.setDataAtendimento(atendimento.getDataAtendimento().plusHours(-3));
 		return AtendimentoDTO.create(atendimentosRepository.save(atendimento));
 	}
 
