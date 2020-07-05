@@ -96,7 +96,7 @@
                         </h1>
                         <div class="table table-striped">
                             <br>
-                            <table class="table">
+                            <table class="table table-sm">
                                 <thead>
                                     <tr>
                                         <th scope="col">
@@ -106,19 +106,13 @@
                                             <h4>Descrição</h4>
                                         </th>
                                         <th scope="col">
-                                            <h4>Fornecedor</h4>
-                                        </th>
-                                        <th scope="col">
                                             <h4>Valor</h4>
                                         </th>
                                         <th scope="col">
-                                            <h4>Data compra/pedido</h4>
+                                            <h4>Data compra</h4>
                                         </th>
                                         <th scope="col">
                                             <h4>Status pagamentos</h4>
-                                        </th>
-                                        <th scope="col">
-                                            <h4>Status caixa</h4>
                                         </th>
                                         <th scope="col">
                                             <h4></h4>
@@ -133,15 +127,13 @@
                                     <tr th:each="produtos : ${produtos}">
                                         <td scope="row" th:text="${produtosStat.index} + 1"></td>
                                         <td th:text="${produtos.descricaoProduto}"></td>
-                                        <td th:text="${produtos.fornecedor.nome}"></td>
                                         <td th:text="'R$ ' + ${produtos.valor}"></td>
-                                        <td th:text="${#temporals.format((produtos.data), 'dd-MMM-yyyy HH:mm')}"></td>
+                                        <td th:text="${#temporals.format((produtos.data), 'dd-MMM-yyyy')}"></td>
                                         <td th:text="${produtos.statusPagamento}"></td>
-                                        <td th:text="${produtos.statusCaixa}"></td>
                                         <td>
                                             <div class="btn-group pull-right">
                                                 <a button type="button" class="btn btn-outline-primary"
-                                                    th:href="@{/agenda/produtos/editar/{id}/produtos(id=${produtos.id})}">Editar
+                                                    th:href="@{/organizacao/estoque/editar/{id}/produtos(id=${produtos.id})}">Editar
                                                     </button>
                                                 </a>
                                                 <form
@@ -161,17 +153,6 @@
                     </div>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
-                        <div>
-                            <a href="#">Privacy Policy</a> &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>

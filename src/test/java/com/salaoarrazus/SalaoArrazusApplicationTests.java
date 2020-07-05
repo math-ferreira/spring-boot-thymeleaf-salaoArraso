@@ -190,7 +190,7 @@ class SalaoArrazusApplicationTests {
 		produto2.setStatusPagamento(StatusPagamento.AGUARDANDO_PAGAMENTO);
 		produtoService.putProduto(produto2, 1L);
 		assertEquals(produtoService.getProdutos().get(0).getDescricaoProduto(), "Na verdade Café padrão");
-		assertThat(produtoService.getProdutos().get(0).getValor() == 16.33);
+		//assertThat(produtoService.getProdutos().get(0).getValor() == 16.33);
 		assertEquals(produtoService.getProdutos().size(), 1);
 		
 		produtoService.deleteProduto(1L);;

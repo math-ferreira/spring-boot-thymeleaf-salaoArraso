@@ -1,6 +1,9 @@
 package com.salaoarrazus.controller.page;
 
 import com.salaoarrazus.domain.model.Atendimento;
+import com.salaoarrazus.domain.model.Produto;
+import com.salaoarrazus.domain.model.enums.StatusCaixa;
+import com.salaoarrazus.service.FornecedorService;
 import com.salaoarrazus.service.ProdutoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,26 +22,33 @@ import org.springframework.web.servlet.ModelAndView;
 public class EstoqueController {
 
 	@Autowired
-	private ProdutoService ProdutoService;
+	private ProdutoService produtoService;
+
+	@Autowired
+	private FornecedorService fornecedorService;
 
 	@GetMapping()
 	public String estoque(ModelMap model) throws Exception {
-		model.addAttribute("produtos", ProdutoService.getProdutos());
-		return "organizacao/estoque";
+		model.addAttribute("produtos", produtoService.getProdutos());
+		return "organizacao/index-estoque";
 	}
 
-	@GetMapping("/editar/{id}/estoque")
+	@GetMapping("/editar/{id}/produtos")
 	public ModelAndView editarEstoque(@PathVariable("id") Long id) {
-		return null;
+		ModelAndView mvc = new ModelAndView("organizacao/editar-estoque-produtos");
+		mvc.addObject("produto", produtoService.getProdutoById(id));
+		mvc.addObject("fornecedores", fornecedorService.getFornecedores());
+		return mvc;
 	}
 
 	@GetMapping("/adicionar")
-	public ModelAndView adicionarEstoque(Atendimento atendimento) {
+	public ModelAndView adicionarEstoque(Produto produto) {
 		return null;
 	}
 
 	@PostMapping("/save")
-	public String save(Atendimento atendimento, @RequestParam("estoqueId") Long id) {
+	public String save(Produto produto, @RequestParam("produtoId") Long id) {
+		produto.setStatusCaixa(StatusCaixa.SAIDA);
 		return null;
 	}
 

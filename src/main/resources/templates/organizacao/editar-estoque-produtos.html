@@ -14,8 +14,8 @@
 
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
-        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle">
+        <a class="navbar-brand" th:href="@{/}">Home</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
 			<i class="fas fa-bars"></i>
 		</button>
         <!-- Navbar Search-->
@@ -83,76 +83,105 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid">
-					<h1 class="mt-4">Contato de Pessoas</h1>
+					<h1 class="mt-4">Adicionar / editar item no estoque</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
-						<li class="breadcrumb-item active">Pessoas</li>
+						<li class="breadcrumb-item active"><a th:href="@{/organizacao/estoque}">Estoque</a></li>
+						<li class="breadcrumb-item active">Adicionar item</li>
 					</ol>
-					<h3>Escolha uma das opções abaixo.</h3>
 				</div>
 				<div class="card-body">
-					<h1>
-
-						<a button type="button" class="btn btn-outline-success"
-							th:href="@{/agenda/pessoas/adicionar}">Adicionar Pessoa </a>
-					</h1>
-					<div class="table table-striped">
+					<h4>Preencha as informações abaixo para adicionar ou editar um
+						item no estoque</h4>
+					<br>
+					<form th:action="@{/organizacao/estoque/save}" th:object="${produto}" method="POST">
+						<div class="form-row">
+							<input type="hidden" name="produtoId" th:value="${produto.id}">
+							<div class="col-md-5 mb-3">
+								<label for="validationDefault01">Descrição</label> <input type="text"
+									class="form-control" id="descricaoProduto" placeholder="Lixa de unha" required
+									th:field="*{descricaoProduto}">
+							</div>
+							<div class="col-md-2 mb-3">
+								<label for="exampleFormControlSelect1">Quantidade</label>
+								<select class="custom-select" id="exampleFormControlSelect1" th:field="*{quantidade}">
+									<option th:value="1">1</option>
+									<option th:value="2">2</option>
+									<option th:value="3">3</option>
+									<option th:value="4">4</option>
+									<option th:value="5">5</option>
+									<option th:value="6">6</option>
+									<option th:value="7">7</option>
+									<option th:value="8">8</option>
+									<option th:value="9">9</option>
+									<option th:value="10">10</option>
+									<option th:value="11">11</option>
+									<option th:value="12">12</option>
+									<option th:value="13">13</option>
+									<option th:value="14">14</option>
+									<option th:value="15">15</option>
+									<option th:value="16">16</option>
+									<option th:value="17">17</option>
+									<option th:value="18">18</option>
+									<option th:value="19">19</option>
+									<option th:value="20">20</option>
+								</select></div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-3 mb-3">
+								<label for="validationDefault03">Valor</label> <input type="text" class="form-control"
+									id="valor" placeholder="45" required th:field=*{valor}>
+							</div>
+							<div class="col-md-3 mb-3">
+								<label for="validationDefault03">Data compra</label> <input type="text"
+									class="form-control" id="data" placeholder="45" required th:field=*{data}>
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="validationDefault04">Fornecedor</label> <select class="custom-select"
+									th:field="*{fornecedor.id}" id="fornecedores">
+									<option th:each="fornecedor : ${fornecedores}" th:value="${fornecedor.id}"
+										th:text="${fornecedor.nome}"></option>
+								</select>
+							</div>
+						</div>
 						<br>
-						<table class="table">
-							<thead>
-								<tr>
-									<th scope="col">
-										<h4>#</h4>
-									</th>
-									<th scope="col">
-										<h4>Nome</h4>
-									</th>
-									<th scope="col">
-										<h4>Telefone</h4>
-									</th>
-									<th scope="col">
-										<h4></h4>
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<th:block th:if="${pessoas.isEmpty()}">
-									<p style="color: red" class="font-italic">Não há contatos
-										na agenda!</p>
-								</th:block>
-
-								<tr th:each="pessoa : ${pessoas}">
-									<td scope="row" th:text="${pessoaStat.index} + 1"></td>
-									<td th:text="${pessoa.nome}"></td>
-									<td th:text="${pessoa.contato.telefones[0].numeroTelefone}"></td>
-									<td>
-										<div class="btn-group pull-right">
-											<a button type="button" class="btn btn-outline-primary"
-												th:href="@{/agenda/pessoas/editar/{id}/pessoa(id=${pessoa.id})}">Editar
-												</button>
-											</a>
-											<form
-												th:action="@{/agenda/pessoas/remover/{id}/pessoa(id=${pessoa.id})}"
-												th:method="DELETE">
-												<button type="submit" id="btn-remover" class="btn btn-outline-danger" onclick="alert('Registro removido!')">Remover
-												</button>
-											</form>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+						<!-- Button trigger modal -->
+						<button type="submit" class="btn btn-primary" id="btn-salvar">Salvar
+							dados</button>
+					</form>
 				</div>
-
 			</main>
 		</div>
 	</div>
 	<script src="
-												https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+											https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous">
+
+											</script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
 		crossorigin="anonymous"></script>
 	<script th:src="@{/js/scripts.js}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
+		crossorigin="anonymous"></script>
+
+	<!-- Modal Salvar-->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
