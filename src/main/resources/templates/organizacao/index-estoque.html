@@ -92,7 +92,7 @@
                         <h1>
 
                             <a button type="button" class="btn btn-outline-success"
-                                th:href="@{/agenda/produtos/adicionar}">Adicionar Item </a>
+                                th:href="@{/organizacao/estoque/adicionar}">Adicionar Item </a>
                         </h1>
                         <div class="table table-striped">
                             <br>
@@ -121,14 +121,14 @@
                                 </thead>
                                 <tbody>
                                     <th:block th:if="${produtos.isEmpty()}">
-                                        <p style="color: red" class="font-italic">Não há Produtos cadastrados!</p>
+                                        <p style="color: red" class="font-italic">Não há Itens cadastrados!</p>
                                     </th:block>
 
                                     <tr th:each="produtos : ${produtos}">
                                         <td scope="row" th:text="${produtosStat.index} + 1"></td>
                                         <td th:text="${produtos.descricaoProduto}"></td>
                                         <td th:text="'R$ ' + ${produtos.valor}"></td>
-                                        <td th:text="${#temporals.format((produtos.data), 'dd-MMM-yyyy')}"></td>
+                                        <td th:text="${#temporals.format((produtos.data), 'dd-MMM-yyyy hh:mm')}"></td>
                                         <td th:text="${produtos.statusPagamento}"></td>
                                         <td>
                                             <div class="btn-group pull-right">
@@ -137,7 +137,7 @@
                                                     </button>
                                                 </a>
                                                 <form
-                                                    th:action="@{/agenda/produtos/remover/{id}/produtos(id=${produtos.id})}"
+                                                    th:action="@{/organizacao/estoque/remover/{id}/produto(id=${produtos.id})}"
                                                     th:method="DELETE">
                                                     <button type="submit" id="btn-remover"
                                                         class="btn btn-outline-danger"

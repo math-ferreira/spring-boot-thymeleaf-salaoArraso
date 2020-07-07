@@ -1,6 +1,7 @@
 package com.salaoarrazus.controller.page;
 
-import com.salaoarrazus.domain.model.Atendimento;
+import java.util.Objects;
+
 import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.service.FornecedorService;
@@ -43,18 +44,26 @@ public class EstoqueController {
 
 	@GetMapping("/adicionar")
 	public ModelAndView adicionarEstoque(Produto produto) {
-		return null;
+		ModelAndView mvc = new ModelAndView("organizacao/editar-estoque-produtos");
+		mvc.addObject("produto", produto);
+		mvc.addObject("fornecedores", fornecedorService.getFornecedores());
+		return mvc;
 	}
 
 	@PostMapping("/save")
 	public String save(Produto produto, @RequestParam("produtoId") Long id) {
-		produto.setStatusCaixa(StatusCaixa.SAIDA);
-		return null;
+		if (Objects.isNull(id)) {
+			produtoService.postProduto(produto);
+		} else {
+			produtoService.putProduto(produto, id);
+		}
+		return "redirect:";
 	}
 
-	@DeleteMapping("/remover/{id}/estoque")
+	@DeleteMapping("/remover/{id}/produto")
 	public String delete(@PathVariable("id") Long id) {
-		return null;
+		produtoService.deleteProduto(id);
+		return "redirect:/organizacao/estoque";
 	}
 	
 }

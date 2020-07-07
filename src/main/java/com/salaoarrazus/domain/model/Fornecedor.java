@@ -40,7 +40,7 @@ public class Fornecedor implements Serializable {
 	@JoinColumn(name = "contato_fk")
 	private Contato contato;
 
-	@OneToMany(mappedBy = "fornecedor", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "fornecedor")
 	private List<Produto> produtos = new ArrayList<>();
 
 	@OneToOne(cascade = CascadeType.ALL)

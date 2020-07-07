@@ -98,47 +98,35 @@
 						<div class="form-row">
 							<input type="hidden" name="produtoId" th:value="${produto.id}">
 							<div class="col-md-5 mb-3">
-								<label for="validationDefault01">Descrição</label> <input type="text"
+								<label for="validationDefault01">Descrição do item / produto</label> <input type="text"
 									class="form-control" id="descricaoProduto" placeholder="Lixa de unha" required
 									th:field="*{descricaoProduto}">
 							</div>
 							<div class="col-md-2 mb-3">
-								<label for="exampleFormControlSelect1">Quantidade</label>
-								<select class="custom-select" id="exampleFormControlSelect1" th:field="*{quantidade}">
-									<option th:value="1">1</option>
-									<option th:value="2">2</option>
-									<option th:value="3">3</option>
-									<option th:value="4">4</option>
-									<option th:value="5">5</option>
-									<option th:value="6">6</option>
-									<option th:value="7">7</option>
-									<option th:value="8">8</option>
-									<option th:value="9">9</option>
-									<option th:value="10">10</option>
-									<option th:value="11">11</option>
-									<option th:value="12">12</option>
-									<option th:value="13">13</option>
-									<option th:value="14">14</option>
-									<option th:value="15">15</option>
-									<option th:value="16">16</option>
-									<option th:value="17">17</option>
-									<option th:value="18">18</option>
-									<option th:value="19">19</option>
-									<option th:value="20">20</option>
-								</select></div>
+								<label for="validationDefault05">Valor Total (R$)</label> <input type="text"
+									class="form-control" id="valor" placeholder="R$ 45" required
+									th:field="*{valor}">
+								<td>
+							</div>
 						</div>
 						<div class="form-row">
 							<div class="col-md-3 mb-3">
-								<label for="validationDefault03">Valor</label> <input type="text" class="form-control"
-									id="valor" placeholder="45" required th:field=*{valor}>
+								<label for="validationDefault04">Status pagamento</label> <select class="custom-select"
+									th:field="*{statusPagamento}">
+									<option
+										th:each="statusPagamento : ${T(com.salaoarrazus.domain.model.enums.StatusPagamento).values()}"
+										th:value="${statusPagamento}" th:text="${statusPagamento}"></option>
+								</select>
 							</div>
 							<div class="col-md-3 mb-3">
-								<label for="validationDefault03">Data compra</label> <input type="text"
-									class="form-control" id="data" placeholder="45" required th:field=*{data}>
+								<label for="validationDefault01">Data compra</label> <input type="text"
+									class="form-control" id="data" placeholder="00/00/0000 00:00"
+									data-mask="00/00/0000 00:00" required th:field="*{data}">
 							</div>
 							<div class="col-md-4 mb-3">
-								<label for="validationDefault04">Fornecedor</label> <select class="custom-select"
-									th:field="*{fornecedor.id}" id="fornecedores">
+								<label for="validationDefault04">Fornecedor do item / produto</label> <select class="custom-select"
+									th:field="*{fornecedor.id}" id="fornecedores" placeholder="45">
+									<option th:value="-1">n/a</option>
 									<option th:each="fornecedor : ${fornecedores}" th:value="${fornecedor.id}"
 										th:text="${fornecedor.nome}"></option>
 								</select>

@@ -38,6 +38,7 @@ public class Produto implements Serializable {
 	
 	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
 	private LocalDateTime data;
+	
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();
 
 	@ManyToOne()

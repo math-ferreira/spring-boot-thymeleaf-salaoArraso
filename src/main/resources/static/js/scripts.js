@@ -50,8 +50,11 @@
     $("#btn-salvar").on("click",
         function(e) {
             var pathname = window.location.pathname;
-            if ((pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0 ||
-                    pathname.indexOf("/salao_arrazus/v1/calendario/servicos/adicionar") == 0
+            if ((
+                    pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0 ||
+                    pathname.indexOf("/salao_arrazus/v1/calendario/servicos/adicionar") == 0 ||
+                    pathname.indexOf("/salao_arrazus/v1/organizacao/estoque/adicionar") == 0 ||
+                    pathname.indexOf("/salao_arrazus/v1/organizacao/estoque/editar/") == 0
                 ) &&
                 $('#valor').val() != "" &&
                 $('#data').val() != ""
@@ -64,6 +67,11 @@
                 $("#numeroTelefone").val() != '' &&
                 $("#bairro").val() != '' &&
                 $("#cidade").val() != '') {
+                alert("Dados Salvos com sucesso");
+            } else if (pathname.indexOf("/salao_arrazus/v1/organizacao/estoque/adicionar") == 0 &&
+                $("#descricaoProduto").val() != '' &&
+                $("#valor").val() != '' &&
+                $("#data").val() != '') {
                 alert("Dados Salvos com sucesso");
             }
         });
