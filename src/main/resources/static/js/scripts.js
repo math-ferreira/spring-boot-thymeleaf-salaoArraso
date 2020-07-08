@@ -42,7 +42,6 @@
         }
     });
 
-
     $("#btn-confirmar").on("click", function(e) {
         $('#modalConfirmar').modal('toggle');
     });
@@ -50,6 +49,7 @@
     $("#btn-salvar").on("click",
         function(e) {
             var pathname = window.location.pathname;
+            console.log("aqui: " + pathname);
             if ((
                     pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0 ||
                     pathname.indexOf("/salao_arrazus/v1/calendario/servicos/adicionar") == 0 ||
@@ -61,8 +61,8 @@
             ) {
                 $('#valor').val($('#valor').val().replace(/\./g, '').replace(/\,/g, '.'));
                 alert("Dados Salvos com sucesso");
-
-            } else if (pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/editar/") == 0 &&
+            } else if ((pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/editar/") == 0 ||
+                    pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/adicionar") == 0) &&
                 $("#nomePessoa").val() != '' &&
                 $("#numeroTelefone").val() != '' &&
                 $("#bairro").val() != '' &&
@@ -72,6 +72,15 @@
                 $("#descricaoProduto").val() != '' &&
                 $("#valor").val() != '' &&
                 $("#data").val() != '') {
+                alert("Dados Salvos com sucesso");
+            } else if ((pathname.indexOf("/salao_arrazus/v1/agenda/fornecedores/adicionar") == 0 ||
+                    pathname.indexOf("/salao_arrazus/v1/agenda/fornecedores/editar/") == 0) &&
+                $("#nomeFornecedor").val() != '' &&
+                $("#ramoFornecedor").val() != '' &&
+                $("#numeroTelefone").val() != '' &&
+                $("#bairro").val() != '' &&
+                $("#cidade").val() != ''
+            ) {
                 alert("Dados Salvos com sucesso");
             }
         });
