@@ -3,18 +3,19 @@ package com.salaoarrazus.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
-
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.salaoarrazus.domain.dto.FornecedorDTO;
 import com.salaoarrazus.domain.dto.ProdutoDTO;
+import com.salaoarrazus.domain.model.FluxoCaixa;
 import com.salaoarrazus.domain.model.Fornecedor;
 import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.repository.ProdutoRepository;
 import com.salaoarrazus.service.config.UpdateObjectsService;
+import org.springframework.data.domain.Sort;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ProdutoService {
@@ -26,7 +27,7 @@ public class ProdutoService {
 	private FornecedorService fornecedorService;
 
 	public List<ProdutoDTO> getProdutos() {
-		List<Produto> produtos = produtoRepository.findAll();
+		List<Produto> produtos = produtoRepository.findAll(Sort.by(Sort.Direction.ASC, "data"));
 		List<ProdutoDTO> produtosDTO = new ArrayList<>();
 		for (Produto produto : produtos) {
 			produtosDTO.add(ProdutoDTO.create(produto));

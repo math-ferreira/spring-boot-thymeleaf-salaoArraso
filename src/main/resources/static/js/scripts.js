@@ -85,4 +85,25 @@
             }
         });
 
+
+    var btn = document.getElementById("btn-teste");
+
+    btn.addEventListener("click", function() {
+        $.ajax({
+                method: "GET",
+                url: "https://jsonplaceholder.typicode.com/posts"
+            })
+            .done(function(msg) {
+                for (var i = 0; i < msg.length; i++) {
+                    var resposta = JSON.parse(JSON.stringify(msg))[i];
+                    $(".ul-teste").append("<li> UserId: " + resposta.userId + "</li>");
+                    $(".ul-teste").append("<li> Id: " + resposta.id + "</li>");
+                    $(".ul-teste").append("<li> Title: " + resposta.title + "</li>");
+                    $(".ul-teste").append("<li> Body: " + resposta.body + "</li>");
+                    $(".ul-teste").append("<br>");
+
+                }
+            });
+    });
+
 })(jQuery);

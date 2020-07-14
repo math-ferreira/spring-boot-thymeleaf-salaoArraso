@@ -3,7 +3,6 @@ package com.salaoarrazus.controller.page;
 import java.util.Objects;
 
 import com.salaoarrazus.domain.model.Produto;
-import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.service.FornecedorService;
 import com.salaoarrazus.service.ProdutoService;
 

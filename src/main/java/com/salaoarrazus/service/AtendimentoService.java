@@ -28,13 +28,12 @@ public class AtendimentoService {
 	@Autowired
 	private PessoaService pessoaService;
 
-
 	public List<AtendimentoDTO> getAtendimentos(PeriodicidadeAtendimentosEnum periodicidadeAtendimentos) {
 		List<Atendimento> atendimentos = atendimentosRepository.findAll(Sort.by(Sort.Direction.ASC, "dataAtendimento"));
 		List<AtendimentoDTO> atendimentosDTO = new ArrayList<>();
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(new Date());
-		
+
 		switch (periodicidadeAtendimentos.getCode()) {
 			// Todos os Atendimentos
 			case 1:

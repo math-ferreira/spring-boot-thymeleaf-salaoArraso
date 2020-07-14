@@ -1,10 +1,7 @@
 package com.salaoarrazus;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import java.util.Date;
 
 import com.salaoarrazus.domain.model.Contato;
 import com.salaoarrazus.domain.model.Endereco;
