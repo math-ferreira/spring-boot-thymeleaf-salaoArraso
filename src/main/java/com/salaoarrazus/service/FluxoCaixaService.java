@@ -45,6 +45,7 @@ public class FluxoCaixaService {
 				fluxoCaixa.setDescricao(produto.getDescricaoProduto());
 				fluxoCaixa.setData(produto.getData());
 				fluxoCaixa.setValor(produto.getValor());
+				totalFluxoCaixa.add(fluxoCaixa);
 			}
 		}
 		return totalFluxoCaixa;
