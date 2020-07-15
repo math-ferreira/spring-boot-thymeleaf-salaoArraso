@@ -1,8 +1,12 @@
 package com.salaoarrazus.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import com.salaoarrazus.domain.dto.AtendimentoDTO;
 import com.salaoarrazus.domain.dto.ProdutoDTO;
@@ -20,6 +24,111 @@ public class FluxoCaixaService {
 
 	@Autowired
 	private ProdutoService produtoService;
+
+	// Retorna a lista de todas as Receitas para o mes e ano de referencia
+	public List<FluxoCaixa> getListaReceitas(Integer mes, Integer ano) {
+		return getCaixa(mes, ano, receitaCaixa());
+	}
+
+	// Retorna a lista de todas as Despesas para o mes e ano de referencia
+	public List<FluxoCaixa> getListaDespesas(Integer mes, Integer ano) {
+		return getCaixa(mes, ano, despesaCaixa());
+	}
+
+	// Valor total para receitas no mes e ano
+	// mes = 0 e ano = 0 -> total de receitas gravadas
+	public BigDecimal getTotalReceita(Integer mes, Integer ano) {
+		return getTotalCaixa(mes, ano, receitaCaixa());
+	}
+
+	// Valor total para despesas no mes e ano
+	// mes = 0 e ano = 0 -> total de despesas gravadas
+	public BigDecimal getTotalDespesa(Integer mes, Integer ano) {
+		return getTotalCaixa(mes, ano, despesaCaixa());
+	}
+
+	// Dia total com maior receita
+	public LocalDateTime getDiaMaiorReceita() {
+		return getDiaMaiorCaixa(receitaCaixa());
+	}
+
+	// Dia total com maior despesa
+	public LocalDateTime getDiaMaiorDespesa() {
+		return getDiaMaiorCaixa(despesaCaixa());
+	}
+
+	// Dia da semana com maior servicos
+	public String getDiaSemanaMaiorReceita() {
+		return getDiaSemanaCaixa(true, receitaCaixa());
+	}
+
+	// Dia da semana com menos servicos
+	public String getDiaSemanaMenorReceita() {
+		return getDiaSemanaCaixa(false, receitaCaixa());
+	}
+
+	// Dia da semana com maior despesa
+	public String getDiaSemanaMaiorDespesa() {
+		return getDiaSemanaCaixa(true, despesaCaixa());
+	}
+
+	// Dia da semana com menor despesa
+	public String getDiaSemanaMenorDespesa() {
+		return getDiaSemanaCaixa(false, despesaCaixa());
+	}
+
+	// -- métodos privados --//
+
+	private String getDiaSemanaCaixa(boolean opcaoMaior, List<FluxoCaixa> fluxoCaixaDesejado) {
+		HashMap<String, Integer> diaSemana = new HashMap<>();
+		diaSemana.put("Segunda-feira", 0);
+		diaSemana.put("Terça-feira", 0);
+		diaSemana.put("Quarta-feira", 0);
+		diaSemana.put("Quinta-feira", 0);
+		diaSemana.put("Sexta-feira", 0);
+		diaSemana.put("Sabado", 0);
+		diaSemana.put("Domingo", 0);
+
+		for (FluxoCaixa fluxoCaixa : fluxoCaixaDesejado) {
+			switch (fluxoCaixa.getData().getDayOfWeek().getValue()) {
+				case 1:
+					diaSemana.put("Segunda-feira", diaSemana.get("Segunda-feira") + 1);
+					break;
+				case 2:
+					diaSemana.put("Terça-feira", diaSemana.get("Terça-feira") + 1);
+					break;
+				case 3:
+					diaSemana.put("Quarta-feira", diaSemana.get("Quarta-feira") + 1);
+					break;
+				case 4:
+					diaSemana.put("Quinta-feira", diaSemana.get("Quinta-feira") + 1);
+					break;
+				case 5:
+					diaSemana.put("Sexta-feira", diaSemana.get("Sexta-feira") + 1);
+					break;
+				case 6:
+					diaSemana.put("Sabado", diaSemana.get("Sabado") + 1);
+					break;
+				default:
+					diaSemana.put("Domingo", diaSemana.get("Domingo") + 1);
+					break;
+			}
+		}
+
+		int valor;
+
+		if (opcaoMaior) {
+			valor = Collections.max(diaSemana.values());
+		} else {
+			valor = Collections.min(diaSemana.values());
+		}
+		for (Entry<String, Integer> entry : diaSemana.entrySet()) {
+			if (entry.getValue() == valor) {
+				return entry.getKey();
+			}
+		}
+		return null;
+	}
 
 	private List<FluxoCaixa> receitaCaixa() {
 		List<FluxoCaixa> totalFluxoCaixa = new ArrayList<>();
@@ -51,55 +160,37 @@ public class FluxoCaixaService {
 		return totalFluxoCaixa;
 	}
 
-	public List<FluxoCaixa> getReceita(Integer mes, Integer ano){
-		List<FluxoCaixa> receitasFiltradas = new ArrayList<>();
-		for (FluxoCaixa fluxoCaixa : receitaCaixa()) {
-			if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano){
-				receitasFiltradas.add(fluxoCaixa);
+	private List<FluxoCaixa> getCaixa(Integer mes, Integer ano, List<FluxoCaixa> fluxoCaixaDesejado) {
+		List<FluxoCaixa> caixaFiltrado = new ArrayList<>();
+		for (FluxoCaixa fluxoCaixa : fluxoCaixaDesejado) {
+			if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano) {
+				caixaFiltrado.add(fluxoCaixa);
 			}
 		}
-		return receitasFiltradas;
+		return caixaFiltrado;
 	}
 
-	public List<FluxoCaixa> getDespesa(Integer mes, Integer ano){
-		List<FluxoCaixa> despesasFiltradas = new ArrayList<>();
-		for (FluxoCaixa fluxoCaixa : despesaCaixa()) {
-			if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano){
-				despesasFiltradas.add(fluxoCaixa);
+	private BigDecimal getTotalCaixa(Integer mes, Integer ano, List<FluxoCaixa> fluxoCaixaDesejado) {
+		BigDecimal caixaTotal = new BigDecimal(0);
+		for (FluxoCaixa fluxoCaixa : fluxoCaixaDesejado) {
+			if (mes == 0 && ano == 0) {
+				caixaTotal = caixaTotal.add(fluxoCaixa.getValor());
+			} else if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano) {
+				caixaTotal = caixaTotal.add(fluxoCaixa.getValor());
 			}
 		}
-		return despesasFiltradas;
+		return caixaTotal;
 	}
 
-	// mes = 0 e ano = 0 -> total de receitas gravadas
-	public BigDecimal getTotalReceita(Integer mes, Integer ano){
-		BigDecimal receitaTotal = new BigDecimal(0);
-		for (FluxoCaixa fluxoCaixa : receitaCaixa()) {
-			if (mes == 0 && ano == 0){
-				receitaTotal = receitaTotal.add(fluxoCaixa.getValor());
-			}
-			else if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano){
-				receitaTotal = receitaTotal.add(fluxoCaixa.getValor());
+	private LocalDateTime getDiaMaiorCaixa(List<FluxoCaixa> fluxoCaixaDesejado) {
+		BigDecimal caixaNoDia = new BigDecimal(0);
+		LocalDateTime diaMaiorReceita = LocalDateTime.now();
+		for (FluxoCaixa fluxoCaixa : fluxoCaixaDesejado) {
+			if (fluxoCaixa.getValor().compareTo(caixaNoDia) == 1) {
+				caixaNoDia = fluxoCaixa.getValor();
+				diaMaiorReceita = fluxoCaixa.getData();
 			}
 		}
-		return receitaTotal;
+		return diaMaiorReceita;
 	}
-
-	// mes = 0 e ano = 0 -> total de despesas gravadas
-	public BigDecimal getTotalDespesa(Integer mes, Integer ano){
-		BigDecimal despesaTotal = new BigDecimal(0);
-		for (FluxoCaixa fluxoCaixa : despesaCaixa()) {
-			if(mes == 0 && ano == 0){
-				despesaTotal = despesaTotal.add(fluxoCaixa.getValor());
-			}
-			else if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano){
-				despesaTotal = despesaTotal.add(fluxoCaixa.getValor());
-			}
-		}
-		return despesaTotal;
-	}
-
-	// Criar metodos:
-	// dia que ganhou mais, dia que gastou mais, dia da semana que tem mais serviços, dia da semana que tem menos serviços
-
 }

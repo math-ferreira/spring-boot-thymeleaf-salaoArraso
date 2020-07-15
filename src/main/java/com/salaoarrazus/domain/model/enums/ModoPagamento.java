@@ -3,9 +3,11 @@ package com.salaoarrazus.domain.model.enums;
 public enum ModoPagamento {
 
 	DINHEIRO_ESPECIE(1),
-	CARTAO(2),
-	CHEQUE(3),
-	OUTROS(4);
+	CARTAO_CREDITO(2),
+	CARTAO_DEBITO(3),
+	CHEQUE(4),
+	TRANSFERENCIA(5),
+	OUTROS(6);
 	
 	private Integer code;
 	
