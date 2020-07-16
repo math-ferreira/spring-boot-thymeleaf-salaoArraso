@@ -9,7 +9,6 @@
     <meta name="author" content="" />
     <title>Fluxo de Caixa</title>
     <link href="css/styles.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -67,120 +66,151 @@
                         <li class="breadcrumb-item active">Fluxo de Caixa</li>
                     </ol>
                     <div class="card mb-4">
-                        <button id="btn-teste">Clique aqui</button>
-                        <ul class="ul-teste">
-                        </ul>
                         <div class="card-body">
-                            <h5><strong>- A receita é referente ao dinheiro que entra no caixa de uma empresa, proveniente
+                            <h5><strong><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-10.646.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                              </svg> A receita é referente ao dinheiro que entra no caixa de uma empresa,
+                                    proveniente
                                     de:</strong></h5>
-                    <h6>Dinheiro pago pelos clientes por serviços ou bens fornecidos pela entidade.</h6>
+                    <h6>Dinheiro pago pelos clientes por serviços ou bens fornecidos pela entidade.<br><strong>Importante</strong> Só serão considerados os atendimentos/serviços que estiverem com o status de Pagamento igual a 'PAGO'</h6>
 
                     <br>
-                    <h5><strong>- Já as saídas de caixa são originárias das seguintes fontes:</strong></h5>
-                    <h6>Gastos necessários para manter o negócio funcionando, como folha de pagamento, custo das mercadorias vendidas, aluguel, entre outros.</h6><br>
-                    <!--Accordion wrapper-->
-                    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-                        <!-- Accordion card -->
-                        <div class="card">
-
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingOne1">
-                                <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseReceitas" aria-expanded="true" aria-controls="collapseReceitas">
-                                    <h5 class="mb-0">
-                                        Receitas <i class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <!-- Card body -->
-                            <div id="collapseReceitas" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                    craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Accordion card -->
-
-                        <!-- Accordion card -->
-                        <div class="card">
-
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingTwo2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseDespesas" aria-expanded="false" aria-controls="collapseDespesas">
-                                    <h5 class="mb-0">
-                                        Despesas <i class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <!-- Card body -->
-                            <div id="collapseDespesas" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                    craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Accordion card -->
-
-                        <!-- Accordion card -->
-                        <div class="card">
-
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingTwo2">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseSaldo" aria-expanded="false" aria-controls="collapseTwo2">
-                                    <h5 class="mb-0">
-                                        Saldo <i class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <!-- Card body -->
-                            <div id="collapseSaldo" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                    craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Accordion card -->
-
-
-
-                        <!-- Accordion card -->
-                        <div class="card">
-
-                            <!-- Card header -->
-                            <div class="card-header" role="tab" id="headingThree3">
-                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
-                                    <h5 class="mb-0">
-                                        Projeção <i class="fas fa-angle-down rotate-icon"></i>
-                                    </h5>
-                                </a>
-                            </div>
-
-                            <!-- Card body -->
-                            <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
-                                <div class="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                                    on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-                                    craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Accordion card -->
-
-                    </div>
-                    <!-- Accordion wrapper -->
+                    <h5><strong><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+                      </svg> Já as saídas de caixa são originárias das seguintes fontes:</strong></h5>
+                    <h6>Gastos necessários para manter o negócio funcionando, como folha de pagamento, custo das mercadorias compradas, aluguel, entre outros.<br><strong>Importante</strong> Só serão considerados itens/depesas/produtos que estiverem com o
+                        status de Pagamento igual a 'PAGO'</h6>
+                    </h6><br>
                 </div>
+        </div>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Receitas
+                                    </button>
+                    </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <div id="collapseReceitas" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Despesas
+                                    </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                        on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Saldo Total
+                                    </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <p style="color:green;">RECEITA - Saldo total por mês <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-10.646.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                          </svg></p>
+                        <div class="form-row">
+                            <div class="col-md-1 mb-1">
+                                <label for="validationDefault04">Mês</label>
+                                <select class="form-control form-control-sm" id="mes-lista-de-receitas">
+                                                <option th:value=0 th:text="'-'"></option>
+                                                <option th:each="i : ${#numbers.sequence(1, 12)}" th:value="${i}" th:text="${i}" th:selected="${i=='-'}"></option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-1">
+                                <label for="validationDefault04">Ano</label>
+                                <select class="form-control form-control-sm" id="ano-lista-de-receitas">
+                                    <option th:value=0 th:text="'-'"></option>
+                                    <option th:each="i : ${#numbers.sequence(2020, 2025)}" th:value="${i}" th:text="${i}" th:selected="${i=='-'}"></option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-1">
+                                <button class="btn" id="btn-lista-de-receitas">
+                                    <svg width="2em" height="4em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                      </svg>
+                                  </button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="co1-md-1 mb-1" id="resultado-lista-de-receitas">
+                                <p id="p-lista-de-receitas">Saldo: </p>
+                            </div>
+
+                        </div><br>
+                        <p style="color:red;">DESPESA - Saldo total por mês <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-down-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 5a.5.5 0 0 0-1 0v4.793L5.354 7.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 9.793V5z"/>
+                          </svg></p>
+                        <div class="form-row">
+                            <div class="col-md-1 mb-1">
+                                <label for="validationDefault04">Mês</label>
+                                <select class="form-control form-control-sm" id="mes-lista-de-despesas">
+                                    <option th:value=0 th:text="'-'"></option>
+                                    <option th:each="i : ${#numbers.sequence(1, 12)}" th:value="${i}" th:text="${i}" th:selected="${i=='-'}"></option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-1">
+                                <label for="validationDefault04">Ano</label>
+                                <select class="form-control form-control-sm" id="ano-lista-de-despesas">
+                                    <option th:value=0 th:text="'-'"></option>
+                                    <option th:each="i : ${#numbers.sequence(2020, 2025)}" th:value="${i}" th:text="${i}" th:selected="${i=='-'}"></option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 mb-1">
+                                <button class="btn" id="btn-lista-de-despesas">
+                                    <svg width="2em" height="4em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                                      </svg>
+                                  </button>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="co1-md-1 mb-1" id="resultado-lista-de-despesas">
+                                <p id="p-lista-de-despesas">Saldo: </p>
+                            </div>
+
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Projeção
+                          </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                        on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </main>

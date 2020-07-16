@@ -86,23 +86,58 @@
         });
 
 
-    var btn = document.getElementById("btn-teste");
 
-    btn.addEventListener("click", function() {
+
+    /*    btn.addEventListener("click", function() {
+            $.ajax({
+                    method: "GET",
+                    url: "https://jsonplaceholder.typicode.com/posts"
+                })
+                .done(function(msg) {
+                    for (var i = 0; i < msg.length; i++) {
+                        var resposta = JSON.parse(JSON.stringify(msg))[i];
+                        $(".ul-teste").append("<li> UserId: " + resposta.userId + "</li>");
+                        $(".ul-teste").append("<li> Id: " + resposta.id + "</li>");
+                        $(".ul-teste").append("<li> Title: " + resposta.title + "</li>");
+                        $(".ul-teste").append("<li> Body: " + resposta.body + "</li>");
+                        $(".ul-teste").append("<br>");
+
+                    }
+                });
+        }); */
+
+    var btnListaDeReceitas = document.getElementById("btn-lista-de-receitas");
+    btnListaDeReceitas.addEventListener("click", function() {
+        var mes = document.getElementById("mes-lista-de-receitas").options[document.getElementById("mes-lista-de-receitas").selectedIndex].value;
+        var ano = document.getElementById("ano-lista-de-receitas").options[document.getElementById("ano-lista-de-receitas").selectedIndex].value;;
         $.ajax({
                 method: "GET",
-                url: "https://jsonplaceholder.typicode.com/posts"
+                url: "fluxo-caixa/saldo-receitas",
+                data: {
+                    "mes": mes,
+                    "ano": ano,
+                }
             })
             .done(function(msg) {
-                for (var i = 0; i < msg.length; i++) {
-                    var resposta = JSON.parse(JSON.stringify(msg))[i];
-                    $(".ul-teste").append("<li> UserId: " + resposta.userId + "</li>");
-                    $(".ul-teste").append("<li> Id: " + resposta.id + "</li>");
-                    $(".ul-teste").append("<li> Title: " + resposta.title + "</li>");
-                    $(".ul-teste").append("<li> Body: " + resposta.body + "</li>");
-                    $(".ul-teste").append("<br>");
+                document.getElementById("p-lista-de-receitas").textContent = "Saldo: R$ " + msg;
+            });
+    });
 
+
+    var btnListaDeReceitas = document.getElementById("btn-lista-de-despesas");
+    btnListaDeReceitas.addEventListener("click", function() {
+        var mes = document.getElementById("mes-lista-de-despesas").options[document.getElementById("mes-lista-de-despesas").selectedIndex].value;
+        var ano = document.getElementById("ano-lista-de-despesas").options[document.getElementById("ano-lista-de-despesas").selectedIndex].value;;
+        $.ajax({
+                method: "GET",
+                url: "fluxo-caixa/saldo-despesas",
+                data: {
+                    "mes": mes,
+                    "ano": ano,
                 }
+            })
+            .done(function(msg) {
+                document.getElementById("p-lista-de-despesas").textContent = "Saldo: R$ " + msg;
             });
     });
 

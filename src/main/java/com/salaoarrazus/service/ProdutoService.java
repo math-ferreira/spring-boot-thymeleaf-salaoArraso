@@ -6,15 +6,14 @@ import java.util.Objects;
 
 import com.salaoarrazus.domain.dto.FornecedorDTO;
 import com.salaoarrazus.domain.dto.ProdutoDTO;
-import com.salaoarrazus.domain.model.FluxoCaixa;
 import com.salaoarrazus.domain.model.Fornecedor;
 import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.repository.ProdutoRepository;
 import com.salaoarrazus.service.config.UpdateObjectsService;
-import org.springframework.data.domain.Sort;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service

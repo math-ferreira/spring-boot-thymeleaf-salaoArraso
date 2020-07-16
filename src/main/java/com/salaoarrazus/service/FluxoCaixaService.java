@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import com.salaoarrazus.domain.dto.AtendimentoDTO;
 import com.salaoarrazus.domain.dto.ProdutoDTO;
 import com.salaoarrazus.domain.model.FluxoCaixa;
+import com.salaoarrazus.domain.model.enums.StatusPagamento;
 import com.salaoarrazus.service.config.PeriodicidadeAtendimentosEnum;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,24 +27,26 @@ public class FluxoCaixaService {
 	private ProdutoService produtoService;
 
 	// Retorna a lista de todas as Receitas para o mes e ano de referencia
+	// mes = 0 e ano = 0 -> Lista total de receitas gravadas
 	public List<FluxoCaixa> getListaReceitas(Integer mes, Integer ano) {
 		return getCaixa(mes, ano, receitaCaixa());
 	}
 
 	// Retorna a lista de todas as Despesas para o mes e ano de referencia
+	// mes = 0 e ano = 0 -> Lista total de despesas gravadas
 	public List<FluxoCaixa> getListaDespesas(Integer mes, Integer ano) {
 		return getCaixa(mes, ano, despesaCaixa());
 	}
 
 	// Valor total para receitas no mes e ano
 	// mes = 0 e ano = 0 -> total de receitas gravadas
-	public BigDecimal getTotalReceita(Integer mes, Integer ano) {
+	public BigDecimal getSaldoTotalReceita(Integer mes, Integer ano) {
 		return getTotalCaixa(mes, ano, receitaCaixa());
 	}
 
 	// Valor total para despesas no mes e ano
 	// mes = 0 e ano = 0 -> total de despesas gravadas
-	public BigDecimal getTotalDespesa(Integer mes, Integer ano) {
+	public BigDecimal getSaldoTotalDespesa(Integer mes, Integer ano) {
 		return getTotalCaixa(mes, ano, despesaCaixa());
 	}
 
@@ -135,11 +138,13 @@ public class FluxoCaixaService {
 		List<AtendimentoDTO> atendimentos = atendimentoService.getAtendimentos(PeriodicidadeAtendimentosEnum.TODOS);
 		if (atendimentos.size() != 0) {
 			for (AtendimentoDTO atendimento : atendimentos) {
-				FluxoCaixa fluxoCaixa = new FluxoCaixa();
-				fluxoCaixa.setDescricao(atendimento.getTipoAtendimento().toString());
-				fluxoCaixa.setData(atendimento.getDataAtendimento());
-				fluxoCaixa.setValor(atendimento.getValorAtendimento());
-				totalFluxoCaixa.add(fluxoCaixa);
+				if (StatusPagamento.valueOf(atendimento.getStatusPagamento().getCode()).equals(StatusPagamento.PAGO)) {
+					FluxoCaixa fluxoCaixa = new FluxoCaixa();
+					fluxoCaixa.setDescricao(atendimento.getTipoAtendimento().toString());
+					fluxoCaixa.setData(atendimento.getDataAtendimento());
+					fluxoCaixa.setValor(atendimento.getValorAtendimento());
+					totalFluxoCaixa.add(fluxoCaixa);
+				}
 			}
 		}
 		return totalFluxoCaixa;
@@ -150,11 +155,13 @@ public class FluxoCaixaService {
 		List<ProdutoDTO> produtos = produtoService.getProdutos();
 		if (produtos.size() != 0) {
 			for (ProdutoDTO produto : produtos) {
-				FluxoCaixa fluxoCaixa = new FluxoCaixa();
-				fluxoCaixa.setDescricao(produto.getDescricaoProduto());
-				fluxoCaixa.setData(produto.getData());
-				fluxoCaixa.setValor(produto.getValor());
-				totalFluxoCaixa.add(fluxoCaixa);
+				if (StatusPagamento.valueOf(produto.getStatusPagamento().getCode()).equals(StatusPagamento.PAGO)) {
+					FluxoCaixa fluxoCaixa = new FluxoCaixa();
+					fluxoCaixa.setDescricao(produto.getDescricaoProduto());
+					fluxoCaixa.setData(produto.getData());
+					fluxoCaixa.setValor(produto.getValor());
+					totalFluxoCaixa.add(fluxoCaixa);
+				}
 			}
 		}
 		return totalFluxoCaixa;
@@ -163,7 +170,9 @@ public class FluxoCaixaService {
 	private List<FluxoCaixa> getCaixa(Integer mes, Integer ano, List<FluxoCaixa> fluxoCaixaDesejado) {
 		List<FluxoCaixa> caixaFiltrado = new ArrayList<>();
 		for (FluxoCaixa fluxoCaixa : fluxoCaixaDesejado) {
-			if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano) {
+			if (mes == 0 && ano == 0) {
+				caixaFiltrado.add(fluxoCaixa);
+			} else if (fluxoCaixa.getData().getMonth().getValue() == mes && fluxoCaixa.getData().getYear() == ano) {
 				caixaFiltrado.add(fluxoCaixa);
 			}
 		}
