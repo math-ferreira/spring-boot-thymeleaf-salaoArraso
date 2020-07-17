@@ -43,6 +43,13 @@ public class AtendimentoService {
 				break;
 			// Atendimentos do dia
 			case 2:
+				for (Atendimento atendimento : atendimentos) {
+					if (atendimento.getDataAtendimento().getDayOfMonth() == LocalDateTime.now().getDayOfMonth()
+							&& atendimento.getDataAtendimento().getMonth() == LocalDateTime.now().getMonth()
+							&& atendimento.getDataAtendimento().getYear() == LocalDateTime.now().getYear()) {
+						atendimentosDTO.add(AtendimentoDTO.create(atendimento));
+					}
+				}
 				break;
 			// Atendimentos da semana vigente
 			case 3:
@@ -91,13 +98,13 @@ public class AtendimentoService {
 		Long idPessoaGravada = atendimentoGravado.getPessoa().getId();
 		Long idPessoaUpdate = atendimento.getPessoa().getId();
 
-		if (!idPessoaGravada.equals(idPessoaUpdate)){
+		if (!idPessoaGravada.equals(idPessoaUpdate)) {
 			PessoaDTO pessoaDTO = pessoaService.getPessoaById(idPessoaUpdate);
 			ModelMapper modelMapper = new ModelMapper();
 			atendimentoGravado.setPessoa(modelMapper.map(pessoaDTO, Pessoa.class));
 		}
 
-		if (!atendimento.getDataAtendimento().plusHours(-3).equals(atendimentoGravado.getDataAtendimento())){
+		if (!atendimento.getDataAtendimento().plusHours(-3).equals(atendimentoGravado.getDataAtendimento())) {
 			atendimentoGravado.setDataAtendimento(atendimento.getDataAtendimento().plusHours(-3));
 		}
 		UpdateObjectsService.merge(atendimento, atendimentoGravado);

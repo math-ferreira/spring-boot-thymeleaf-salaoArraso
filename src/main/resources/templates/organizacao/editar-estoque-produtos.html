@@ -31,36 +31,36 @@
                         <div class="sb-sidenav-menu-heading">
                             <h6>Para Hoje</h6>
                         </div>
-                        <a class="nav-link" href="atendimentos-hoje.html">
+                        <a class="nav-link" th:href="@{/calendario/servicos/hoje}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-tachometer-alt"></i>
-                            </div> Atendimentos
+                            </div> Para hoje
                         </a>
                         <div class="sb-sidenav-menu-heading">
                             <h6>Agenda</h6>
                         </div>
-                        <a class="nav-link" href="consultar-calendario.html">
+                        <a class="nav-link" th:href="@{/calendario/servicos}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-table"></i>
-                            </div> Consultar calendario
-                        </a>
-                        <a class="nav-link" href="servicos.html">
-                            <div class="sb-nav-link-icon">
-                                <i class="fas fa-table"></i>
-                            </div> Serviços
+                            </div> Histórico de serviços
                         </a>
                         <div class="sb-sidenav-menu-heading">
-                            <h6>Fluxo de caixa</h6>
+                            <h6>Organização</h6>
                         </div>
-                        <a class="nav-link" href="fluxo-de-caixa.html">
+                        <a class="nav-link" th:href="@{/organizacao/fluxo-caixa}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-chart-area"></i>
-                            </div> Consultar Caixa
+                            </div> Fluxo de caixa
+                        </a>
+                        <a class="nav-link">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div> Itens e despesas
                         </a>
                         <div class="sb-sidenav-menu-heading">
                             <h6>Contatos</h6>
                         </div>
-                        <a class="nav-link">
+                        <a class="nav-link" th:href="@{/agenda/pessoas}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-book-open"></i>
                             </div> Pessoas

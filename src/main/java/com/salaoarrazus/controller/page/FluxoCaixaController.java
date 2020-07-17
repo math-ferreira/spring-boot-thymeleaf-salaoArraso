@@ -23,10 +23,6 @@ public class FluxoCaixaController {
 
 	@GetMapping()
 	public String fluxo(ModelMap model) throws Exception {
-		model.addAttribute("receita", fluxoCaixaService.getListaReceitas(0, 0));
-		model.addAttribute("despesa", fluxoCaixaService.getListaDespesas(0, 0));
-		model.addAttribute("saldoReceita", fluxoCaixaService.getSaldoTotalReceita(0, 0));
-		model.addAttribute("saldoDespesa", fluxoCaixaService.getSaldoTotalReceita(0, 0));
 		return "organizacao/index-fluxo-de-caixa";
 	}
 
@@ -40,4 +36,13 @@ public class FluxoCaixaController {
 		return ResponseEntity.ok(fluxoCaixaService.getSaldoTotalDespesa(mes, ano));
 	}
 
+	@GetMapping("/lista-despesas")
+	public ResponseEntity<List<FluxoCaixa>> getListaDespesa(@RequestParam("mes") Integer mes, @RequestParam("ano") Integer ano ){
+		return ResponseEntity.ok(fluxoCaixaService.getListaDespesas(mes, ano));
+	}
+
+	@GetMapping("/lista-receitas")
+	public ResponseEntity<List<FluxoCaixa>> getListaReceita(@RequestParam("mes") Integer mes, @RequestParam("ano") Integer ano ){
+		return ResponseEntity.ok(fluxoCaixaService.getListaReceitas(mes, ano));
+	}
 }

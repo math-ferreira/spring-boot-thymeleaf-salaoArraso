@@ -85,60 +85,182 @@
             }
         });
 
+    // Ação para botão de Listar todas as Despesas
+    $(document).ready(function() {
+        var pathname = window.location.pathname;
+        if (pathname == "/salao_arrazus/v1/organizacao/fluxo-caixa") {
+            var btnSaldoDespesas = document.getElementById("btn-lista-de-despesas");
+            btnSaldoDespesas.addEventListener("click", function() {
+                var mes = document.getElementById("mes-lista-de-despesas").options[document.getElementById("mes-lista-de-despesas").selectedIndex].value;
+                var ano = document.getElementById("ano-lista-de-despesas").options[document.getElementById("ano-lista-de-despesas").selectedIndex].value;
+                $.ajax({
+                        method: "GET",
+                        url: "fluxo-caixa/lista-despesas",
+                        data: {
+                            "mes": mes,
+                            "ano": ano,
+                        }
+                    })
+                    .done(function(msg) {
+                        $('.resultado-lista-de-despesas').children().remove();
+                        for (var i = 0; i < msg.length; i++) {
+                            var resposta = JSON.parse(JSON.stringify(msg))[i];
+                            $('.resultado-lista-de-despesas').append("<tr>");
+                            $('.resultado-lista-de-despesas').append("<td scope='row'>" + resposta.descricao + "</td>");
+                            $('.resultado-lista-de-despesas').append("<td> R$ " + resposta.valor + "</td>");
+                            $('.resultado-lista-de-despesas').append("<td>" + moment(resposta.data).format('DD/MM/YYYY') + "</td>");
+                            $('.resultado-lista-de-despesas').append("</tr>");
+                        }
+                    });
+                $.ajax({
+                        method: "GET",
+                        url: "fluxo-caixa/saldo-despesas",
+                        data: {
+                            "mes": mes,
+                            "ano": ano,
+                        }
+                    })
+                    .done(function(msg) {
+                        document.getElementById("p-saldo-de-despesas").textContent = "- Saldo: R$ " + msg;
+                    });
+            });
+        }
+    });
+
+    // Ação para botão de Listar todas as Receitas
+    $(document).ready(function() {
+        var pathname = window.location.pathname;
+        if (pathname == "/salao_arrazus/v1/organizacao/fluxo-caixa") {
+            var btnSaldoDespesas = document.getElementById("btn-lista-de-receitas");
+            btnSaldoDespesas.addEventListener("click", function() {
+                var mes = document.getElementById("mes-lista-de-receitas").options[document.getElementById("mes-lista-de-receitas").selectedIndex].value;
+                var ano = document.getElementById("ano-lista-de-receitas").options[document.getElementById("ano-lista-de-receitas").selectedIndex].value;
+                $.ajax({
+                        method: "GET",
+                        url: "fluxo-caixa/lista-receitas",
+                        data: {
+                            "mes": mes,
+                            "ano": ano,
+                        }
+                    })
+                    .done(function(msg) {
+                        $('.resultado-lista-de-receitas').children().remove();
+                        for (var i = 0; i < msg.length; i++) {
+                            var resposta = JSON.parse(JSON.stringify(msg))[i];
+
+                            $('.resultado-lista-de-receitas').append("<tr>");
+                            $('.resultado-lista-de-receitas').append("<td scope='row'>" + resposta.descricao + "</td>");
+                            $('.resultado-lista-de-receitas').append("<td> R$ " + resposta.valor + "</td>");
+                            $('.resultado-lista-de-receitas').append("<td>" + moment(resposta.data).format('DD/MM/YYYY') + "</td>");
+                            $('.resultado-lista-de-receitas').append("</tr>");
+                        }
+                    });
+                $.ajax({
+                        method: "GET",
+                        url: "fluxo-caixa/saldo-receitas",
+                        data: {
+                            "mes": mes,
+                            "ano": ano,
+                        }
+                    })
+                    .done(function(msg) {
+                        document.getElementById("p-saldo-de-receitas").textContent = "- Saldo: R$ " + msg;
+                    });
+            });
+        }
+    });
 
 
-
-    /*    btn.addEventListener("click", function() {
+    $(document).ready(function() {
+        var pathname = window.location.pathname;
+        if (pathname == "/salao_arrazus/v1/organizacao/fluxo-caixa") {
+            var receitas;
             $.ajax({
                     method: "GET",
-                    url: "https://jsonplaceholder.typicode.com/posts"
+                    url: "fluxo-caixa/saldo-receitas",
+                    data: {
+                        "mes": 0,
+                        "ano": 0,
+                    }
                 })
                 .done(function(msg) {
-                    for (var i = 0; i < msg.length; i++) {
-                        var resposta = JSON.parse(JSON.stringify(msg))[i];
-                        $(".ul-teste").append("<li> UserId: " + resposta.userId + "</li>");
-                        $(".ul-teste").append("<li> Id: " + resposta.id + "</li>");
-                        $(".ul-teste").append("<li> Title: " + resposta.title + "</li>");
-                        $(".ul-teste").append("<li> Body: " + resposta.body + "</li>");
-                        $(".ul-teste").append("<br>");
-
-                    }
+                    receitas = msg;
+                    document.getElementById("p-total-receita").textContent = "- Receitas: R$ " + msg;
                 });
-        }); */
+            $.ajax({
+                    method: "GET",
+                    url: "fluxo-caixa/saldo-despesas",
+                    data: {
+                        "mes": 0,
+                        "ano": 0,
+                    }
+                })
+                .done(function(msg) {
+                    document.getElementById("p-total-despesa").textContent = "- Despesas: R$ " + msg;
+                });
+            $.ajax({
+                    method: "GET",
+                    url: "fluxo-caixa/lista-receitas",
+                    data: {
+                        "mes": 0,
+                        "ano": 0,
+                    }
+                })
+                .done(function(msg) {
+                    var resposta = JSON.parse(JSON.stringify(msg))[0];
+                    var date = new Date(resposta.data);
+                    var a = moment(date, 'D/M/YYYY');
+                    var b = moment(new Date(), 'D/M/YYYY');
 
-    var btnListaDeReceitas = document.getElementById("btn-lista-de-receitas");
-    btnListaDeReceitas.addEventListener("click", function() {
-        var mes = document.getElementById("mes-lista-de-receitas").options[document.getElementById("mes-lista-de-receitas").selectedIndex].value;
-        var ano = document.getElementById("ano-lista-de-receitas").options[document.getElementById("ano-lista-de-receitas").selectedIndex].value;;
-        $.ajax({
-                method: "GET",
-                url: "fluxo-caixa/saldo-receitas",
-                data: {
-                    "mes": mes,
-                    "ano": ano,
-                }
-            })
-            .done(function(msg) {
-                document.getElementById("p-lista-de-receitas").textContent = "Saldo: R$ " + msg;
-            });
+                    var diffDays = b.diff(a, 'months');
+                    alert(resposta.data);
+
+                    if (diffDays > 0) {
+                        var valorTotal = 0;
+                        for (var i = 0; i < msg.length; i++) {
+                            var res = JSON.parse(JSON.stringify(msg))[i];
+                            valorTotal += parseFloat(resp.valor);
+                        } //CORRIGIR
+                        document.getElementById("p-media-receita").textContent = "- Receita média: R$ " + valorTotal / diffDays;
+                    }
+
+                });
+
+            $.ajax({
+                    method: "GET",
+                    url: "fluxo-caixa/lista-despesas",
+                    data: {
+                        "mes": 0,
+                        "ano": 0,
+                    }
+                })
+                .done(function(msg) {
+                    var resposta = JSON.parse(JSON.stringify(msg))[0];
+                    var date = new Date(resposta.data);
+                    console.log(resposta.data);
+                    var a = moment(date, 'D/M/YYYY');
+                    var b = moment(new Date(), 'D/M/YYYY');
+                    var diffDays = b.diff(a, 'months');
+                    if (diffDays > 0) {
+                        var valorTotal = 0;
+                        for (var i = 0; i < msg.length; i++) {
+                            var resposta = JSON.parse(JSON.stringify(msg))[i];
+                            valorTotal += parseFloat(resposta.valor);
+                        }
+                        document.getElementById("p-media-despesa").textContent = "- Despesa média: R$ " + valorTotal / diffDays;
+                    }
+
+                });
+        }
     });
 
-
-    var btnListaDeReceitas = document.getElementById("btn-lista-de-despesas");
-    btnListaDeReceitas.addEventListener("click", function() {
-        var mes = document.getElementById("mes-lista-de-despesas").options[document.getElementById("mes-lista-de-despesas").selectedIndex].value;
-        var ano = document.getElementById("ano-lista-de-despesas").options[document.getElementById("ano-lista-de-despesas").selectedIndex].value;;
-        $.ajax({
-                method: "GET",
-                url: "fluxo-caixa/saldo-despesas",
-                data: {
-                    "mes": mes,
-                    "ano": ano,
-                }
-            })
-            .done(function(msg) {
-                document.getElementById("p-lista-de-despesas").textContent = "Saldo: R$ " + msg;
-            });
+    $(document).ready(function() {
+        var pathname = window.location.pathname;
+        if (pathname == "/salao_arrazus/v1/calendario/servicos/hoje") {
+            var b = moment().format('MM/DD/YYYY');
+            document.getElementById("titulo-data-hoje").textContent = "Data de hoje: " + b;
+        }
     });
+
 
 })(jQuery);

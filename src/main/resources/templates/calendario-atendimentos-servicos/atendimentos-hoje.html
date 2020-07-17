@@ -7,17 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Atendimentos - Hoje</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <title>Contatos</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Home</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button
-            ><!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                
+        <a class="navbar-brand" th:href="@{/}" th:method="GET">Home</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle">
+			<i class="fas fa-bars"></i>
+		</button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+
         </form>
     </nav>
     <div id="layoutSidenav">
@@ -25,69 +28,121 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Para Hoje</div>
-                        <a class="nav-link" href="atendimentos-hoje.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Atendimentos</a>
-                        <div class="sb-sidenav-menu-heading">Agenda</div>
-                        <a class="nav-link" href="consultar-calendario.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Consultar calendario</a>
-                            <a class="nav-link" href="servicos.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Serviços</a>
-                        <div class="sb-sidenav-menu-heading">Fluxo de caixa</div>
-                        <a class="nav-link" href="fluxo-de-caixa.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Consultar Caixa</a>
-                            <div class="sb-sidenav-menu-heading">Contatos</div>
-                        <a class="nav-link" href="contatos.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Acessar agenda</a>                         
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Para Hoje</h6>
+                        </div>
+                        <a class="nav-link">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div> Para hoje
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Agenda</h6>
+                        </div>
+                        <a class="nav-link" th:href="@{/calendario/servicos}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-table"></i>
+                            </div> Histórico de serviços
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Organização</h6>
+                        </div>
+                        <a class="nav-link" th:href="@{/organizacao/fluxo-caixa}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div> Fluxo de caixa
+                        </a>
+                        <a class="nav-link" th:href="@{/organizacao/estoque}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div> Itens e despesas
+                        </a>
+                        <div class="sb-sidenav-menu-heading">
+                            <h6>Contatos</h6>
+                        </div>
+                        <a class="nav-link" th:href="@{/agenda/pessoas}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div> Pessoas
+                        </a>
+                        <a class="nav-link" th:href="@{/agenda/fornecedores}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div> Fornecedores
+                        </a>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Feito por:</div>
-                    <strong><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/math-ferreira/">Matheus Ferreira</a>
-                </div>
-            </nav>
-        </div>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid">
-                    <h1 class="mt-4">Atendimentos para hoje</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-                        <li class="breadcrumb-item active">Atendimentos</li>
-                    </ol>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p class="mb-0">This page is an example of using static navigation. By removing the <code>.sb-nav-fixed</code> class from the <code>body</code>, the top navigation and side navigation will become static on scroll. Scroll down this page to
-                                see an example.</p>
-                        </div>
-                    </div>
-                    <div style="height: 100vh;"></div>
-                    <div class="card mb-4">
-                        <div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div>
-                    </div>
-                </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
-                        <div>
-                            <a href="#">Privacy Policy</a> &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+                    <strong><a target="_blank" rel="noopener noreferrer"
+							href="https://www.linkedin.com/in/math-ferreira/">Matheus
+							Ferreira</a>
+				</div>
+			</nav>
+		</div>
+		<div id="layoutSidenav_content">
+			<main>
+				<div class="container-fluid">
+					<h1 class="mt-4">Atendimentos Hoje</h1>
+					<ol class="breadcrumb mb-4">
+						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
+						<li class="breadcrumb-item active">Histórico de serviços</li>
+					</ol>
+					<h4 id="titulo-data-hoje"></h4>
+				</div>
+
+				<div class="card-body">
+						<div class="table .table-sm">
+							<br>
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col"><h4>#</h4></th>
+										<th scope="col"><h4>Horário</h4></th>
+										<th scope="col"><h4>Cliente</h4></th>
+										<th scope="col"><h4>Contato</h4></th>
+										<th scope="col"><h4>Serviço</h4></th>
+										<th scope="col"><h4>Valor</h4></th>
+										<th scope="col"><h4>Pagamento</h4></th>
+										<th scope="col"><h4>Status</h4></th>
+									</tr>
+								</thead>
+								<tbody>
+									<th:block th:if="${atendimentosTotais.isEmpty()}">
+										<p style="color: red" class="font-italic">Não há
+											serviços na agenda para hoje!</p>
+									</th:block>
+
+									<tr th:each="atendimentosTotais : ${atendimentosTotais}">
+											<td scope="row"
+												th:text="${atendimentosTotaisStat.index} + 1"></td>
+
+											<td th:text="${#temporals.format((atendimentosTotais.dataAtendimento), 'HH:mm')}"></td>
+											<td th:text="${atendimentosTotais.pessoa.nome}"></td>
+											<td
+												th:text="${atendimentosTotais.pessoa.contato.telefones[0].numeroTelefone}"></td>
+											<td th:text="${atendimentosTotais.tipoAtendimento}"></td>
+											<td
+												th:text="'R$ ' + ${atendimentosTotais.valorAtendimento}"></td>
+											<td th:text="${atendimentosTotais.statusPagamento}"></td>
+											<td th:block th:if="${atendimentosTotais.atendimentoRealizado == true}">Concluido</th:block>
+											<td th:block th:if="${atendimentosTotais.atendimentoRealizado == false}">A fazer</th:block>
+												</div>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+				</div>
+
+			</main>
+		</div>
+	</div>
+	<script src="
+												https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script th:src="@{/js/scripts.js}"></script>
 </body>
 
 </html>

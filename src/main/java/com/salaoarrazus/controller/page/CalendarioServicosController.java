@@ -37,6 +37,13 @@ public class CalendarioServicosController {
 		return "calendario-atendimentos-servicos/index-calendario-servicos.html";
 	}
 
+	@GetMapping("/hoje")
+	public String agendaHoje(ModelMap model) throws Exception {
+		List<AtendimentoDTO> totais= atendimentoService.getAtendimentos(PeriodicidadeAtendimentosEnum.DIARIO);
+		model.addAttribute("atendimentosTotais", atendimentoService.converteDataGTMLocal(totais));
+		return "calendario-atendimentos-servicos/atendimentos-hoje.html";
+	}
+
 	@GetMapping("/editar/{id}/servicos")
 	public ModelAndView editarPessoa(@PathVariable("id") Long id) {
 		ModelAndView mvc = new ModelAndView("calendario-atendimentos-servicos/editar-calendario-servicos");

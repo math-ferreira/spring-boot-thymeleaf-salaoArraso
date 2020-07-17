@@ -31,44 +31,44 @@
                         <div class="sb-sidenav-menu-heading">
                             <h6>Para Hoje</h6>
                         </div>
-                        <a class="nav-link" href="atendimentosSemanais-hoje.html">
+                        <a class="nav-link" th:href="@{/calendario/servicos/hoje}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-tachometer-alt"></i>
-                            </div> Atendimentos
+                            </div> Para hoje
                         </a>
                         <div class="sb-sidenav-menu-heading">
                             <h6>Agenda</h6>
                         </div>
-                        <a class="nav-link" href="consultar-calendario.html">
+                        <a class="nav-link">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-table"></i>
-                            </div> Consultar calendario
-                        </a>
-                        <a class="nav-link" href="atendimentosSemanais.html">
-                            <div class="sb-nav-link-icon">
-                                <i class="fas fa-table"></i>
-                            </div> Serviços
+                            </div> Histórico de serviços
                         </a>
                         <div class="sb-sidenav-menu-heading">
-                            <h6>Fluxo de caixa</h6>
+                            <h6>Organização</h6>
                         </div>
-                        <a class="nav-link" href="fluxo-de-caixa.html">
+                        <a class="nav-link" th:href="@{/organizacao/fluxo-caixa}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-chart-area"></i>
-                            </div> Consultar Caixa
+                            </div> Fluxo de caixa
+                        </a>
+                        <a class="nav-link" th:href="@{/organizacao/estoque}">
+                            <div class="sb-nav-link-icon">
+                                <i class="fas fa-chart-area"></i>
+                            </div> Itens e despesas
                         </a>
                         <div class="sb-sidenav-menu-heading">
                             <h6>Contatos</h6>
                         </div>
-                        <a class="nav-link">
+                        <a class="nav-link" th:href="@{/agenda/pessoas}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-book-open"></i>
                             </div> Pessoas
                         </a>
-                        <a class="nav-link" th:href="@{/agenda/atendimentosSemanais}">
+                        <a class="nav-link" th:href="@{/agenda/fornecedores}">
                             <div class="sb-nav-link-icon">
                                 <i class="fas fa-book-open"></i>
-                            </div> Servicos
+                            </div> Fornecedores
                         </a>
                     </div>
                 </div>
@@ -83,10 +83,10 @@
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid">
-					<h1 class="mt-4">Calendário de serviços</h1>
+					<h1 class="mt-4">Histórico de serviços</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
-						<li class="breadcrumb-item active">Calendario de serviços</li>
+						<li class="breadcrumb-item active">Histórico de serviços</li>
 					</ol>
 					<h6>Seção destinada para inclusão, alteração e consulta de
 						serviços a serem realizados no Salão, sendo necessario informar dados basicos para consulta.</h6>
