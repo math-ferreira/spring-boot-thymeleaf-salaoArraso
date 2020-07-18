@@ -22,9 +22,51 @@
 
     //masks
     $(document).ready(function() {
-        $('#phone-number').mask('0000-0000');
-        $('#valor').mask('#.##0,00', { reverse: true });
+        var pathname = window.location.pathname;
+        if ((pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/editar/") == 0) || (pathname.indexOf("/salao_arrazus/v1/agenda/fornecedores/editar/") == 0)) {
+            $("#tipo-telefone").change(function() {
+                var text = $('#tipo-telefone option:selected').val();
+                if (text == 'RESIDENCIAL' || text == 'COMERCIAL') {
+                    $("#numeroTelefone").inputmask({
+                        mask: ['(99) 9999-9999'],
+                        keepStatic: true
+                    });
+
+                } else if (text == 'CELULAR') {
+                    $("#numeroTelefone").inputmask({
+                        mask: ['(99) 99999-9999'],
+                        keepStatic: true
+                    });
+
+                } else {
+                    $("#numeroTelefone").inputmask({
+                        mask: [''],
+                        keepStatic: true
+                    });
+                }
+            });
+
+            var text = $('#tipo-telefone option:selected').val();
+            if (text == 'RESIDENCIAL' || text == 'COMERCIAL') {
+                $("#numeroTelefone").inputmask({
+                    mask: ['(99) 9999-9999'],
+                    keepStatic: true
+                });
+
+            } else if (text == 'CELULAR') {
+                $("#numeroTelefone").inputmask({
+                    mask: ['(99) 99999-9999'],
+                    keepStatic: true
+                });
+
+            } else {
+                $("#numeroTelefone").unmask();
+            }
+
+            $('#valor').mask('#.##0,00', { reverse: true });
+        }
     });
+
 
     $(document).ready(function() {
         if ($('#valor').val() == 0) {
@@ -49,7 +91,6 @@
     $("#btn-salvar").on("click",
         function(e) {
             var pathname = window.location.pathname;
-            console.log("aqui: " + pathname);
             if ((
                     pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar") == 0 ||
                     pathname.indexOf("/salao_arrazus/v1/calendario/servicos/adicionar") == 0 ||
@@ -213,16 +254,14 @@
                     var b = moment(new Date(), 'D/M/YYYY');
 
                     var diffDays = b.diff(a, 'months');
-                    alert(resposta.data);
-
-                    if (diffDays > 0) {
-                        var valorTotal = 0;
-                        for (var i = 0; i < msg.length; i++) {
-                            var res = JSON.parse(JSON.stringify(msg))[i];
-                            valorTotal += parseFloat(resp.valor);
-                        } //CORRIGIR
-                        document.getElementById("p-media-receita").textContent = "- Receita média: R$ " + valorTotal / diffDays;
+                    console.log("aqui: " + diffDays);
+                    var valorTotal = 0;
+                    for (var i = 0; i < msg.length; i++) {
+                        var resp = JSON.parse(JSON.stringify(msg))[i];
+                        valorTotal += parseFloat(resp.valor);
                     }
+                    document.getElementById("p-media-receita").textContent = "- Receita média: R$ " + valorTotal / diffDays;
+                    if (diffDays > 0) {}
 
                 });
 
@@ -237,7 +276,6 @@
                 .done(function(msg) {
                     var resposta = JSON.parse(JSON.stringify(msg))[0];
                     var date = new Date(resposta.data);
-                    console.log(resposta.data);
                     var a = moment(date, 'D/M/YYYY');
                     var b = moment(new Date(), 'D/M/YYYY');
                     var diffDays = b.diff(a, 'months');

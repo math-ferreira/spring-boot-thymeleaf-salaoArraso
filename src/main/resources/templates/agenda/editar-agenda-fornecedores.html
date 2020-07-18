@@ -116,13 +116,12 @@
 								<label for="validationDefault03">Telefone</label> <input
 									type="text" class="form-control" id="numeroTelefone"
 									placeholder="(99) 9999-9999" required
-									data-mask="(00) 00000-0000"
 									th:field=*{contato.telefones[0].numeroTelefone}>
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="validationDefault04">Tipo Telefone</label> <select
 									class="custom-select"
-									th:field="*{contato.telefones[0].tipoTelefone}">
+									th:field="*{contato.telefones[0].tipoTelefone}" id="tipo-telefone">
 									<option
 										th:each="tipoTelefone : ${T(com.salaoarrazus.domain.model.enums.TipoTelefone).values()}"
 										th:value="${tipoTelefone}" th:text="${tipoTelefone}"></option>
@@ -169,6 +168,8 @@
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
 		crossorigin="anonymous"></script>
+		<script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
 
 	<!-- Modal Salvar-->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
