@@ -63,12 +63,13 @@
                 $("#numeroTelefone").unmask();
             }
 
-            $('#valor').mask('#.##0,00', { reverse: true });
+
         }
     });
 
 
     $(document).ready(function() {
+        $('#valor').mask('#.##0,00', { reverse: true });
         if ($('#valor').val() == 0) {
             $('#valor').val("");
         }
@@ -295,7 +296,7 @@
     $(document).ready(function() {
         var pathname = window.location.pathname;
         if (pathname == "/salao_arrazus/v1/calendario/servicos/hoje") {
-            var b = moment().format('MM/DD/YYYY');
+            var b = moment().format('DD/MM/YYYY');
             document.getElementById("titulo-data-hoje").textContent = "Data de hoje: " + b;
         }
     });

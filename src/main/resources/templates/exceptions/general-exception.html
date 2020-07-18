@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link th:href="@{/css/styles.css}" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<body class="sb-nav-fixed">
+    <div class="page-wrap d-flex flex-row align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <span class="display-1 d-block" th:text="${code}"></span>
+                    <div class="mb-4 lead">
+                        <h6 th:text="${descricaoCode}"></h6><br>
+                        <strong><h3 th:text="${detalhe}"></h3></strong><br>
+                        <strong><h3>Por favor, certifique-se da ação que deseja realizar e retorne a pagina!</h3></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

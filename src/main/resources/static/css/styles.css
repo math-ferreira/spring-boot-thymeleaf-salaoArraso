@@ -80,6 +80,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fff;
+    background: #dedede;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -5008,6 +5009,10 @@ input[type=button].btn-block {
     color: #007bff;
     background-color: #fff;
     border: 1px solid #dee2e6;
+}
+
+.page-wrap {
+    min-height: 100vh;
 }
 
 .page-link:hover {
