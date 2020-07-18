@@ -1,0 +1,85 @@
+2020-07-18 12:16:36.170 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - ### - Iniciando aplicacao
+2020-07-18 12:16:36.402 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - ### - Iniciando aplicacao
+2020-07-18 12:16:36.847 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - Starting SalaoArrazusApplication on DESKTOP-MATH with PID 11108 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-07-18 12:16:36.849 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - No active profile set, falling back to default profiles: default
+2020-07-18 12:16:36.916 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-18 12:16:36.917 [] INFO  - org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-18 12:16:38.291 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-07-18 12:16:38.430 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 126ms. Found 7 JPA repository interfaces.
+2020-07-18 12:16:39.559 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-18 12:16:39.571 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-18 12:16:39.573 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-18 12:16:39.717 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] - Initializing Spring embedded WebApplicationContext
+2020-07-18 12:16:39.718 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2800 ms
+2020-07-18 12:16:39.960 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-18 12:16:40.023 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-07-18 12:16:40.101 [] INFO  - org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-07-18 12:16:40.338 [] INFO  - org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-07-18 12:16:40.498 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-07-18 12:16:40.618 [] INFO  - springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-18 12:16:40.728 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-07-18 12:16:40.749 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-07-18 12:16:40.789 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-18 12:16:40.882 [] INFO  - org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-18 12:16:41.362 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-07-18 12:16:41.363 [] INFO  - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-07-18 12:16:41.401 [] INFO  - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-07-18 12:16:41.439 [] INFO  - springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-07-18 12:16:41.766 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2020-07-18 12:16:41.781 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_1
+2020-07-18 12:16:41.834 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: agendaUsingGET_1
+2020-07-18 12:16:41.838 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_2
+2020-07-18 12:16:41.854 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_2
+2020-07-18 12:16:41.877 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: agendaUsingGET_2
+2020-07-18 12:16:41.881 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_3
+2020-07-18 12:16:41.885 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: editarPessoaUsingGET_1
+2020-07-18 12:16:41.895 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_3
+2020-07-18 12:16:41.911 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_4
+2020-07-18 12:16:41.926 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2020-07-18 12:16:51.430 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-07-18 12:16:51.440 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-18 12:16:51.829 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2020-07-18 12:16:51.841 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - Started SalaoArrazusApplication in 15.427 seconds (JVM running for 17.274)
+2020-07-18 12:24:45.480 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-07-18 12:24:45.481 [] INFO  - org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-07-18 12:24:48.309 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-18 12:24:48.312 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-07-18 12:24:48.344 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-07-18 12:24:48.414 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - ### - Iniciando aplicacao
+2020-07-18 12:24:48.497 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - Starting SalaoArrazusApplication on DESKTOP-MATH with PID 11108 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-07-18 12:24:48.498 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - No active profile set, falling back to default profiles: default
+2020-07-18 12:24:49.153 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-07-18 12:24:49.221 [] INFO  - org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68ms. Found 7 JPA repository interfaces.
+2020-07-18 12:24:49.381 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-18 12:24:49.382 [] INFO  - org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-18 12:24:49.383 [] INFO  - org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-18 12:24:49.413 [] INFO  - org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] - Initializing Spring embedded WebApplicationContext
+2020-07-18 12:24:49.413 [] INFO  - org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 907 ms
+2020-07-18 12:24:49.486 [] INFO  - org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-18 12:24:49.511 [] INFO  - org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-07-18 12:24:49.523 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2020-07-18 12:24:49.528 [] INFO  - com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2020-07-18 12:24:49.529 [] INFO  - org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-07-18 12:24:49.751 [] INFO  - springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-18 12:24:49.837 [] INFO  - org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-18 12:24:49.848 [] INFO  - org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-18 12:24:49.983 [] INFO  - org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-07-18 12:24:49.984 [] INFO  - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-07-18 12:24:49.985 [] INFO  - springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-07-18 12:24:49.991 [] INFO  - springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-07-18 12:24:50.105 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_1
+2020-07-18 12:24:50.116 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_1
+2020-07-18 12:24:50.155 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: agendaUsingGET_1
+2020-07-18 12:24:50.160 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_2
+2020-07-18 12:24:50.197 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_2
+2020-07-18 12:24:50.217 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: agendaUsingGET_2
+2020-07-18 12:24:50.220 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: deleteUsingDELETE_3
+2020-07-18 12:24:50.223 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: editarPessoaUsingGET_1
+2020-07-18 12:24:50.230 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_3
+2020-07-18 12:24:50.246 [] INFO  - s.documentation.spring.web.readers.operation.CachingOperationNameGenerator - Generating unique operation named: saveUsingPOST_4
+2020-07-18 12:24:50.248 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+2020-07-18 12:24:58.369 [] INFO  - org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-07-18 12:24:58.370 [] INFO  - org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-18 12:24:58.480 [] INFO  - o.s.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+2020-07-18 12:24:58.484 [] INFO  - com.salaoarrazus.SalaoArrazusApplication - Started SalaoArrazusApplication in 10.062 seconds (JVM running for 503.917)
+2020-07-18 12:24:58.486 [] INFO  - o.s.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
