@@ -1,0 +1,378 @@
+[2020-07-18T23:25:57.057Z] [com.salaoarrazus.SalaoArrazusApplication] [main] [13] [INFO ] ### - Iniciando aplicacao
+[2020-07-18T23:25:57.057Z] [com.salaoarrazus.SalaoArrazusApplication] [restartedMain] [13] [INFO ] ### - Iniciando aplicacao
+[2020-07-18T23:25:58.058Z] [org.springframework.boot.StartupInfoLogger] [restartedMain] [55] [INFO ] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 17404 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+[2020-07-18T23:25:58.058Z] [org.springframework.boot.SpringApplication] [restartedMain] [651] [INFO ] No active profile set, falling back to default profiles: default
+[2020-07-18T23:25:58.058Z] [org.springframework.boot.logging.DeferredLog] [restartedMain] [225] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2020-07-18T23:25:58.058Z] [org.springframework.boot.logging.DeferredLog] [restartedMain] [225] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2020-07-18T23:25:59.059Z] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [127] [INFO ] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+[2020-07-18T23:26:00.000Z] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [187] [INFO ] Finished Spring Data repository scanning in 134ms. Found 7 JPA repository interfaces.
+[2020-07-18T23:26:01.001Z] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [108] [INFO ] Tomcat initialized with port(s): 8080 (http)
+[2020-07-18T23:26:01.001Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing ProtocolHandler ["http-nio-8080"]
+[2020-07-18T23:26:01.001Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2020-07-18T23:26:01.001Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-07-18T23:26:01.001Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2020-07-18T23:26:01.001Z] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [285] [INFO ] Root WebApplicationContext: initialization completed in 2853 ms
+[2020-07-18T23:26:01.001Z] [org.springframework.scheduling.concurrent.ExecutorConfigurationSupport] [restartedMain] [181] [INFO ] Initializing ExecutorService 'applicationTaskExecutor'
+[2020-07-18T23:26:01.001Z] [org.hibernate.jpa.internal.util.LogHelper] [task-1] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2020-07-18T23:26:01.001Z] [org.hibernate.Version] [task-1] [44] [INFO ] HHH000412: Hibernate ORM core version 5.4.17.Final
+[2020-07-18T23:26:01.001Z] [org.hibernate.annotations.common.reflection.java.JavaReflectionManager] [task-1] [49] [INFO ] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[2020-07-18T23:26:01.001Z] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [220] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2020-07-18T23:26:02.002Z] [com.zaxxer.hikari.HikariDataSource] [task-1] [110] [INFO ] HikariPool-1 - Starting...
+[2020-07-18T23:26:02.002Z] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping] [restartedMain] [69] [INFO ] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-07-18T23:26:02.002Z] [com.zaxxer.hikari.HikariDataSource] [task-1] [123] [INFO ] HikariPool-1 - Start completed.
+[2020-07-18T23:26:02.002Z] [org.hibernate.dialect.Dialect] [task-1] [172] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[2020-07-18T23:26:02.002Z] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [58] [INFO ] LiveReload server is running on port 35729
+[2020-07-18T23:26:02.002Z] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] [restartedMain] [58] [INFO ] Adding welcome page template: index
+[2020-07-18T23:26:02.002Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting ProtocolHandler ["http-nio-8080"]
+[2020-07-18T23:26:02.002Z] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [220] [INFO ] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+[2020-07-18T23:26:02.002Z] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [restartedMain] [147] [INFO ] Context refreshed
+[2020-07-18T23:26:02.002Z] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [restartedMain] [150] [INFO ] Found 1 custom documentation plugin(s)
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner] [restartedMain] [41] [INFO ] Scanning for api listing references
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: deleteUsingDELETE_1
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_1
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: agendaUsingGET_1
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: deleteUsingDELETE_2
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_2
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: agendaUsingGET_2
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: deleteUsingDELETE_3
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: editarPessoaUsingGET_1
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_3
+[2020-07-18T23:26:03.003Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_4
+[2020-07-18T23:26:03.003Z] [org.springframework.data.repository.config.DeferredRepositoryInitializationListener] [restartedMain] [49] [INFO ] Triggering deferred initialization of Spring Data repositories…
+[2020-07-18T23:26:12.012Z] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [task-1] [52] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2020-07-18T23:26:12.012Z] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [task-1] [416] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2020-07-18T23:26:13.013Z] [org.springframework.data.repository.config.DeferredRepositoryInitializationListener] [restartedMain] [53] [INFO ] Spring Data repositories initialized!
+[2020-07-18T23:26:13.013Z] [org.springframework.boot.StartupInfoLogger] [restartedMain] [61] [INFO ] Started SalaoArrazusApplication in 15.3 seconds (JVM running for 17.134)
+[2020-07-18T23:26:15.015Z] [org.apache.juli.logging.DirectJDKLog] [http-nio-8080-exec-1] [173] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-07-18T23:26:15.015Z] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8080-exec-1] [525] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2020-07-18T23:26:15.015Z] [org.springframework.web.servlet.FrameworkServlet] [http-nio-8080-exec-1] [547] [INFO ] Completed initialization in 12 ms
+[2020-07-18T23:26:42.042Z] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [Thread-182] [598] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2020-07-18T23:26:42.042Z] [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] [Thread-182] [526] [INFO ] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[2020-07-18T23:26:44.044Z] [org.springframework.scheduling.concurrent.ExecutorConfigurationSupport] [Thread-182] [218] [INFO ] Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-07-18T23:26:44.044Z] [com.zaxxer.hikari.HikariDataSource] [Thread-182] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2020-07-18T23:26:44.044Z] [com.zaxxer.hikari.HikariDataSource] [Thread-182] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2020-07-18T23:26:44.044Z] [com.salaoarrazus.SalaoArrazusApplication] [restartedMain] [13] [INFO ] ### - Iniciando aplicacao
+[2020-07-18T23:26:44.044Z] [org.springframework.boot.StartupInfoLogger] [restartedMain] [55] [INFO ] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 17404 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+[2020-07-18T23:26:44.044Z] [org.springframework.boot.SpringApplication] [restartedMain] [651] [INFO ] No active profile set, falling back to default profiles: default
+[2020-07-18T23:26:45.045Z] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [127] [INFO ] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+[2020-07-18T23:26:45.045Z] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [187] [INFO ] Finished Spring Data repository scanning in 60ms. Found 7 JPA repository interfaces.
+[2020-07-18T23:26:45.045Z] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [108] [INFO ] Tomcat initialized with port(s): 8080 (http)
+[2020-07-18T23:26:45.045Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing ProtocolHandler ["http-nio-8080"]
+[2020-07-18T23:26:45.045Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2020-07-18T23:26:45.045Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-07-18T23:26:45.045Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2020-07-18T23:26:45.045Z] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [285] [INFO ] Root WebApplicationContext: initialization completed in 975 ms
+[2020-07-18T23:26:45.045Z] [org.springframework.scheduling.concurrent.ExecutorConfigurationSupport] [restartedMain] [181] [INFO ] Initializing ExecutorService 'applicationTaskExecutor'
+[2020-07-18T23:26:45.045Z] [org.hibernate.jpa.internal.util.LogHelper] [task-1] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2020-07-18T23:26:45.045Z] [com.zaxxer.hikari.HikariDataSource] [task-1] [110] [INFO ] HikariPool-2 - Starting...
+[2020-07-18T23:26:45.045Z] [com.zaxxer.hikari.HikariDataSource] [task-1] [123] [INFO ] HikariPool-2 - Start completed.
+[2020-07-18T23:26:45.045Z] [org.hibernate.dialect.Dialect] [task-1] [172] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[2020-07-18T23:26:45.045Z] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [220] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_atendimentos_marcados 
+       drop 
+       foreign key FKq6tatfpr3se40yghdtyrhx4c8" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_atendimentos_marcados 
+       drop 
+       foreign key FKq6tatfpr3se40yghdtyrhx4c8" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_atendimentos_marcados' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_fornecedor 
+       drop 
+       foreign key FKkedbhljlqjbys0d954hvkuo9m" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_fornecedor 
+       drop 
+       foreign key FKkedbhljlqjbys0d954hvkuo9m" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_fornecedor' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_fornecedor 
+       drop 
+       foreign key FKt22uj0v9290e9o2f6hhq42xgx" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_fornecedor 
+       drop 
+       foreign key FKt22uj0v9290e9o2f6hhq42xgx" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_fornecedor' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_pessoa 
+       drop 
+       foreign key FKav5k0hcvimm48rl9u87hevpf" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_pessoa 
+       drop 
+       foreign key FKav5k0hcvimm48rl9u87hevpf" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_pessoa' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_pessoa 
+       drop 
+       foreign key FKl31k8vsgy8xi1rjn1mo8wdn5p" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_pessoa 
+       drop 
+       foreign key FKl31k8vsgy8xi1rjn1mo8wdn5p" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_pessoa' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_produto 
+       drop 
+       foreign key FKn028hp0khdv07pfvr1h8msjrt" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_produto 
+       drop 
+       foreign key FKn028hp0khdv07pfvr1h8msjrt" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_produto' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [task-1] [27] [WARN ] GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table tb_telefone 
+       drop 
+       foreign key FK49p5hinwibyd60poyc2olrvb" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table tb_telefone 
+       drop 
+       foreign key FK49p5hinwibyd60poyc2olrvb" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'salao_arrazus.tb_telefone' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 19 common frames omitted
+[2020-07-18T23:26:45.045Z] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping] [restartedMain] [69] [INFO ] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-07-18T23:26:45.045Z] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [58] [INFO ] LiveReload server is running on port 35729
+[2020-07-18T23:26:45.045Z] [org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping] [restartedMain] [58] [INFO ] Adding welcome page template: index
+[2020-07-18T23:26:45.045Z] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting ProtocolHandler ["http-nio-8080"]
+[2020-07-18T23:26:45.045Z] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [220] [INFO ] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+[2020-07-18T23:26:45.045Z] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [restartedMain] [147] [INFO ] Context refreshed
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper] [restartedMain] [150] [INFO ] Found 1 custom documentation plugin(s)
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner] [restartedMain] [41] [INFO ] Scanning for api listing references
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: deleteUsingDELETE_1
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_1
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: agendaUsingGET_1
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: deleteUsingDELETE_2
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_2
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader] [restartedMain] [86] [WARN ] Trying to infer dataType org.springframework.ui.ModelMap
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: agendaUsingGET_2
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: deleteUsingDELETE_3
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: editarPessoaUsingGET_1
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_3
+[2020-07-18T23:26:46.046Z] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator] [restartedMain] [40] [INFO ] Generating unique operation named: saveUsingPOST_4
+[2020-07-18T23:26:46.046Z] [org.springframework.data.repository.config.DeferredRepositoryInitializationListener] [restartedMain] [49] [INFO ] Triggering deferred initialization of Spring Data repositories…
+[2020-07-18T23:26:53.053Z] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [task-1] [52] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2020-07-18T23:26:53.053Z] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [task-1] [416] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2020-07-18T23:26:53.053Z] [org.springframework.data.repository.config.DeferredRepositoryInitializationListener] [restartedMain] [53] [INFO ] Spring Data repositories initialized!
+[2020-07-18T23:26:53.053Z] [org.springframework.boot.StartupInfoLogger] [restartedMain] [61] [INFO ] Started SalaoArrazusApplication in 9.556 seconds (JVM running for 57.793)
+[2020-07-18T23:26:53.053Z] [org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener] [restartedMain] [63] [INFO ] Condition evaluation unchanged
+[2020-07-18T23:28:33.033Z] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [Thread-186] [598] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2020-07-18T23:28:33.033Z] [org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl] [Thread-186] [526] [INFO ] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[2020-07-18T23:28:35.035Z] [org.springframework.scheduling.concurrent.ExecutorConfigurationSupport] [Thread-186] [218] [INFO ] Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-07-18T23:28:35.035Z] [com.zaxxer.hikari.HikariDataSource] [Thread-186] [350] [INFO ] HikariPool-2 - Shutdown initiated...
+[2020-07-18T23:28:35.035Z] [com.zaxxer.hikari.HikariDataSource] [Thread-186] [352] [INFO ] HikariPool-2 - Shutdown completed.
+[2020-07-18T23:28:35.035Z] [com.salaoarrazus.SalaoArrazusApplication] [restartedMain] [13] [INFO ] ### - Iniciando aplicacao

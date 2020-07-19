@@ -10,7 +10,7 @@ public class SalaoArrazusApplication {
 
 	private static Logger logger = LoggerFactory.getLogger(SalaoArrazusApplication.class);
 	public static void main(String[] args) {
-		logger.info("### - Iniciando aplicacao");
+		logger.info("########################### - Iniciando aplicacao - ###########################");
 		SpringApplication.run(SalaoArrazusApplication.class, args);
 	}
 
