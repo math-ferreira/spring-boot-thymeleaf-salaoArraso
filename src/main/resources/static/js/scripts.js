@@ -23,7 +23,7 @@
     //masks
     $(document).ready(function() {
         var pathname = window.location.pathname;
-        if ((pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/editar/") == 0) || (pathname.indexOf("/salao_arrazus/v1/agenda/fornecedores/editar/") == 0)) {
+        if ((pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/editar/") == 0) || (pathname.indexOf("/salao_arrazus/v1/agenda/pessoas/adicionar") == 0) || (pathname.indexOf("/salao_arrazus/v1/agenda/fornecedores/editar/") == 0) || (pathname.indexOf("/salao_arrazus/v1/agenda/fornecedores/adicionar") == 0)) {
             $("#tipo-telefone").change(function() {
                 var text = $('#tipo-telefone option:selected').val();
                 if (text == 'RESIDENCIAL' || text == 'COMERCIAL') {
