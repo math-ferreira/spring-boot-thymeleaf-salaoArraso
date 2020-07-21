@@ -29,7 +29,7 @@ public class FluxoCaixaController {
 	@GetMapping()
 	public String fluxo(ModelMap model) {
 		logger.info("# Pagina inicial de fluxo de caixa");
-		return "organizacao/index-fluxo-de-caixa";
+		return "organizacao/index-fluxo-de-caixa.html";
 	}
 
 	@GetMapping("/saldo-receitas")

@@ -32,13 +32,13 @@ public class FornecedorController {
 	public String agenda(ModelMap model) {
 		logger.info("# Pagina inicial de contatos fornecedores");
 		model.addAttribute("fornecedores", fornecedorService.getFornecedores());
-		return "agenda/index-agenda-fornecedores";
+		return "agenda/index-agenda-fornecedores.html";
 	}
 	
 	@GetMapping("/editar/{id}/fornecedor")
 	public ModelAndView editarFornecedor(@PathVariable("id") Long id) {
 		logger.info("# Pagina editar fornecedor com id: " + id);
-		ModelAndView mvc = new ModelAndView("agenda/editar-agenda-fornecedores");
+		ModelAndView mvc = new ModelAndView("agenda/editar-agenda-fornecedores.html");
 		mvc.addObject("fornecedor", fornecedorService.getFornecedorById(id));
 		return mvc;
 	}
@@ -46,7 +46,7 @@ public class FornecedorController {
 	@GetMapping("/adicionar")
 	public ModelAndView adicionarFornecedor(Fornecedor fornecedor) {
 		logger.info("# Pagina adicionar novo fornecedor");
-		ModelAndView mv = new ModelAndView("agenda/editar-agenda-fornecedores");
+		ModelAndView mv = new ModelAndView("agenda/editar-agenda-fornecedores.html");
 		mv.addObject("fornecedor", fornecedor);
 		return mv;
 	}
@@ -67,6 +67,6 @@ public class FornecedorController {
 	public String delete(@PathVariable("id") Long id) {
 		logger.info("# Removendo fornecedor com id: " + id);
 		fornecedorService.deleteFornecedor(id);
-		return "redirect:/agenda/fornecedores";
+		return "redirect:http://localhost:8080/salao_arrazus/v1/agenda/fornecedores";
 	}
 }

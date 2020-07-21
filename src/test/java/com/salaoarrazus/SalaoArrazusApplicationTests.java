@@ -29,7 +29,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class SalaoArrazusApplicationTests {
 
-	@Autowired
+/*	@Autowired
 	private PessoaService pessoaService;
 
 	@Autowired
@@ -194,6 +194,6 @@ class SalaoArrazusApplicationTests {
 		assertEquals(produtoService.getProdutos().size(), 0);
 		fornecedorService.deleteFornecedor(1L);
 		assertEquals(fornecedorService.getFornecedores().size(), 0);
-	}
+	} */
 	
 }

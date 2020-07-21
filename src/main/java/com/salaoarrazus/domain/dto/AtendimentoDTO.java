@@ -3,13 +3,14 @@ package com.salaoarrazus.domain.dto;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import org.modelmapper.ModelMapper;
-
 import com.salaoarrazus.domain.model.Atendimento;
 import com.salaoarrazus.domain.model.Pessoa;
 import com.salaoarrazus.domain.model.enums.ModoPagamento;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 import com.salaoarrazus.domain.model.enums.TipoAtendimento;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -17,7 +18,10 @@ import lombok.Data;
 public class AtendimentoDTO {
 
 	private Long id;
+
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime dataAtendimento;
+	
 	private BigDecimal valorAtendimento;
 	private boolean atendimentoRealizado;
 	private TipoAtendimento tipoAtendimento;

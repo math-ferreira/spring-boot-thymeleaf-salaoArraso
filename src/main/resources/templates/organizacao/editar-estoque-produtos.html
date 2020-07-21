@@ -119,9 +119,9 @@
 								</select>
 							</div>
 							<div class="col-md-3 mb-3">
-								<label for="validationDefault01">Data compra</label> <input type="text"
+								<label for="validationDefault01">Data compra</label> <input type="datetime-local"
 									class="form-control" id="data" placeholder="00/00/0000 00:00"
-									data-mask="00/00/0000 00:00" required th:field="*{data}">
+									required th:field="*{data}">
 							</div>
 							<div class="col-md-4 mb-3">
 								<label for="validationDefault04">Fornecedor do item / produto</label> <select class="custom-select"
@@ -150,6 +150,9 @@
 	<script th:src="@{/js/scripts.js}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
 		crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+		<script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
 
 	<!-- Modal Salvar-->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

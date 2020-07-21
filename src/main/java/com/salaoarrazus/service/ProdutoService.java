@@ -74,6 +74,13 @@ public class ProdutoService {
 		return ProdutoDTO.create(produtoRepository.save(produtoGravado));
 	}
 
+	public List<ProdutoDTO> converteDataGTMLocal(List<ProdutoDTO> produtos) {
+		for (ProdutoDTO produto : produtos) {
+			produto.setData(produto.getData().plusHours(3));
+		}
+		return produtos;
+	}
+
 	public void deleteProduto(Long id) {
 		produtoRepository.deleteById(id);
 	}

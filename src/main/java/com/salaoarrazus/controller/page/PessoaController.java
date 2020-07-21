@@ -33,13 +33,13 @@ public class PessoaController {
 	public String agenda(ModelMap model) {
 		logger.info("# Pagina inicial de contatos pessoas");
 		model.addAttribute("pessoas", pessoaService.getPessoas());
-		return "agenda/index-agenda-pessoas";
+		return "agenda/index-agenda-pessoas.html";
 	}
 
 	@GetMapping("/editar/{id}/pessoa")
 	public ModelAndView editarPessoa(@PathVariable("id") Long id) {
 		logger.info("# Pagina editar pessoa com id: " + id);
-		ModelAndView mvc = new ModelAndView("agenda/editar-agenda-pessoas");
+		ModelAndView mvc = new ModelAndView("agenda/editar-agenda-pessoas.html");
 		mvc.addObject("pessoa", pessoaService.getPessoaById(id));
 		return mvc;
 	}
@@ -47,7 +47,7 @@ public class PessoaController {
 	@GetMapping("/adicionar")
 	public ModelAndView adicionarPessoa(Pessoa pessoa) {
 		logger.info("# Pagina adicionar nova pessoa");
-		ModelAndView mv = new ModelAndView("agenda/editar-agenda-pessoas");
+		ModelAndView mv = new ModelAndView("agenda/editar-agenda-pessoas.html");
 		mv.addObject("pessoa", pessoa);
 		return mv;
 	}
@@ -68,6 +68,6 @@ public class PessoaController {
 	public String delete(@PathVariable("id") Long id) {
 		logger.info("# Removendo pessoa com id: " + id);
 		pessoaService.deletePessoa(id);
-		return "redirect:/agenda/pessoas";
+		return "redirect:http://localhost:8080/salao_arrazus/v1/agenda/pessoas";
 	}
 }

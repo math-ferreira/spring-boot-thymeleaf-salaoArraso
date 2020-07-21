@@ -116,9 +116,9 @@
 								</div>
 							</th:block>
 							<div class="col-md-3 mb-3">
-								<label for="validationDefault01">Data e Hora Atendimento</label> <input type="text"
+								<label for="validationDefault01">Data e Hora Atendimento</label> <input type="datetime-local"
 									class="form-control" id="data" placeholder="00/00/0000 00:00"
-									data-mask="00/00/0000 00:00" required th:field="*{dataAtendimento}">
+									required th:field="*{dataAtendimento}">
 							</div>
 							<div class="col-md-2 mb-3">
 								<label for="validationDefault05">Valor (R$)</label> <input type="text"
@@ -185,6 +185,10 @@
 	<script th:src="@{/js/scripts.js}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"
 		crossorigin="anonymous"></script>
+		<script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 </body>
 
 </html>

@@ -9,6 +9,7 @@ import com.salaoarrazus.domain.model.enums.StatusCaixa;
 import com.salaoarrazus.domain.model.enums.StatusPagamento;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -19,7 +20,10 @@ public class ProdutoDTO {
 	private String descricaoProduto;
 	private Integer quantidade;
 	private BigDecimal valor;
+
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime data;
+	
 	private StatusPagamento statusPagamento;
 	private Fornecedor fornecedor;
 	private StatusCaixa statusCaixa;

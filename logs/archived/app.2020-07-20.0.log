@@ -1,0 +1,112 @@
+2020-07-20 13:42:10,783 INFO com.salaoarrazus.SalaoArrazusApplication [main] ########################### - Iniciando aplicacao - ###########################
+2020-07-20 13:42:11,915 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] ########################### - Iniciando aplicacao - ###########################
+2020-07-20 13:42:13,975 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 15576 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-07-20 13:42:13,979 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-07-20 13:42:14,347 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-20 13:42:14,351 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-20 13:42:20,533 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-07-20 13:42:21,085 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 483ms. Found 7 JPA repository interfaces.
+2020-07-20 13:42:25,737 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-07-20 13:42:25,813 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-20 13:42:25,813 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-07-20 13:42:25,817 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-20 13:42:26,401 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-07-20 13:42:26,401 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 12050 ms
+2020-07-20 13:42:27,685 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-20 13:42:28,233 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-07-20 13:42:28,657 INFO org.hibernate.Version [task-1] HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-07-20 13:42:29,821 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-07-20 13:42:29,877 INFO org.hibernate.annotations.common.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-07-20 13:42:30,609 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-1 - Starting...
+2020-07-20 13:42:30,825 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-20 13:42:31,657 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-07-20 13:42:31,885 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-07-20 13:42:32,037 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-1 - Start completed.
+2020-07-20 13:42:32,185 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-07-20 13:42:33,101 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-07-20 13:42:34,504 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-07-20 13:42:34,512 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2020-07-20 13:42:34,788 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2020-07-20 13:42:35,204 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2020-07-20 13:42:36,808 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-20 13:42:36,852 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-20 13:42:37,120 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_1
+2020-07-20 13:42:37,153 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-20 13:42:37,209 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_1
+2020-07-20 13:42:37,237 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-20 13:42:37,498 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-20 13:42:37,506 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_1
+2020-07-20 13:42:37,530 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_2
+2020-07-20 13:42:37,610 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_2
+2020-07-20 13:42:37,718 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-07-20 13:42:37,730 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_2
+2020-07-20 13:42:37,746 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_3
+2020-07-20 13:42:37,762 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: editarPessoaUsingGET_1
+2020-07-20 13:42:37,822 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_3
+2020-07-20 13:42:37,906 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_4
+2020-07-20 13:42:37,974 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-07-20 13:42:39,271 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-07-20 13:42:39,319 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-07-20 13:42:40,867 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-07-20 13:42:40,915 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Started SalaoArrazusApplication in 28.938 seconds (JVM running for 42.172)
+2020-07-20 13:42:47,528 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-20 13:42:47,528 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-07-20 13:42:47,568 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 36 ms
+2020-07-20 13:42:53,529 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina inicial de atendimentos serviços
+2020-07-20 13:42:56,783 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Pagina adicionar novo Servico
+2020-07-20 13:43:14,838 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina editar servico com id: 4
+2020-07-20 13:43:31,754 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina editar servico com id: 4
+2020-07-20 13:43:32,750 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Pagina editar servico com id: 4
+2020-07-20 13:43:38,818 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina editar servico com id: 4
+2020-07-20 13:43:45,841 ERROR com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Exception bindNoSuchException, com LocalizedMessage: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'atendimento' on field 'dataAtendimento': rejected value [12/04/199521:55]; codes [typeMismatch.atendimento.dataAtendimento,typeMismatch.dataAtendimento,typeMismatch.java.time.LocalDateTime,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [atendimento.dataAtendimento,dataAtendimento]; arguments []; default message [dataAtendimento]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDateTime' for property 'dataAtendimento'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value '12/04/199521:55'; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [12/04/199521:55]] - cause: null
+2020-07-20 13:43:45,841 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-10] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'atendimento' on field 'dataAtendimento': rejected value [12/04/199521:55]; codes [typeMismatch.atendimento.dataAtendimento,typeMismatch.dataAtendimento,typeMismatch.java.time.LocalDateTime,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [atendimento.dataAtendimento,dataAtendimento]; arguments []; default message [dataAtendimento]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDateTime' for property 'dataAtendimento'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value '12/04/199521:55'; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [12/04/199521:55]]]
+2020-07-20 13:44:38,407 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-1] # Pagina inicial de atendimentos serviços
+2020-07-20 13:44:40,268 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-8] # Pagina adicionar novo Servico
+2020-07-20 13:44:53,597 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-7] # Inserindo novo servico com body: com.salaoarrazus.domain.model.Atendimento@1f
+2020-07-20 13:44:54,153 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-6] # Pagina inicial de atendimentos serviços
+2020-07-20 13:44:59,264 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-1] # Pagina adicionar novo Servico
+2020-07-20 13:45:07,397 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina editar servico com id: 5
+2020-07-20 13:47:29,309 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Pagina editar servico com id: 5
+2020-07-20 13:47:30,435 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina editar servico com id: 5
+2020-07-20 13:47:58,810 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-9] # Pagina editar servico com id: 5
+2020-07-20 13:48:12,835 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-9] # Pagina inicial de contatos pessoas
+2020-07-20 13:48:14,617 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Pagina editar pessoa com id: 8
+2020-07-20 13:48:56,109 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina editar pessoa com id: 8
+2020-07-20 13:49:04,861 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina inicial de atendimentos serviços
+2020-07-20 13:49:08,358 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-7] # Pagina editar servico com id: 4
+2020-07-20 13:49:44,562 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina editar servico com id: 4
+2020-07-20 13:49:51,014 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-1] # Pagina editar servico com id: 4
+2020-07-20 13:50:18,085 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina inicial de itens
+2020-07-20 13:50:19,732 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-9] # Pagina editar item com id: 4
+2020-07-20 13:50:32,105 ERROR com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Exception bindNoSuchException, com LocalizedMessage: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'produto' on field 'data': rejected value [23/23/11]; codes [typeMismatch.produto.data,typeMismatch.data,typeMismatch.java.time.LocalDateTime,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [produto.data,data]; arguments []; default message [data]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDateTime' for property 'data'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value '23/23/11'; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [23/23/11]] - cause: null
+2020-07-20 13:50:32,109 WARN org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [http-nio-8080-exec-5] Resolved [org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
+Field error in object 'produto' on field 'data': rejected value [23/23/11]; codes [typeMismatch.produto.data,typeMismatch.data,typeMismatch.java.time.LocalDateTime,typeMismatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [produto.data,data]; arguments []; default message [data]]; default message [Failed to convert property value of type 'java.lang.String' to required type 'java.time.LocalDateTime' for property 'data'; nested exception is org.springframework.core.convert.ConversionFailedException: Failed to convert from type [java.lang.String] to type [@org.springframework.format.annotation.DateTimeFormat java.time.LocalDateTime] for value '23/23/11'; nested exception is java.lang.IllegalArgumentException: Parse attempt failed for value [23/23/11]]]
+2020-07-20 13:51:06,474 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina editar item com id: 4
+2020-07-20 13:51:21,884 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-7] # Pagina editar item com id: 4
+2020-07-20 13:51:27,175 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-6] # Atualizando item com id: 4
+2020-07-20 13:51:27,311 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Pagina inicial de itens
+2020-07-20 13:51:30,337 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina editar item com id: 4
+2020-07-20 13:51:34,549 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-7] # Atualizando item com id: 4
+2020-07-20 13:51:34,641 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina inicial de itens
+2020-07-20 13:51:37,626 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Pagina editar item com id: 4
+2020-07-20 13:51:42,374 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Atualizando item com id: 4
+2020-07-20 13:51:42,474 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina inicial de itens
+2020-07-20 13:51:45,675 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina editar item com id: 4
+2020-07-20 13:51:48,723 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Atualizando item com id: 4
+2020-07-20 13:51:48,823 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Pagina inicial de itens
+2020-07-20 13:52:08,918 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina inicial de atendimentos serviços
+2020-07-20 13:52:10,557 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina editar servico com id: 4
+2020-07-20 13:52:15,127 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-5] # Atualizando servico com id: 4
+2020-07-20 13:52:15,287 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Pagina inicial de atendimentos serviços
+2020-07-20 13:52:18,484 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina editar servico com id: 4
+2020-07-20 13:52:26,331 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Atualizando servico com id: 4
+2020-07-20 13:52:26,647 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-9] # Pagina inicial de atendimentos serviços
+2020-07-20 13:52:29,649 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Pagina adicionar novo Servico
+2020-07-20 13:53:08,017 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-8] # Pagina adicionar novo Servico
+2020-07-20 13:54:08,047 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-8] # Pagina inicial de contatos pessoas
+2020-07-20 13:54:12,102 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-9] # Pagina inicial de itens
+2020-07-20 13:54:15,598 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Pagina adicionar novo item
+2020-07-20 13:54:58,802 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-3] # Pagina adicionar novo item

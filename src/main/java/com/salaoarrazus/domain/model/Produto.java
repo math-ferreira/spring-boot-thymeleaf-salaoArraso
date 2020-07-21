@@ -36,7 +36,7 @@ public class Produto implements Serializable {
 	private Integer quantidade;
 	private BigDecimal valor;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private LocalDateTime data;
 	
 	private Integer statusPagamento = StatusPagamento.AGUARDANDO_PAGAMENTO.getCode();

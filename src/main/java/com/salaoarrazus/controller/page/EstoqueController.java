@@ -1,8 +1,10 @@
 package com.salaoarrazus.controller.page;
 
+import java.util.List;
 import java.util.Objects;
 
 import com.salaoarrazus.SalaoArrazusApplication;
+import com.salaoarrazus.domain.dto.ProdutoDTO;
 import com.salaoarrazus.domain.model.Produto;
 import com.salaoarrazus.service.FornecedorService;
 import com.salaoarrazus.service.ProdutoService;
@@ -35,14 +37,15 @@ public class EstoqueController {
 	@GetMapping()
 	public String estoque(ModelMap model) throws Exception {
 		logger.info("# Pagina inicial de itens");
-		model.addAttribute("produtos", produtoService.getProdutos());
-		return "organizacao/index-estoque";
+		List<ProdutoDTO> produtos = produtoService.getProdutos();
+		model.addAttribute("produtos", produtoService.converteDataGTMLocal(produtos));
+		return "organizacao/index-estoque.html";
 	}
 
 	@GetMapping("/editar/{id}/produtos")
 	public ModelAndView editarEstoque(@PathVariable("id") Long id) {
 		logger.info("# Pagina editar item com id: " + id);
-		ModelAndView mvc = new ModelAndView("organizacao/editar-estoque-produtos");
+		ModelAndView mvc = new ModelAndView("organizacao/editar-estoque-produtos.html");
 		mvc.addObject("produto", produtoService.getProdutoById(id));
 		mvc.addObject("fornecedores", fornecedorService.getFornecedores());
 		return mvc;
@@ -51,7 +54,7 @@ public class EstoqueController {
 	@GetMapping("/adicionar")
 	public ModelAndView adicionarEstoque(Produto produto) {
 		logger.info("# Pagina adicionar novo item");
-		ModelAndView mvc = new ModelAndView("organizacao/editar-estoque-produtos");
+		ModelAndView mvc = new ModelAndView("organizacao/editar-estoque-produtos.html");
 		mvc.addObject("produto", produto);
 		mvc.addObject("fornecedores", fornecedorService.getFornecedores());
 		return mvc;
@@ -73,7 +76,7 @@ public class EstoqueController {
 	public String delete(@PathVariable("id") Long id) {
 		logger.info("# Removendo item com id: " + id);
 		produtoService.deleteProduto(id);
-		return "redirect:/organizacao/estoque";
+		return "redirect:http://localhost:8080/salao_arrazus/v1/organizacao/estoque";
 	}
 	
 }

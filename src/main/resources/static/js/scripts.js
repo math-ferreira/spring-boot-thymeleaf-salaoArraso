@@ -301,5 +301,11 @@
         }
     });
 
+    $(document).ready(function() {
+        var pathname = window.location.pathname;
+        if (pathname.indexOf("/salao_arrazus/v1/organizacao/estoque/adicionar") == 0 || pathname.indexOf("/salao_arrazus/v1/organizacao/estoque/editar/") == 0 || pathname.indexOf("/salao_arrazus/v1/calendario/servicos/adicionar") == 0 || pathname.indexOf("/salao_arrazus/v1/calendario/servicos/editar/") == 0) {
+
+        }
+    });
 
 })(jQuery);
