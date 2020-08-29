@@ -21,9 +21,9 @@ Realização de testes no que foi desenvolvido de acordo com os requisitos;
 Implantação em produção do produto final;
 
 # 2. Tecnologias utilizadas:
-
 ![image](https://user-images.githubusercontent.com/48540484/84463495-5c09f280-ac48-11ea-9be7-e71a13a6e133.png)
 
+# 3. Documentação
 - **Requisitos funcionais:**
 Se trata das funcionalidades que o sistema deve ter.
 
@@ -44,8 +44,6 @@ Se trata das funcionalidades que o sistema deve ter.
 		15: O sistema deverá apresentara a lista de fornecedores e seus respectivos contatos para consulta;
 		16: O sistema possibilitara consultar a movimentação de caixa, referente as entradas e saidas;
 		17: O sistema possibilitara filtrar a movimentação de caixa por: entrada, tipo de entrada, saida, tipo de saida, dia, mês, ano e data vigente;
-
-# 3. Documentação
 
 - **Requisitos não funcionais:**
 Estes tratam de recursos que não são funcionalidades, mas sim características do sistema, como restrições, segurança, confiabilidade, velocidade, validações. entre outros.
