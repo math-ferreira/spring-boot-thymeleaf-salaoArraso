@@ -4,6 +4,22 @@ Projeto com SpringBoot e Thymeleaf para gerenciamento de Agenda de um Salão de 
 # Aplicação para gerenciamento - Salão ARRAZUS!
 Sistema para gerenciamento de serviços de salão de beleza. Estara disponivel o gerenciamento de calendario, bem como a agenda de serviços do estabelecimento. 
 
+# Passos realizados no Projeto
+1. Definição de Requisitos:
+Levanta os requisitos mínimos, estuda a viabilidade e define o modelo a ser usado;
+
+2. Documentação do Projeto:
+Envolve atividades de concepção, especificação, design da interface, prototipação, design da arquitetura;
+
+3. Implementação e desenvolvimento:
+Tradução para uma linguagem de programação das funcionalidades definidas durante as fases anteriores;
+
+4. Cobertura e testes:
+Realização de testes no que foi desenvolvido de acordo com os requisitos;
+
+5. Disponilização em produção:
+Implantação em produção do produto final;
+
 - Tecnologias utilizadas:
 
 ![image](https://user-images.githubusercontent.com/48540484/84463495-5c09f280-ac48-11ea-9be7-e71a13a6e133.png)
