@@ -49,9 +49,13 @@ Estes tratam de recursos que não são funcionalidades, mas sim características
 			→ Utilizara o paradigma Orientada a Objetos para o desenvolvimento backend e também o paradigma Relacional para o Banco de Dados. A integragação entre os paradigmas será realizada com a implementação do Hibernate, através da biblioteca padrão de persistencia de objetos no JAVA, o JPA.
 			→ Caso ocorra algum problema na aplicação, que não foi identificado nos testes, este estara disponivel em arquivos de logs do sistema (.txt);
 
-- **Diagrama de Caso de Uso:**
-![image](https://user-images.githubusercontent.com/48540484/84463728-0255f800-ac49-11ea-9d18-56ff63687f8c.png)
+- **Diagrama de Caso de Uso:** Auxilia no levantamento dos requisitos funcionais do sistema, descrevendo um conjunto de funcionalidades do sistema e suas interações com elementos externos.
+![image](https://user-images.githubusercontent.com/48540484/91641512-4b714900-e9fb-11ea-96bf-2d0a3128a385.png)
 
-- **Diagrama Entidade Relacionamento (DER):**
+- **Diagrama de Classes:** É a abstração de um objeto da vida real (vida real que será tratada via software), que agrupa dados (atributos) e procedimentos (operações) relacionados ao seu contexto.
+![image](https://user-images.githubusercontent.com/48540484/91641521-54fab100-e9fb-11ea-9d34-36ce9000b486.png)
 
-![image](https://user-images.githubusercontent.com/48540484/84463536-78a62a80-ac48-11ea-9ec4-fd1d582993b3.png)
+- **Diagrama Entidade Relacionamento (DER):** É um modelo conceitual utilizado na Engenharia de Software para descrever os objetos (entidades) envolvidos em um domínio de negócios, com suas características (atributos) e como elas se relacionam entre si (relacionamentos). Em geral, este modelo representa de forma abstrata a estrutura que possuirá o banco de dados da aplicação.
+
+![image](https://user-images.githubusercontent.com/48540484/91641573-b3279400-e9fb-11ea-9d56-242ffdaf635e.png)
+
