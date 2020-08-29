@@ -1,4 +1,4 @@
-# spring-boot-thymeleaf-salaoArraso
+# Nome projeto: spring-boot-thymeleaf-salaoArraso
 Projeto com SpringBoot e Thymeleaf para gerenciamento de Agenda de um Salão de Beleza
 
 # Aplicação para gerenciamento - Salão ARRAZUS!
