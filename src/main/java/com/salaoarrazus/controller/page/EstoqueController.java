@@ -3,15 +3,10 @@ package com.salaoarrazus.controller.page;
 import java.util.List;
 import java.util.Objects;
 
-import com.salaoarrazus.SalaoArrazusApplication;
-import com.salaoarrazus.domain.dto.ProdutoDTO;
-import com.salaoarrazus.domain.model.Produto;
-import com.salaoarrazus.service.FornecedorService;
-import com.salaoarrazus.service.ProdutoService;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,10 +17,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.salaoarrazus.SalaoArrazusApplication;
+import com.salaoarrazus.domain.dto.ProdutoDTO;
+import com.salaoarrazus.domain.model.Produto;
+import com.salaoarrazus.service.FornecedorService;
+import com.salaoarrazus.service.ProdutoService;
+
 @Controller
 @RequestMapping("/organizacao/estoque")
 public class EstoqueController {
 
+	@Value("${url.domain}")
+	private String domainURL;
+	
+	@Value("${server.servlet.context-path}")
+	private String pathURL;
+	
 	private static Logger logger = LoggerFactory.getLogger(SalaoArrazusApplication.class);
 	
 	@Autowired
@@ -76,7 +83,7 @@ public class EstoqueController {
 	public String delete(@PathVariable("id") Long id) {
 		logger.info("# Removendo item com id: " + id);
 		produtoService.deleteProduto(id);
-		return "redirect:http://localhost:8080/salao_arrazus/v1/organizacao/estoque";
+		return "redirect:" + domainURL + pathURL + "/organizacao/estoque";
 	}
 	
 }

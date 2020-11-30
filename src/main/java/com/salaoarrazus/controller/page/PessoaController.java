@@ -2,13 +2,12 @@ package com.salaoarrazus.controller.page;
 
 import java.util.Objects;
 
-import com.salaoarrazus.SalaoArrazusApplication;
-import com.salaoarrazus.domain.model.Pessoa;
-import com.salaoarrazus.service.PessoaService;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,15 +18,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.salaoarrazus.SalaoArrazusApplication;
+import com.salaoarrazus.domain.model.Pessoa;
+import com.salaoarrazus.service.PessoaService;
+
 @Controller
 @RequestMapping("/agenda/pessoas")
 public class PessoaController {
 
+	@Value("${url.domain}")
+	private String domainURL;
+
+	@Value("${server.servlet.context-path}")
+	private String pathURL;
+
 	private static Logger logger = LoggerFactory.getLogger(SalaoArrazusApplication.class);
-	
+
 	@Autowired
 	private PessoaService pessoaService;
-	
 
 	@GetMapping()
 	public String agenda(ModelMap model) {
@@ -43,7 +51,7 @@ public class PessoaController {
 		mvc.addObject("pessoa", pessoaService.getPessoaById(id));
 		return mvc;
 	}
-	
+
 	@GetMapping("/adicionar")
 	public ModelAndView adicionarPessoa(Pessoa pessoa) {
 		logger.info("# Pagina adicionar nova pessoa");
@@ -54,7 +62,7 @@ public class PessoaController {
 
 	@PostMapping("/save")
 	public String save(Pessoa pessoa, @RequestParam("pessoaId") Long id) {
-		if (Objects.isNull(id)) {			
+		if (Objects.isNull(id)) {
 			logger.info("# Inserindo nova pessoa com body: " + pessoa.toString());
 			pessoaService.postPessoa(pessoa);
 		} else {
@@ -63,11 +71,11 @@ public class PessoaController {
 		}
 		return "redirect:";
 	}
-	
+
 	@DeleteMapping("/remover/{id}/pessoa")
 	public String delete(@PathVariable("id") Long id) {
 		logger.info("# Removendo pessoa com id: " + id);
 		pessoaService.deletePessoa(id);
-		return "redirect:http://localhost:8080/salao_arrazus/v1/agenda/pessoas";
+		return "redirect:" + domainURL + pathURL + "/agenda/pessoas";
 	}
 }

@@ -13,6 +13,7 @@ import com.salaoarrazus.service.config.PeriodicidadeAtendimentosEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,6 +28,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/calendario/servicos")
 public class CalendarioServicosController {
 
+	@Value("${url.domain}")
+	private String domainURL;
+	
+	@Value("${server.servlet.context-path}")
+	private String pathURL;
+	
 	private static Logger logger = LoggerFactory.getLogger(SalaoArrazusApplication.class);
 	
 	@Autowired
@@ -85,7 +92,7 @@ public class CalendarioServicosController {
 	public String delete(@PathVariable("id") Long id) {
 		logger.info("# Removendo servico com id: " + id);
 		atendimentoService.deleteAtendimento(id);
-		return "redirect:http://localhost:8080/salao_arrazus/v1/calendario/servicos";
+		return "redirect:" + domainURL + pathURL + "/calendario/servicos";
 	}
 	
 }
