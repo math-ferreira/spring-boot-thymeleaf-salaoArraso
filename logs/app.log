@@ -2698,3 +2698,209 @@ Field error in object 'atendimento' on field 'dataAtendimento': rejected value [
 2020-11-30 19:41:45,012 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina inicial de itens
 2020-11-30 19:41:45,178 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-7] # Pagina inicial de itens
 2020-11-30 19:41:45,708 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-10] # Pagina inicial de contatos fornecedores
+2020-11-30 19:41:47,831 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-2] # Removendo fornecedor com id: 6
+2020-11-30 19:41:47,942 INFO com.salaoarrazus.SalaoArrazusApplication [http-nio-8080-exec-4] # Pagina inicial de contatos fornecedores
+2020-11-30 19:43:57,075 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-928] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:43:57,076 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [Thread-928] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:43:57,076 INFO com.zaxxer.hikari.HikariDataSource [Thread-928] HikariPool-6 - Shutdown initiated...
+2020-11-30 19:43:57,079 INFO com.zaxxer.hikari.HikariDataSource [Thread-928] HikariPool-6 - Shutdown completed.
+2020-11-30 19:43:57,123 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] ########################### - Iniciando aplicacao - ###########################
+2020-11-30 19:43:57,159 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 5284 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-11-30 19:43:57,159 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] The following profiles are active: dev
+2020-11-30 19:43:57,500 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-30 19:43:57,534 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 33ms. Found 7 JPA repository interfaces.
+2020-11-30 19:43:57,620 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-11-30 19:43:57,621 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:43:57,622 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-11-30 19:43:57,622 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-30 19:43:57,644 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-11-30 19:43:57,644 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 483 ms
+2020-11-30 19:43:57,682 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:43:57,695 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-30 19:43:57,699 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-7 - Starting...
+2020-11-30 19:43:57,704 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-7 - Start completed.
+2020-11-30 19:43:57,704 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-11-30 19:43:57,782 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-30 19:43:57,845 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-30 19:43:57,849 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-30 19:43:57,850 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:43:57,858 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-11-30 19:43:57,886 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-11-30 19:43:57,969 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:43:57,974 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-11-30 19:43:57,976 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2020-11-30 19:43:57,977 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2020-11-30 19:43:57,983 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2020-11-30 19:43:58,057 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:43:58,060 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:43:58,087 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_1
+2020-11-30 19:43:58,089 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:43:58,097 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_1
+2020-11-30 19:43:58,103 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:43:58,147 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:43:58,151 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_1
+2020-11-30 19:43:58,157 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_2
+2020-11-30 19:43:58,179 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_2
+2020-11-30 19:43:58,201 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:43:58,204 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_2
+2020-11-30 19:43:58,207 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_3
+2020-11-30 19:43:58,210 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: editarPessoaUsingGET_1
+2020-11-30 19:43:58,223 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_3
+2020-11-30 19:43:58,243 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_4
+2020-11-30 19:43:58,244 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-11-30 19:43:58,438 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-11-30 19:43:58,442 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Started SalaoArrazusApplication in 1.313 seconds (JVM running for 480.335)
+2020-11-30 19:43:58,444 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-11-30 19:43:59,427 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-1113] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:43:59,427 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [Thread-1113] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:43:59,427 INFO com.zaxxer.hikari.HikariDataSource [Thread-1113] HikariPool-7 - Shutdown initiated...
+2020-11-30 19:43:59,430 INFO com.zaxxer.hikari.HikariDataSource [Thread-1113] HikariPool-7 - Shutdown completed.
+2020-11-30 19:43:59,483 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] ########################### - Iniciando aplicacao - ###########################
+2020-11-30 19:43:59,516 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 5284 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-11-30 19:43:59,516 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] The following profiles are active: dev
+2020-11-30 19:43:59,906 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-30 19:43:59,934 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 28ms. Found 7 JPA repository interfaces.
+2020-11-30 19:44:00,024 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-11-30 19:44:00,024 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:44:00,025 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-11-30 19:44:00,025 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-30 19:44:00,050 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-11-30 19:44:00,050 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 531 ms
+2020-11-30 19:44:00,090 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:44:00,101 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-30 19:44:00,107 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-8 - Starting...
+2020-11-30 19:44:00,110 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-8 - Start completed.
+2020-11-30 19:44:00,111 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-11-30 19:44:00,200 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-30 19:44:00,252 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-30 19:44:00,253 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:44:00,253 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-30 19:44:00,262 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-11-30 19:44:00,296 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-11-30 19:44:00,357 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:44:00,360 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-11-30 19:44:00,361 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2020-11-30 19:44:00,361 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2020-11-30 19:44:00,369 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2020-11-30 19:44:00,445 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:00,448 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:00,482 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_1
+2020-11-30 19:44:00,486 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:00,494 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_1
+2020-11-30 19:44:00,501 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:00,535 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:00,537 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_1
+2020-11-30 19:44:00,540 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_2
+2020-11-30 19:44:00,551 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_2
+2020-11-30 19:44:00,580 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:00,583 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_2
+2020-11-30 19:44:00,586 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_3
+2020-11-30 19:44:00,589 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: editarPessoaUsingGET_1
+2020-11-30 19:44:00,598 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_3
+2020-11-30 19:44:00,612 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_4
+2020-11-30 19:44:00,614 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-11-30 19:44:00,759 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-11-30 19:44:00,763 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Started SalaoArrazusApplication in 1.273 seconds (JVM running for 482.657)
+2020-11-30 19:44:00,765 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-11-30 19:44:16,288 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-1298] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:44:16,289 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [Thread-1298] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:44:16,289 INFO com.zaxxer.hikari.HikariDataSource [Thread-1298] HikariPool-8 - Shutdown initiated...
+2020-11-30 19:44:16,292 INFO com.zaxxer.hikari.HikariDataSource [Thread-1298] HikariPool-8 - Shutdown completed.
+2020-11-30 19:44:16,354 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] ########################### - Iniciando aplicacao - ###########################
+2020-11-30 19:44:16,405 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 5284 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-11-30 19:44:16,405 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] The following profiles are active: dev
+2020-11-30 19:44:16,912 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-30 19:44:16,949 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 36ms. Found 7 JPA repository interfaces.
+2020-11-30 19:44:17,068 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-11-30 19:44:17,069 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:44:17,069 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-11-30 19:44:17,069 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-30 19:44:17,098 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-11-30 19:44:17,098 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 685 ms
+2020-11-30 19:44:17,166 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:44:17,185 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-30 19:44:17,194 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-9 - Starting...
+2020-11-30 19:44:17,198 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-9 - Start completed.
+2020-11-30 19:44:17,198 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-11-30 19:44:17,307 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-30 19:44:17,360 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-30 19:44:17,361 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:44:17,373 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-11-30 19:44:17,396 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-30 19:44:17,441 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-11-30 19:44:17,517 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:44:17,522 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-11-30 19:44:17,523 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2020-11-30 19:44:17,524 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2020-11-30 19:44:17,533 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2020-11-30 19:44:17,643 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:17,647 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:17,685 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_1
+2020-11-30 19:44:17,690 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:17,702 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_1
+2020-11-30 19:44:17,709 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:17,744 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:17,747 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_1
+2020-11-30 19:44:17,751 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_2
+2020-11-30 19:44:17,770 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_2
+2020-11-30 19:44:17,789 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:17,790 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_2
+2020-11-30 19:44:17,792 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_3
+2020-11-30 19:44:17,795 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: editarPessoaUsingGET_1
+2020-11-30 19:44:17,801 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_3
+2020-11-30 19:44:17,819 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_4
+2020-11-30 19:44:17,821 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-11-30 19:44:17,935 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-11-30 19:44:17,939 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Started SalaoArrazusApplication in 1.576 seconds (JVM running for 499.833)
+2020-11-30 19:44:17,941 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
+2020-11-30 19:44:18,981 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [Thread-1483] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:44:18,981 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [Thread-1483] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:44:18,981 INFO com.zaxxer.hikari.HikariDataSource [Thread-1483] HikariPool-9 - Shutdown initiated...
+2020-11-30 19:44:18,984 INFO com.zaxxer.hikari.HikariDataSource [Thread-1483] HikariPool-9 - Shutdown completed.
+2020-11-30 19:44:19,026 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] ########################### - Iniciando aplicacao - ###########################
+2020-11-30 19:44:19,056 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Starting SalaoArrazusApplication on DESKTOP-MATH with PID 5284 (C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus\target\classes started by matsf in C:\Users\matsf\eclipse-workspace-springtool\salao-arrazus)
+2020-11-30 19:44:19,056 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] The following profiles are active: dev
+2020-11-30 19:44:19,462 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-30 19:44:19,512 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 48ms. Found 7 JPA repository interfaces.
+2020-11-30 19:44:19,636 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-11-30 19:44:19,637 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:44:19,637 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2020-11-30 19:44:19,637 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-11-30 19:44:19,663 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/salao_arrazus/v1] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-11-30 19:44:19,664 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 606 ms
+2020-11-30 19:44:19,705 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-30 19:44:19,717 INFO org.hibernate.jpa.internal.util.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-30 19:44:19,722 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-10 - Starting...
+2020-11-30 19:44:19,725 INFO com.zaxxer.hikari.HikariDataSource [task-1] HikariPool-10 - Start completed.
+2020-11-30 19:44:19,726 INFO org.hibernate.dialect.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-11-30 19:44:19,793 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-30 19:44:19,835 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-11-30 19:44:19,838 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-30 19:44:19,838 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-30 19:44:19,853 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [task-2] LiveReload server is running on port 35729
+2020-11-30 19:44:19,884 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-11-30 19:44:19,984 INFO org.apache.coyote.http11.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-11-30 19:44:19,988 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path '/salao_arrazus/v1'
+2020-11-30 19:44:19,990 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2020-11-30 19:44:19,991 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2020-11-30 19:44:20,001 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2020-11-30 19:44:20,086 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:20,088 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:20,125 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_1
+2020-11-30 19:44:20,130 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:20,142 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_1
+2020-11-30 19:44:20,146 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:20,184 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:20,185 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_1
+2020-11-30 19:44:20,187 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_2
+2020-11-30 19:44:20,206 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_2
+2020-11-30 19:44:20,224 WARN springfox.documentation.spring.web.readers.parameter.ParameterDataTypeReader [restartedMain] Trying to infer dataType org.springframework.ui.ModelMap
+2020-11-30 19:44:20,226 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: agendaUsingGET_2
+2020-11-30 19:44:20,229 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUsingDELETE_3
+2020-11-30 19:44:20,231 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: editarPessoaUsingGET_1
+2020-11-30 19:44:20,238 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_3
+2020-11-30 19:44:20,250 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: saveUsingPOST_4
+2020-11-30 19:44:20,251 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Triggering deferred initialization of Spring Data repositories…
+2020-11-30 19:44:20,334 INFO org.springframework.data.repository.config.DeferredRepositoryInitializationListener [restartedMain] Spring Data repositories initialized!
+2020-11-30 19:44:20,337 INFO com.salaoarrazus.SalaoArrazusApplication [restartedMain] Started SalaoArrazusApplication in 1.305 seconds (JVM running for 502.23)
+2020-11-30 19:44:20,338 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener [restartedMain] Condition evaluation unchanged
