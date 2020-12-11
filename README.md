@@ -1,5 +1,6 @@
 # spring-boot-thymeleaf-salaoArraso
-Projeto com SpringBoot e Thymeleaf para gerenciamento de Agenda de um Salão de Beleza
+Projeto com SpringBoot e Thymeleaf para gerenciamento de Agenda de um Salão de Beleza.
+System for managing salon services. Calendar management as well as the establishment's service agenda will be available.
 
 This article will walk you through building an application called Salao Arrazus.
 
@@ -41,9 +42,6 @@ Congratulations! Your web app should now be up and running on Heroku. Open it in
 If you want to skip the creation steps you can clone the finished sample (without memcache backed session):
 
     $ git clone git@github.com:math-ferreira/spring-boot-thymeleaf-salaoArraso.git
-
-# Aplicação para gerenciamento - Salão ARRAZUS!
-Sistema para gerenciamento de serviços de salão de beleza. Estara disponivel o gerenciamento de calendario, bem como a agenda de serviços do estabelecimento. 
 
 # 1. Passos realizados no Projeto
 1. Definição de Requisitos:
